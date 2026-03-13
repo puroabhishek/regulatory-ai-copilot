@@ -1,0 +1,34 @@
+{
+  "policy_name": "Data Protection and Privacy Policy",
+  "selected_control_files": [
+    "data_handling_and_protection_regulation_controls.json",
+    "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english_controls.json"
+  ],
+  "selected_profile_file": "New venture.json",
+  "profile_summary": {
+    "profile_name": "New venture",
+    "country": "Qatar",
+    "regulator": "QCB",
+    "sector": "Government",
+    "business_type": "Tech Service Provider",
+    "business_model": "B2B",
+    "target_customers": "Enterprises",
+    "other_users": "End customers",
+    "key_stakeholders": "QCB, Enterprises, Government Entities",
+    "performs_kyc": "Not applicable",
+    "mandated_kyc": "Not applicable",
+    "lending_model": "Not applicable",
+    "lending_partners": "",
+    "cloud_use": "Yes",
+    "cloud_service_model": "PaaS",
+    "cloud_providers": [
+      "GCP"
+    ],
+    "hosting_region": "Qatar",
+    "data_residency_required": "Yes",
+    "handles_pii": "Yes",
+    "handles_financial_data": "Yes"
+  },
+  "sample_policy_text": "",
+  "drafting_instructions": "Use a formal policy structure. Keep it business-specific and align responsibilities to the operating model."
+}

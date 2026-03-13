@@ -1,0 +1,11 @@
+streamlit
+python-dotenv
+pydantic
+chromadb
+llama-index
+openai
+pypdf
+tqdm
+tiktoken
+sentence-transformers
+google-genai

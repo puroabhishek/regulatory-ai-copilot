@@ -1,0 +1,883 @@
+[
+  {
+    "control_id": "QCB-PDP-P3-I0",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 3,
+    "clause": null,
+    "type": "SHALL",
+    "topic": "General",
+    "statement": "This document is not official and the official version of the law is the one published in the Official Gazette number 15 of year 2016 that is available on almeezan.qa Chapter One Definitions and General Provisions Article (1) For the implementation of the provisions hereof, the following terms and words shall have such meanings assigned to the same, unless otherwise required by context: Ministry: Ministry of Transport and Communications.",
+    "category": "Regulatory Interpretation",
+    "control_type": "Legal",
+    "severity": "Low",
+    "policy_tags": [
+      "Regulatory Interpretation",
+      "Law"
+    ],
+    "implementation_hint": "Review and apply the official law from the Official Gazette as the primary source."
+  },
+  {
+    "control_id": "QCB-PDP-P3-I5",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 3,
+    "clause": null,
+    "type": "MAY",
+    "topic": "Data Protection",
+    "statement": "Controller: a natural or legal person who, whether acting individually or jointly with others, determines how Personal Data may be processed and determines the purpose(s) of any suc h processing Personal Data Processing.",
+    "category": "Data Governance",
+    "control_type": "Governance",
+    "severity": "High",
+    "policy_tags": [
+      "DataPrivacyPolicy",
+      "DataProtectionPolicy"
+    ],
+    "implementation_hint": "Assign clear roles and responsibilities for data processing."
+  },
+  {
+    "control_id": "QCB-PDP-P5-I4",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 5,
+    "clause": null,
+    "type": "SHALL",
+    "topic": "Data Protection",
+    "statement": "Article (2) Provisions hereof shall apply to Personal Data when it is electronically processed, or obtained, gathered or extracted in preparation in any other way for electronic processing, or w hen processed via a combination of electronic and traditional processing.",
+    "category": "Data Privacy",
+    "control_type": "Technical",
+    "severity": "High",
+    "policy_tags": [
+      "GDPR",
+      "Data Protection"
+    ],
+    "implementation_hint": "Ensure all data handling processes are compliant with the article's provisions."
+  },
+  {
+    "control_id": "QCB-PDP-P5-I5",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 5,
+    "clause": null,
+    "type": "SHALL",
+    "topic": "Data Protection",
+    "statement": "Provisions hereof shall not apply to Personal Data processed by individuals within a private or a family scope, or to any Personal Data processed for the purpose of obtaining official statistical data as per provisions of the referred to law No (2) of 2011.",
+    "category": "Data Privacy",
+    "control_type": "Legal",
+    "severity": "Medium",
+    "policy_tags": [
+      "GDPR",
+      "DataPrivacy"
+    ],
+    "implementation_hint": "Review and exclude personal data processed within private or family scopes, and for official statistical data as per law No (2) of 2011."
+  },
+  {
+    "control_id": "QCB-PDP-P6-I0",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 6,
+    "clause": null,
+    "type": "SHALL",
+    "topic": "Data Protection",
+    "statement": "This document is not official and the official version of the law is the one published in the Official Gazette number 15 of year 2016 that is available on almeezan.qa Chapter Two Rights of Individuals Article (3) Each Individual has the right to the protection of the Personal Data thereof that shall be processed only within the framework of transparency, honesty, and respect of human dignity, and acceptable practices according to provisions hereof.",
+    "category": "Data Protection",
+    "control_type": "Governance",
+    "severity": "High",
+    "policy_tags": [
+      "DataPrivacy",
+      "LegalCompliance"
+    ],
+    "implementation_hint": "Ensure all data processing activities comply with the Official Gazette 15 of 2016 and Article 3 of Chapter Two."
+  },
+  {
+    "control_id": "QCB-PDP-P6-I1",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 6,
+    "clause": null,
+    "type": "SHALL",
+    "topic": "Data Protection",
+    "statement": "Article (4) The Controller shall process Personal Data only after obtaining the consent of the Individual, unless data processing is necessar y to achieve a Lawful Purpose for the Controller or the other recipient of such data.",
+    "category": "Data Processing",
+    "control_type": "Operational",
+    "severity": "Medium",
+    "policy_tags": [
+      "DataPrivacyPolicy",
+      "ConsentManagement"
+    ],
+    "implementation_hint": "Ensure data processing activities are reviewed for necessity and documented."
+  },
+  {
+    "control_id": "QCB-PDP-P7-I3",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 7,
+    "clause": null,
+    "type": "SHALL",
+    "topic": "General",
+    "statement": "A request so made shall be accompanied with proof of the accuracy of such request.",
+    "category": "Authorization and Validation",
+    "control_type": "Operational",
+    "severity": "Medium",
+    "policy_tags": [
+      "DataAccuracy",
+      "Authorization"
+    ],
+    "implementation_hint": "Verify request proof before processing"
+  },
+  {
+    "control_id": "QCB-PDP-P7-I9",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 7,
+    "clause": null,
+    "type": "SHALL",
+    "topic": "Data Protection",
+    "statement": "Obtain a copy of the Personal Data thereof after paying an amount that shall not exceed the service charge.",
+    "category": "Data Access Control",
+    "control_type": "Operational",
+    "severity": "High",
+    "policy_tags": [
+      "DataPrivacyPolicy",
+      "DataAccessControlPolicy"
+    ],
+    "implementation_hint": "Review and update service charge and data access policies"
+  },
+  {
+    "control_id": "QCB-PDP-P7-I10",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 7,
+    "clause": null,
+    "type": "SHALL",
+    "topic": "General",
+    "statement": "Article (7) The controls and procedures, related to individuals’ exercise of rights provided for in the two preceding Articles , shall be specified by a decision of the Minister.",
+    "category": "Data Governance",
+    "control_type": "Governance",
+    "severity": "Medium",
+    "policy_tags": [
+      "DataPrivacy",
+      "DataAccess"
+    ],
+    "implementation_hint": "Develop and publish a ministerial decision specifying controls and procedures for individual rights."
+  },
+  {
+    "control_id": "QCB-PDP-P8-I0",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 8,
+    "clause": null,
+    "type": "SHALL",
+    "topic": "General",
+    "statement": "This document is not official and the official version of the law is the one published in the Official Gazette number 15 of year 2016 that is available on almeezan.qa Chapter Three Liabilities of Controller and Processor Article (8) The Controller shall abide by the following: 1.",
+    "category": "Data Governance",
+    "control_type": "Governance",
+    "severity": "Medium",
+    "policy_tags": [
+      "DataCompliance",
+      "LegalAgreement"
+    ],
+    "implementation_hint": "Review and comply with the official law as stated in the Official Gazette."
+  },
+  {
+    "control_id": "QCB-PDP-P8-I7",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 8,
+    "clause": null,
+    "type": "SHALL",
+    "topic": "Data Protection",
+    "statement": "The privacy protecting policies developed by the Competent Department, and a decision thereon shall be issued by the Minister.",
+    "category": "Data Protection",
+    "control_type": "Governance",
+    "severity": "High",
+    "policy_tags": [
+      "DataPrivacyPolicy",
+      "MinisterialDecision"
+    ],
+    "implementation_hint": "Ensure all policies are reviewed and updated by the Competent Department, and decisions are made by the Minister."
+  },
+  {
+    "control_id": "QCB-PDP-P9-I5",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 9,
+    "clause": null,
+    "type": "SHALL",
+    "topic": "Data Protection",
+    "statement": "Comprehensive and accurate description of the processing activities and the levels of disclosure of such Personal Data for the Lawful Purposes, and if the Controller fails to do so, the Controller shall provide the Individual with a general description there of.",
+    "category": "Data Transparency",
+    "control_type": "Governance",
+    "severity": "Medium",
+    "policy_tags": [
+      "DataPrivacyPolicy",
+      "DataTransparency"
+    ],
+    "implementation_hint": "Ensure all processing activities are documented and disclosed as required by law."
+  },
+  {
+    "control_id": "QCB-PDP-P9-I8",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 9,
+    "clause": null,
+    "type": "SHALL",
+    "topic": "Data Protection",
+    "statement": "Article (10) The Controller shall verify that Personal Data that he collects, or being collected for the benefit thereof, is relevant to Lawful Purposes and adequate for achieving the same.",
+    "category": "Data Collection",
+    "control_type": "Governance",
+    "severity": "Medium",
+    "policy_tags": [
+      "DataPrivacy",
+      "DataCompliance"
+    ],
+    "implementation_hint": "Ensure all collected data is reviewed against the lawful purposes and relevance criteria."
+  },
+  {
+    "control_id": "QCB-PDP-P9-I10",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 9,
+    "clause": null,
+    "type": "SHALL",
+    "topic": "Data Protection",
+    "statement": "In addition, the Controller shall not keep any Personal Data for a period of time that exce eds the necessary period for achieving such purposes.",
+    "category": "Data Retention",
+    "control_type": "Governance",
+    "severity": "Medium",
+    "policy_tags": [
+      "DataPrivacyPolicy",
+      "DataRetentionPolicy"
+    ],
+    "implementation_hint": "Review and update retention policies to ensure compliance with data retention periods."
+  },
+  {
+    "control_id": "QCB-PDP-P10-I0",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 10,
+    "clause": null,
+    "type": "SHALL",
+    "topic": "General",
+    "statement": "This document is not official and the official version of the law is the one published in the Official Gazette number 15 of year 2016 that is available on almeezan.qa Article (11) The Controller shall take the following procedures: 1.",
+    "category": "Data Governance",
+    "control_type": "Governance",
+    "severity": "Medium",
+    "policy_tags": [
+      "DataCompliance",
+      "LegalRequirements"
+    ],
+    "implementation_hint": "Review and implement the procedures outlined in the Official Gazette as per Article (11)"
+  },
+  {
+    "control_id": "QCB-PDP-P10-I7",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 10,
+    "clause": null,
+    "type": "SHALL",
+    "topic": "Security Controls",
+    "statement": "Developing internal systems to receive and investigate complaints, and data access and omission or correction reque sts; and they shall be made available to individuals.",
+    "category": "Data Privacy and Security",
+    "control_type": "Operational",
+    "severity": "Medium",
+    "policy_tags": [
+      "GDPR",
+      "DataPrivacy"
+    ],
+    "implementation_hint": "Implement a comprehensive complaint handling system and ensure data access and correction mechanisms are in place."
+  },
+  {
+    "control_id": "QCB-PDP-P11-I1",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 11,
+    "clause": null,
+    "type": "SHALL",
+    "topic": "Security Controls",
+    "statement": "Article (13) Each of the Controller and the Processor shall take the precautions necessary to protect Personal Data against loss, damage, change, disclosure, access thereto, or the inadvertent or illegal use thereof.",
+    "category": "Data Protection",
+    "control_type": "Technical",
+    "severity": "High",
+    "policy_tags": [
+      "GDPR",
+      "DataPrivacy"
+    ],
+    "implementation_hint": "Implement encryption and access controls"
+  },
+  {
+    "control_id": "QCB-PDP-P11-I2",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 11,
+    "clause": null,
+    "type": "SHALL",
+    "topic": "Data Protection",
+    "statement": "Such precautions shall be commensurate with the nature and the importance of the Personal Data intended to be protected.",
+    "category": "Data Protection",
+    "control_type": "Governance",
+    "severity": "Medium",
+    "policy_tags": [
+      "DataPrivacyPolicy",
+      "DataSecurityPolicy"
+    ],
+    "implementation_hint": "Review and implement appropriate data protection measures based on data sensitivity."
+  },
+  {
+    "control_id": "QCB-PDP-P11-I3",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 11,
+    "clause": null,
+    "type": "SHALL",
+    "topic": "Data Protection",
+    "statement": "The Processor shall forthwith notify the Controller of the existence of any breach of the precautions referred to, or where any risk arises threatening Personal Data in any way.",
+    "category": "Data Breach Notification",
+    "control_type": "Operational",
+    "severity": "High",
+    "policy_tags": [
+      "Data Protection",
+      "Privacy"
+    ],
+    "implementation_hint": "Implement a notification process for breaches and risks to personal data"
+  },
+  {
+    "control_id": "QCB-PDP-P11-I4",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 11,
+    "clause": null,
+    "type": "SHALL",
+    "topic": "Data Protection",
+    "statement": "Article (14) The Controller shall inform the Individual and Competent Department of the occurrence of any breach of the precautions provided for in the preceding Article, and if such breach may cause serious damage to Personal Data or individual privacy.",
+    "category": "Data Breach Notification",
+    "control_type": "Operational",
+    "severity": "Medium",
+    "policy_tags": [
+      "DataPrivacy",
+      "Security"
+    ],
+    "implementation_hint": "Inform affected individuals and relevant departments promptly upon breach detection."
+  },
+  {
+    "control_id": "QCB-PDP-P11-I5",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 11,
+    "clause": null,
+    "type": "SHALL",
+    "topic": "General",
+    "statement": "Article (15) Taking into account the liabilities provided for hereto, the Controller shall be forbidden from taking any decision or measure that may limit the Cross-Border Data Flow, unless the processing of such data",
+    "category": "Data Protection",
+    "control_type": "Governance",
+    "severity": "High",
+    "policy_tags": [
+      "GDPR",
+      "DataPrivacy"
+    ],
+    "implementation_hint": "Ensure compliance with GDPR Article 28"
+  },
+  {
+    "control_id": "QCB-PDP-P12-I0",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 12,
+    "clause": null,
+    "type": "MAY",
+    "topic": "Data Protection",
+    "statement": "This document is not official and the official version of the law is the one published in the Official Gazette number 15 of year 2016 that is available on almeezan.qa is in breach of this Law, or where such processing may cause serious damage to the Personal Data or to the Individual’s privacy.",
+    "category": "Data Privacy",
+    "control_type": "Legal",
+    "severity": "High",
+    "policy_tags": [
+      "DataPrivacyPolicy",
+      "PersonalDataProtection"
+    ],
+    "implementation_hint": "Review and update compliance with the Official Gazette 15 of 2016"
+  },
+  {
+    "control_id": "QCB-PDP-P12-I1",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 12,
+    "clause": null,
+    "type": "SHALL",
+    "topic": "Data Protection",
+    "statement": "Chapter Four Personal Data with Special Nature Article (16) The Personal data, related to ethnic origin, children, health, physical or psychological condition, religious creeds, marital relations, and criminal offenses, shall be regarded as Personal data with special nature.",
+    "category": "Data Classification",
+    "control_type": "Governance",
+    "severity": "Medium",
+    "policy_tags": [
+      "DataPrivacyPolicy",
+      "DataSecurityPolicy"
+    ],
+    "implementation_hint": "Classify relevant personal data as 'Personal data with special nature' and apply specific handling procedures."
+  },
+  {
+    "control_id": "QCB-PDP-P12-I2",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 12,
+    "clause": null,
+    "type": "MAY",
+    "topic": "Data Protection",
+    "statement": "The Minister may add other types of Personal Data of a special nature, where the misuse or disclosure of the same may cause serious damage to Individual.",
+    "category": "Data Protection",
+    "control_type": "Governance",
+    "severity": "High",
+    "policy_tags": [
+      "DataPrivacyPolicy",
+      "DataSecurityPolicy"
+    ],
+    "implementation_hint": "Review and update data handling policies to include new types of Personal Data."
+  },
+  {
+    "control_id": "QCB-PDP-P12-I3",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 12,
+    "clause": null,
+    "type": "MAY",
+    "topic": "Data Protection",
+    "statement": "Personal Data of a special nature may only be processed after obtaining the permission from the Competent Department, as per the measures and controls determined by a decision issued by the Minister.",
+    "category": "Data Protection",
+    "control_type": "Governance",
+    "severity": "High",
+    "policy_tags": [
+      "GDPR",
+      "DataPrivacy"
+    ],
+    "implementation_hint": "Ensure all personal data handling is authorized by the Competent Department and comply with the Minister's decision."
+  },
+  {
+    "control_id": "QCB-PDP-P12-I5",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 12,
+    "clause": null,
+    "type": "SHALL",
+    "topic": "General",
+    "statement": "Article (17) Taking into consideration the liabilities provided for hereto, an owner or operator of any website addressing children shall take into account the following:",
+    "category": "Data Protection",
+    "control_type": "Governance",
+    "severity": "Medium",
+    "policy_tags": [
+      "DataPrivacy",
+      "ChildProtection"
+    ],
+    "implementation_hint": "Ensure compliance with Article (17) in website terms of service and privacy policy"
+  },
+  {
+    "control_id": "QCB-PDP-P13-I9",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 13,
+    "clause": null,
+    "type": "SHALL",
+    "topic": "Data Protection",
+    "statement": "A child’s participation in a game, promotional award or any other activity shall not be conditional on the child’s provision of Personal Data in excess of the necessary for the participation in such activity.",
+    "category": "Data Protection",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "DataPrivacy",
+      "ChildProtection"
+    ],
+    "implementation_hint": "Ensure data collection is minimized and transparent for child activities."
+  },
+  {
+    "control_id": "QCB-PDP-P13-I10",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 13,
+    "clause": null,
+    "type": "MAY",
+    "topic": "Data Protection",
+    "statement": "Chapter Five Exemptions Article (18) The Competent Authority may decide to process some Personal Data, without abiding by the provisions of Articles (4), (9), (15) and (17) hereof, for achieving any of the following purposes:",
+    "category": "Data Processing Exemptions",
+    "control_type": "Legal",
+    "severity": "Medium",
+    "policy_tags": [
+      "DataPrivacyPolicy",
+      "DataSecurityPolicy"
+    ],
+    "implementation_hint": "Review and document exemptions for compliance"
+  },
+  {
+    "control_id": "QCB-PDP-P14-I8",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 14,
+    "clause": null,
+    "type": "SHALL",
+    "topic": "General",
+    "statement": "The Competent Authority shall keep a special record where the data achieving the aforementioned purposes shall be entered.",
+    "category": "Data Management",
+    "control_type": "Governance",
+    "severity": "Medium",
+    "policy_tags": [
+      "DataRetentionPolicy",
+      "DataSecurityPolicy"
+    ],
+    "implementation_hint": "Maintain a dedicated log for all data entries."
+  },
+  {
+    "control_id": "QCB-PDP-P14-I9",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 14,
+    "clause": null,
+    "type": "SHALL",
+    "topic": "General",
+    "statement": "Conditions, controls and statuses of entry on such record shall be specified by virtue of a decision issued by the Minister.",
+    "category": "Data Governance",
+    "control_type": "Governance",
+    "severity": "High",
+    "policy_tags": [
+      "DataManagement",
+      "MinisterialControls"
+    ],
+    "implementation_hint": "Ensure all entries are accompanied by a ministerial decision"
+  },
+  {
+    "control_id": "QCB-PDP-P14-I10",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 14,
+    "clause": null,
+    "type": "SHALL",
+    "topic": "General",
+    "statement": "Article (19) The Controller shall be exempted from the provisions of Articles (4), (5\\ Items 1, 2, and 3) and (6) hereof, in any of the following cases: 1.",
+    "category": "Data Privacy",
+    "control_type": "Legal",
+    "severity": "High",
+    "policy_tags": [
+      "GDPR",
+      "DataPrivacy"
+    ],
+    "implementation_hint": "Review and apply exemptions as per policy"
+  },
+  {
+    "control_id": "QCB-PDP-P14-I20",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 14,
+    "clause": null,
+    "type": "SHALL",
+    "topic": "General",
+    "statement": "Article (20) The Controller shall be exempted from disclosing the reasons for the refusal thereof of abiding by the rights of the Individual, as provided for in Article (6) hereof, if such disclosure would prevent achieving",
+    "category": "Data Privacy",
+    "control_type": "Legal",
+    "severity": "High",
+    "policy_tags": [
+      "GDPR",
+      "DataProtection"
+    ],
+    "implementation_hint": "Review and update privacy policies to align with Article (20)"
+  },
+  {
+    "control_id": "QCB-PDP-P15-I1",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 15,
+    "clause": null,
+    "type": "SHALL",
+    "topic": "General",
+    "statement": "Article (21) Taking into consideration the provisions of the preceding two Article, the Controller shall be exempted from abiding by provisions of Article (6) hereof, in either of the following two cases: 1.",
+    "category": "Data Access Control",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "DataPrivacy",
+      "DataSecurity"
+    ],
+    "implementation_hint": "Exclude exempted articles from access rules"
+  },
+  {
+    "control_id": "QCB-PDP-P15-I4",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 15,
+    "clause": null,
+    "type": "MAY",
+    "topic": "Data Protection",
+    "statement": "When implementation of such liability would cause disclosing Personal Data related to another Individual who does not consent thereto, and disclosure may lead to physical or moral damage either to this Individual or to any other Individual.",
+    "category": "Data Privacy",
+    "control_type": "Technical",
+    "severity": "High",
+    "policy_tags": [
+      "GDPR",
+      "Data Protection",
+      "Personal Data Handling"
+    ],
+    "implementation_hint": "Implement strict access controls and consent management for personal data"
+  },
+  {
+    "control_id": "QCB-PDP-P15-I5",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 15,
+    "clause": null,
+    "type": "SHALL",
+    "topic": "General",
+    "statement": "Chapter Six Electronic Communication for the Purpose of Direct Marketing Article (22) The transmission of any Electronic Communication to an Individual, for the purpose of Direct Marketing, shall be forbidden, except after obtaining the prior consent thereof.",
+    "category": "Data Privacy",
+    "control_type": "Legal",
+    "severity": "High",
+    "policy_tags": [
+      "DataPrivacyPolicy",
+      "DirectMarketing"
+    ],
+    "implementation_hint": "Obtain prior consent before transmitting electronic communications for direct marketing purposes."
+  },
+  {
+    "control_id": "QCB-PDP-P15-I6",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 15,
+    "clause": null,
+    "type": "SHALL",
+    "topic": "General",
+    "statement": "The Electronic Communication shall include the identity of the originator thereof, and highlight that it is sent for the purpose of Direct Marketing.",
+    "category": "Data Privacy",
+    "control_type": "Legal",
+    "severity": "High",
+    "policy_tags": [
+      "GDPR",
+      "CAN-SPAM"
+    ],
+    "implementation_hint": "Ensure all electronic communications include the sender's identity and specify the purpose as Direct Marketing."
+  },
+  {
+    "control_id": "QCB-PDP-P15-I7",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 15,
+    "clause": null,
+    "type": "SHALL",
+    "topic": "Security Controls",
+    "statement": "In addition, it shall include a valid address for easy access thereto and through which an Individual can send a request to the originator to stop such communications or revoke the consent on the sending thereof.",
+    "category": "Data Privacy",
+    "control_type": "Legal",
+    "severity": "High",
+    "policy_tags": [
+      "GDPR",
+      "CCPA",
+      "HIPAA"
+    ],
+    "implementation_hint": "Ensure address is publicly accessible and includes contact information for data subjects."
+  },
+  {
+    "control_id": "QCB-PDP-P16-I0",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 16,
+    "clause": null,
+    "type": "SHALL",
+    "topic": "General",
+    "statement": "This document is not official and the official version of the law is the one published in the Official Gazette number 15 of year 2016 that is available on almeezan.qa Chapter Seven Penalties Article (23) Without prejudice to any more severe penalty stipulated in any other law, a penalty that shall not exceed (1, 000,000) one million QR shall be applicable to anyone violating any of the provisions of the Articles (4, 8, 9, 10, 11, 12, 14, 15, and 22) hereof .",
+    "category": "Legal Compliance",
+    "control_type": "Legal",
+    "severity": "High",
+    "policy_tags": [
+      "Data_Law",
+      "Financial_Law"
+    ],
+    "implementation_hint": "Review and comply with Article (23) of the Official Gazette number 15 of year 2016"
+  },
+  {
+    "control_id": "QCB-PDP-P16-I1",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 16,
+    "clause": null,
+    "type": "SHALL",
+    "topic": "General",
+    "statement": "Article (24) Without prejudice to any more severe penalty stipulated in any other law, a penalty that shall not exceed (5, 000, 000) five million QR shall be applicable to anyone violating any of the provisions of the Articles (13), (16\\ paragraph 3), and (17) hereof.",
+    "category": "Data Privacy",
+    "control_type": "Legal",
+    "severity": "High",
+    "policy_tags": [
+      "DataPrivacyPolicy",
+      "ComplianceRegulations"
+    ],
+    "implementation_hint": "Ensure all employees are trained on the specific articles and penalties."
+  },
+  {
+    "control_id": "QCB-PDP-P16-I2",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 16,
+    "clause": null,
+    "type": "SHALL",
+    "topic": "General",
+    "statement": "Article (25) A penalty that shall not exceed (1,000,000) One million QR shall be applicable to violating legal person, in the event of committing any of those crimes stipulated herein on the name or for the interest thereof, without prej udice to criminal liability taken by affiliated natural person.",
+    "category": "Data Privacy and Security",
+    "control_type": "Legal",
+    "severity": "High",
+    "policy_tags": [
+      "DataPrivacy",
+      "LegalCompliance"
+    ],
+    "implementation_hint": "Ensure all legal entities comply with the specified penalties for name-related crimes."
+  },
+  {
+    "control_id": "QCB-PDP-P17-I0",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 17,
+    "clause": null,
+    "type": "MAY",
+    "topic": "General",
+    "statement": "This document is not official and the official version of the law is the one published in the Official Gazette number 15 of year 2016 that is available on almeezan.qa Chapter Eight Final Provisions Article (26) An Individual may file a complaint to the Competent Department in case of violating provisions hereof and the issued decisions in the implementation thereof.",
+    "category": "Legal Compliance",
+    "control_type": "Legal",
+    "severity": "High",
+    "policy_tags": [
+      "DataPrivacy",
+      "Compliance"
+    ],
+    "implementation_hint": "Ensure all complaints are filed in accordance with the Official Gazette and Competent Department guidelines."
+  },
+  {
+    "control_id": "QCB-PDP-P17-I1",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 17,
+    "clause": null,
+    "type": "MAY",
+    "topic": "General",
+    "statement": "The Competent Department may, after investigating received complaints and proving the seriousness thereof, issue a reasoned decision binding the Controller or Processor, as the case may be, to rectify such breach within a period it specifies.",
+    "category": "Data Breach Response",
+    "control_type": "Governance",
+    "severity": "High",
+    "policy_tags": [
+      "DataPrivacy",
+      "Compliance"
+    ],
+    "implementation_hint": "Establish clear breach response procedures and escalation protocols"
+  },
+  {
+    "control_id": "QCB-PDP-P17-I2",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 17,
+    "clause": null,
+    "type": "MAY",
+    "topic": "General",
+    "statement": "The Controller or Processor may raise a grievance against such decision to the Minister, within sixty days from the notification date thereof.",
+    "category": "Data Governance",
+    "control_type": "Governance",
+    "severity": "High",
+    "policy_tags": [
+      "DataPrivacy",
+      "DataManagement"
+    ],
+    "implementation_hint": "Implement a formal grievance process and notify all stakeholders of the procedure."
+  },
+  {
+    "control_id": "QCB-PDP-P17-I3",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 17,
+    "clause": null,
+    "type": "SHALL",
+    "topic": "General",
+    "statement": "The Minister shall decide on the grievance within sixty days from the date of the submission thereof, and the lapse of such period without a response shall be considered as an implicit rejection of the grievance, and the decision of the Minister thereon shall be final.",
+    "category": "Regulatory Response Time",
+    "control_type": "Governance",
+    "severity": "High",
+    "policy_tags": [
+      "Regulatory Compliance",
+      "Grievance Handling"
+    ],
+    "implementation_hint": "Minister must respond within 60 days or decisions are final"
+  },
+  {
+    "control_id": "QCB-PDP-P18-I5",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 18,
+    "clause": null,
+    "type": "SHALL",
+    "topic": "General",
+    "statement": "Article (28) Any contract or agreement made in violation of the provisions hereof shall be regarded as null and void.",
+    "category": "",
+    "control_type": "",
+    "severity": "",
+    "policy_tags": [],
+    "implementation_hint": ""
+  },
+  {
+    "control_id": "QCB-PDP-P18-I6",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 18,
+    "clause": null,
+    "type": "MAY",
+    "topic": "General",
+    "statement": "Article (29) The Ministry employees, authorized as law enforcement officers as per a decision by the Public Prosecutor, in agreement with the Minister, may detect and prove crimes committed in violation of provisions hereof.",
+    "category": "Law Enforcement",
+    "control_type": "Legal",
+    "severity": "High",
+    "policy_tags": [
+      "Law Enforcement",
+      "Legal Compliance"
+    ],
+    "implementation_hint": "Ensure compliance with Public Prosecutor and Minister's decisions for authorized law enforcement officers"
+  },
+  {
+    "control_id": "QCB-PDP-P18-I8",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 18,
+    "clause": null,
+    "type": "MAY",
+    "topic": "General",
+    "statement": "Such period may be extended for other similar period or periods by virtue of a decision of the Council of Ministers, upon the proposal of the Minister.",
+    "category": "Regulatory Approval",
+    "control_type": "Governance",
+    "severity": "Medium",
+    "policy_tags": [
+      "RegulatoryFramework",
+      "CouncilOfMinisters"
+    ],
+    "implementation_hint": "Review and approve proposed decisions by Council of Ministers"
+  },
+  {
+    "control_id": "QCB-PDP-P19-I0",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 19,
+    "clause": null,
+    "type": "SHALL",
+    "topic": "General",
+    "statement": "This document is not official and the official version of the law is the one published in the Official Gazette number 15 of year 2016 that is available on almeezan.qa Article (31) The Minister shall issue the necessary decisions for the implementation of the provisions hereof.",
+    "category": "Legal Compliance",
+    "control_type": "Legal",
+    "severity": "High",
+    "policy_tags": [
+      "Legal Regulations",
+      "Compliance"
+    ],
+    "implementation_hint": "Review and implement the official decision issued by the Minister in the Official Gazette."
+  },
+  {
+    "control_id": "QCB-PDP-P19-I1",
+    "doc_id": "ncsa-ncgaa-law_no._(13)_of_2016__on_protecting_personal_data_privacy_-_english",
+    "doc_title": "NCSA-NCGAA-Law No. (13) of 2016  on Protecting Personal Data Privacy - English.pdf",
+    "page": 19,
+    "clause": null,
+    "type": "SHALL",
+    "topic": "General",
+    "statement": "Article 32 All the competent authorities, each within the competences thereof, shall implement this Law, and it shall be published in the official gazette.",
+    "category": "Regulatory Compliance",
+    "control_type": "Governance",
+    "severity": "High",
+    "policy_tags": [
+      "Data_Law",
+      "Legal_Regulation"
+    ],
+    "implementation_hint": "Publish in official gazette and ensure all authorities are aware and implement."
+  }
+]

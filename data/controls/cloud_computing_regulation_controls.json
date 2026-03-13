@@ -1,0 +1,1402 @@
+[
+  {
+    "control_id": "QCB-CCR-P6-I6",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 6,
+    "clause": null,
+    "type": "MAY",
+    "topic": "General",
+    "statement": "Cloud Computing may provide operational flexibility, reliability and recovery speeds."
+  },
+  {
+    "control_id": "QCB-CCR-P7-I7",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 7,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Governance",
+    "statement": "An Entity must create a defined Cloud Computing strategy also be ."
+  },
+  {
+    "control_id": "QCB-CCR-P7-I9",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 7,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Governance",
+    "statement": "An Entity must conduct a periodic review of its Cloud Computing strategy consistent with other strategic reviews."
+  },
+  {
+    "control_id": "QCB-CCR-P7-I11",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 7,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Risk Management",
+    "statement": "An Entity must ensure that its strategy addresses information and communication technology, information security, and operational risk management (including business continuity and resiliency framework)."
+  },
+  {
+    "control_id": "QCB-CCR-P7-I13",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 7,
+    "clause": null,
+    "type": "MUST",
+    "topic": "General",
+    "statement": "A must define an implementation plan and architectural roadmap that covers the target IT environment, the transition from the current environment to the target environment, and the operating model, including any organizational change or additional skillsets that may be necessary."
+  },
+  {
+    "control_id": "QCB-CCR-P7-I15",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 7,
+    "clause": null,
+    "type": "MUST",
+    "topic": "General",
+    "statement": "An Entity must allocate sufficient resources to handle all Cloud Computing Arrangements."
+  },
+  {
+    "control_id": "QCB-CCR-P7-I17",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 7,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Governance",
+    "statement": "An Entity must establish policies within the Cloud Computing strategy , defining parameters for acceptable engagements within its Cloud Computing Arrangements."
+  },
+  {
+    "control_id": "QCB-CCR-P7-I19",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 7,
+    "clause": null,
+    "type": "MAY",
+    "topic": "Assurance & Audit",
+    "statement": "An Entity may adopt a multi-cloud service provider strategy in order to mitigate risks associated with single point of failure, security risks and maintain operational continuity."
+  },
+  {
+    "control_id": "QCB-CCR-P7-I21",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 7,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Outsourcing & Vendor Risk",
+    "statement": "Cloud Computing strategy must be consistent with the overall outsourcing strategy."
+  },
+  {
+    "control_id": "QCB-CCR-P8-I4",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 8,
+    "clause": null,
+    "type": "MAY",
+    "topic": "Risk Management",
+    "statement": "Both the board of directors and senior management may have members with the knowledge to understand and manage technology risks, which include risks posed by cyber threats."
+  },
+  {
+    "control_id": "QCB-CCR-P8-I6",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 8,
+    "clause": null,
+    "type": "MUST",
+    "topic": "General",
+    "statement": "An Entity senior management must be responsible for the assessment, understanding and monitoring of SPs for material services."
+  },
+  {
+    "control_id": "QCB-CCR-P8-I8",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 8,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Governance",
+    "statement": "An Entity management must provide information that is clear, consistent, robust, timely, well targeted , and contain an appropriate level of technical detail to facilitate effective oversight and challenge by the board."
+  },
+  {
+    "control_id": "QCB-CCR-P8-I12",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 8,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Risk Management",
+    "statement": "An Entity must define risk appetite and tolerance levels for Cloud Computing Arrangements."
+  },
+  {
+    "control_id": "QCB-CCR-P8-I14",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 8,
+    "clause": null,
+    "type": "MUST",
+    "topic": "General",
+    "statement": "An Entity must establish a function overseeing internal and external Cloud Computing Arrangements or delegating its responsibility to an existing function within the Entity."
+  },
+  {
+    "control_id": "QCB-CCR-P8-I17",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 8,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Risk Management",
+    "statement": "An Entity must establish approved and documented cloud governance policies for effective decision-making and proper management and control of risks arising from Cloud Computing Arrangements."
+  },
+  {
+    "control_id": "QCB-CCR-P8-I22",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 8,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Outsourcing & Vendor Risk",
+    "statement": "Where a CSP is involved, the division of roles and responsibility between an Entity and the CSP must be clearly defined."
+  },
+  {
+    "control_id": "QCB-CCR-P8-I25",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 8,
+    "clause": null,
+    "type": "SHOULD",
+    "topic": "Risk Management",
+    "statement": "The process should conform to the E internal risk assessment measures."
+  },
+  {
+    "control_id": "QCB-CCR-P9-I3",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 9,
+    "clause": null,
+    "type": "SHOULD",
+    "topic": "Security Controls",
+    "statement": "Establish strong authentication, access controls, data encryption and other security and technical controls to meet all Entity requirements and these should relevant Sector-Specific Security Regulation."
+  },
+  {
+    "control_id": "QCB-CCR-P9-I9",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 9,
+    "clause": null,
+    "type": "MUST",
+    "topic": "General",
+    "statement": "An Entity must define how they apply their Cloud Computing policy to each Cloud Computing Arrangement."
+  },
+  {
+    "control_id": "QCB-CCR-P9-I11",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 9,
+    "clause": null,
+    "type": "MUST",
+    "topic": "General",
+    "statement": "An Entity must consider its data classification framework and the sensitivity of data within its cloud computing policy."
+  },
+  {
+    "control_id": "QCB-CCR-P9-I13",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 9,
+    "clause": null,
+    "type": "MUST",
+    "topic": "General",
+    "statement": "An Entity must develop a policy on the applicable global standards and the compliance to those standards for Cloud Computing Arrangements."
+  },
+  {
+    "control_id": "QCB-CCR-P9-I16",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 9,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Register & Reporting",
+    "statement": "An Entity must develop a Register with a complete inventory of Cloud Computing Arrangements."
+  },
+  {
+    "control_id": "QCB-CCR-P9-I18",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 9,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Regulatory Approval",
+    "statement": "An Entity must disclose to QCB the criteria it is using to determine if a contract is material or not."
+  },
+  {
+    "control_id": "QCB-CCR-P9-I22",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 9,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Regulatory Approval",
+    "statement": "An Entity must disclose the full Register to QCB on an annual basis and upon request by QCB."
+  },
+  {
+    "control_id": "QCB-CCR-P9-I24",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 9,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Register & Reporting",
+    "statement": "An Entity must maintain an updated Register of information on all its Cloud Computing Arrangements, distinguishing between Material Arrangements and other arrangements."
+  },
+  {
+    "control_id": "QCB-CCR-P10-I7",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 10,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Outsourcing & Vendor Risk",
+    "statement": "A category assigned by an Entity that reflects the nature of the outsourced function (for example information technology function, control function), which must facilitate the identification of the different types of cloud outsourcing arrangements."
+  },
+  {
+    "control_id": "QCB-CCR-P10-I12",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 10,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Register & Reporting",
+    "statement": "Where an Entity uses a service provider as an intermediary to access a CSP this must be recorded in the Register."
+  },
+  {
+    "control_id": "QCB-CCR-P10-I22",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 10,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Register & Reporting",
+    "statement": "An Entity must include within the Register s, when data is processed by the vendor s CSP, and all the items mentioned in clause (9.6) must be included."
+  },
+  {
+    "control_id": "QCB-CCR-P10-I24",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 10,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Outsourcing & Vendor Risk",
+    "statement": "For any Primary Sub-Contractor of the CSP, the Entity must ensure all the items mentioned in clause (9.6) are included."
+  },
+  {
+    "control_id": "QCB-CCR-P10-I27",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 10,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Outsourcing & Vendor Risk",
+    "statement": "An Entity must plan and manage its transition to a Cloud Service Provider (CSP)."
+  },
+  {
+    "control_id": "QCB-CCR-P10-I28",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 10,
+    "clause": null,
+    "type": "SHOULD",
+    "topic": "Outsourcing & Vendor Risk",
+    "statement": "This should include an evaluation of the CSP's technical support capabilities and any guidance or tools they can provide to facilitate a smooth transition of functions."
+  },
+  {
+    "control_id": "QCB-CCR-P10-I30",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 10,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Governance",
+    "statement": "An Entity must review its governance and data requirements, and c heck for any constraints before planning a transition to the cloud, this includes but is not limited to:"
+  },
+  {
+    "control_id": "QCB-CCR-P11-I1",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 11,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Regulatory Approval",
+    "statement": "An Entity must conduct a legal due diligence to ensure that it is not restricted by legal obligations, QCB issued regulations, or agreements, or data use agreements that might restrict the transfer of data to third parties, even if these third parties are service providers."
+  },
+  {
+    "control_id": "QCB-CCR-P11-I3",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 11,
+    "clause": null,
+    "type": "MUST",
+    "topic": "General",
+    "statement": "An Entity must check that the required consent has been received as per the Law No."
+  },
+  {
+    "control_id": "QCB-CCR-P11-I6",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 11,
+    "clause": null,
+    "type": "MUST",
+    "topic": "General",
+    "statement": "An Entity must review the legal and regulatory requirements, contractual obligations and other corporate policies."
+  },
+  {
+    "control_id": "QCB-CCR-P11-I7",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 11,
+    "clause": null,
+    "type": "MUST",
+    "topic": "General",
+    "statement": "Corporate policies and standards must be reviewed to see if they need to be updated to allow a third party to handle data."
+  },
+  {
+    "control_id": "QCB-CCR-P11-I9",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 11,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Governance",
+    "statement": "An Entity must ensure data governance policies and practices extend to data processed on the cloud."
+  },
+  {
+    "control_id": "QCB-CCR-P11-I11",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 11,
+    "clause": null,
+    "type": "MUST",
+    "topic": "General",
+    "statement": "An Entity must review whether the existing data or technical architectures are optimal for a cloud environment prior to migrating to the cloud."
+  },
+  {
+    "control_id": "QCB-CCR-P11-I14",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 11,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Outsourcing & Vendor Risk",
+    "statement": "An Entity must undertake due diligence o n the CSP whether it is directly contracted with the CSP or has contracted with a CSP via a broker or other intermediary."
+  },
+  {
+    "control_id": "QCB-CCR-P11-I16",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 11,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Outsourcing & Vendor Risk",
+    "statement": "An En tity must undertake due diligence on prospective CSP and appropriateness of the prospective CSP and services selected, considering the intended usage of the Cloud Computing service."
+  },
+  {
+    "control_id": "QCB-CCR-P11-I18",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 11,
+    "clause": null,
+    "type": "MUST",
+    "topic": "General",
+    "statement": "An Entity must have a clear and documented business case or rationale in support of the decision to utilize the cloud."
+  },
+  {
+    "control_id": "QCB-CCR-P11-I20",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 11,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Data Protection",
+    "statement": "An Entity must consider data confidentiality, security maturity, financial, operational, and reputational , in its due diligence of a service provider."
+  },
+  {
+    "control_id": "QCB-CCR-P11-I22",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 11,
+    "clause": null,
+    "type": "MUST",
+    "topic": "General",
+    "statement": "An Entity must consider its data classification framework and the sensitiv ity of data in scope prior to any Cloud Computing Arrangement."
+  },
+  {
+    "control_id": "QCB-CCR-P11-I24",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 11,
+    "clause": null,
+    "type": "MUST",
+    "topic": "General",
+    "statement": "An Entity must ensure that the depth of the due diligence must commensurate with the criticality and Materiality of the Cloud Computing Arrangement."
+  },
+  {
+    "control_id": "QCB-CCR-P12-I1",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 12,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Risk Management",
+    "statement": "An Entity must establish risk mitigating controls that align with the criticality and Materiality of the Cloud Computing Arrangement and deploy cloud model-specific (SaaS, PaaS, IaaS) controls."
+  },
+  {
+    "control_id": "QCB-CCR-P12-I3",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 12,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Security Testing",
+    "statement": "An Entity must consider the track record of the CSP in achieving acceptable outcomes in areas such as information security policies and awareness, due diligence and risk assessment of practices related to sub-contracting, system vulnerability assessments, penetration testing and technology refresh management."
+  },
+  {
+    "control_id": "QCB-CCR-P12-I7",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 12,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Outsourcing & Vendor Risk",
+    "statement": "An Entity must cover all zones in its due diligence of a CSP."
+  },
+  {
+    "control_id": "QCB-CCR-P12-I8",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 12,
+    "clause": null,
+    "type": "MUST",
+    "topic": "General",
+    "statement": "It must not be assumed that controls are consistent across all locations."
+  },
+  {
+    "control_id": "QCB-CCR-P12-I9",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 12,
+    "clause": null,
+    "type": "MUST",
+    "topic": "General",
+    "statement": "An Entity must set the scope of the due diligence assessment appropriately to cover an adequate set of controls and individual assessments of all locations expected to be relevant in the arrangement."
+  },
+  {
+    "control_id": "QCB-CCR-P12-I11",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 12,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Security Controls",
+    "statement": "An Entity must ensure that C SP implement strong authentication, access controls, data encryption and other 11.12."
+  },
+  {
+    "control_id": "QCB-CCR-P12-I12",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 12,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Regulatory Approval",
+    "statement": "An Entity must verify that the CSP s controls adhere to the QCB Sector-Specific Security Regulation."
+  },
+  {
+    "control_id": "QCB-CCR-P12-I14",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 12,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Outsourcing & Vendor Risk",
+    "statement": "Prior to implementing Cloud Computing services and undertaking an outsourcing arrangement, an Entity must conduct an initial security and risk assessment of the se rvice to identify any information security, cybersecurity other IT control weaknesses -Specific Security Regulation."
+  },
+  {
+    "control_id": "QCB-CCR-P12-I16",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 12,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Risk Management",
+    "statement": "An Entity must ensure that t he security and risk assessment identifies security threats including information security threats and operational weaknesses and develop safeguards to mitigate those threats and weaknesses."
+  },
+  {
+    "control_id": "QCB-CCR-P12-I17",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 12,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Risk Management",
+    "statement": "The factors considered during the risk assessment must include, but are not limited to the following: 11.14.1."
+  },
+  {
+    "control_id": "QCB-CCR-P13-I1",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 13,
+    "clause": null,
+    "type": "MAY",
+    "topic": "Assurance & Audit",
+    "statement": "An Entity may also take any external assurance that has already been provided by independent auditors when conducting their own due diligence."
+  },
+  {
+    "control_id": "QCB-CCR-P13-I3",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 13,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Security Testing",
+    "statement": "An Entity must conduct a Threat & Vulnerability Risk Assessment (TVRA) or an equivalent independent assessment on the CSP 11.16."
+  },
+  {
+    "control_id": "QCB-CCR-P13-I4",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 13,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Outsourcing & Vendor Risk",
+    "statement": "An Entity must ensure the CSP has a disaster recovery and business continuity plan."
+  },
+  {
+    "control_id": "QCB-CCR-P13-I6",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 13,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Outsourcing & Vendor Risk",
+    "statement": "An Entity must conduct a detailed review of any financial information publicly available, provided by the CSP or other sources, in its due diligence."
+  },
+  {
+    "control_id": "QCB-CCR-P13-I8",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 13,
+    "clause": null,
+    "type": "MUST",
+    "topic": "General",
+    "statement": "An Entity must assess its Cloud Computing Arrangements compliance to the global standards as per the clause (8.4) and this regulation."
+  },
+  {
+    "control_id": "QCB-CCR-P13-I9",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 13,
+    "clause": null,
+    "type": "MAY",
+    "topic": "General",
+    "statement": "For such purposes, an Entity may rely on a n independent reputable aud assurance demonstrating the compliance."
+  },
+  {
+    "control_id": "QCB-CCR-P13-I20",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 13,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Risk Management",
+    "statement": "The notification period set in the written agreement must allow an Entity sufficient time at least to carry out a risk assessment of the proposed sub-contracting or material changes thereof and to object to or explicitly approve them."
+  },
+  {
+    "control_id": "QCB-CCR-P14-I1",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 14,
+    "clause": null,
+    "type": "MUST",
+    "topic": "General",
+    "statement": "Where an Entity does not have the contractual right to reject any proposed subcontractor, it is recommended that an Entity must retain a right to terminate the agreement."
+  },
+  {
+    "control_id": "QCB-CCR-P14-I3",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 14,
+    "clause": null,
+    "type": "MUST",
+    "topic": "General",
+    "statement": "An Entity must review the sub-contracting arrangements relevant to the provision of a regulated activity to determine if these sub-contacting arrangements ensure its compliance with regulatory requirements."
+  },
+  {
+    "control_id": "QCB-CCR-P14-I5",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 14,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Outsourcing & Vendor Risk",
+    "statement": "The Entity must ensure that a ny subcontractor processing an E requirements adhered to by the CSP."
+  },
+  {
+    "control_id": "QCB-CCR-P14-I8",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 14,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Outsourcing & Vendor Risk",
+    "statement": "An Entity must ensure that the respective rights and obligations of an Entity and its CSP are clearly set out in a written agreement, either directly or through an intermediary (who may also be providing elements of the Cloud Computing)."
+  },
+  {
+    "control_id": "QCB-CCR-P14-I10",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 14,
+    "clause": null,
+    "type": "MUST",
+    "topic": "General",
+    "statement": "An Entity must ensure that written agreement expressly allows the possibility for an Entity to terminate it, where necessary."
+  },
+  {
+    "control_id": "QCB-CCR-P14-I12",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 14,
+    "clause": null,
+    "type": "MUST",
+    "topic": "General",
+    "statement": "An Enti ty must ensure that its written agreement for a Material Arrangement addresses the following issues including, but not limited to: 13.3.1."
+  },
+  {
+    "control_id": "QCB-CCR-P14-I15",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 14,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Governance",
+    "statement": "SLAs: Enforceable and measurable SLAs must include a definition of the governance to be put in place to manage the contract on an ongoing basis."
+  },
+  {
+    "control_id": "QCB-CCR-P14-I16",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 14,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Governance",
+    "statement": "This must define any management information and other deliverables that will form the basis for that governance."
+  },
+  {
+    "control_id": "QCB-CCR-P14-I22",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 14,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Outsourcing & Vendor Risk",
+    "statement": "Ownership and control over IT Assets, if the CSP is expected to be given some level of control over IT Assets, this level of control must be defined in the relevant outsourcing agreement."
+  },
+  {
+    "control_id": "QCB-CCR-P15-I3",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 15,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Assurance & Audit",
+    "statement": "An Entity must have the right to monitor, review and audit Cloud Computing Arrangements."
+  },
+  {
+    "control_id": "QCB-CCR-P15-I6",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 15,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Assurance & Audit",
+    "statement": "An Entity must ensure that it receives reports relevant to its security function and key functions from the CSP, such as reports prepared by the internal audit function of the CSP."
+  },
+  {
+    "control_id": "QCB-CCR-P15-I8",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 15,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Security Testing",
+    "statement": "An Entity must receive detailed data on cyber security arrangements from the CSP such as but not limited to: Malware protection, cryptographic controls, security testing, technical compliance, KPI (Key Performance Indicators) & KRI (Key Risk Indicators)."
+  },
+  {
+    "control_id": "QCB-CCR-P15-I10",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 15,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Outsourcing & Vendor Risk",
+    "statement": "The agreement must specify whether sub -contracting is permitted by the CSP directly or via other parties, and if so, what types of sub-contracting under which conditions."
+  },
+  {
+    "control_id": "QCB-CCR-P15-I12",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 15,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Outsourcing & Vendor Risk",
+    "statement": "The agreement must contain provisions regarding the management of incidents by the CSP, including the obligation for the CSP to report to the Entity without undue delay incidents that have affected the operation of the Entity vice."
+  },
+  {
+    "control_id": "QCB-CCR-P15-I14",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 15,
+    "clause": null,
+    "type": "MUST",
+    "topic": "General",
+    "statement": "The agreement must contain provisions regarding digital forensic evidence generation , including whether the original copies of forensic evidence will be utilized or a copy with a chain of custody."
+  },
+  {
+    "control_id": "QCB-CCR-P15-I15",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 15,
+    "clause": null,
+    "type": "SHOULD",
+    "topic": "General",
+    "statement": "The chain of custody pre-requisites should be communicated and stated in the contract."
+  },
+  {
+    "control_id": "QCB-CCR-P15-I17",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 15,
+    "clause": null,
+    "type": "MUST",
+    "topic": "General",
+    "statement": "The agreement must address e-discovery costs and forensics requirements including cost and response times."
+  },
+  {
+    "control_id": "QCB-CCR-P15-I19",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 15,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Regulatory Approval",
+    "statement": "An Entity must receive official QCB approval prior to signing any Material Arrangement(s), or to any materia l modification of an existing one."
+  },
+  {
+    "control_id": "QCB-CCR-P15-I21",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 15,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Data Protection",
+    "statement": "An Entity's contract with the CSP must include clauses that ensures data confidentiality, availability and integrity at all times, depending on the nature of service being provided by the CSP."
+  },
+  {
+    "control_id": "QCB-CCR-P16-I2",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 16,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Outsourcing & Vendor Risk",
+    "statement": "Prior to signing the contract, an Entity must plan and schedule an initial post outsourcing implementation review, set at a time after the implementation of the Material Arrangement."
+  },
+  {
+    "control_id": "QCB-CCR-P16-I4",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 16,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Outsourcing & Vendor Risk",
+    "statement": "The post outsourcing implementation review must address the following: 14.2.1."
+  },
+  {
+    "control_id": "QCB-CCR-P16-I5",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 16,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Assurance & Audit",
+    "statement": "An Entity must performance of the service provider and checks to ensure that the risks associated with the outsourcing activity are managed appropriately as planned."
+  },
+  {
+    "control_id": "QCB-CCR-P16-I7",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 16,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Outsourcing & Vendor Risk",
+    "statement": "An Entity must develop a process for CSP assessments , in collaboration with the CSP ."
+  },
+  {
+    "control_id": "QCB-CCR-P16-I8",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 16,
+    "clause": null,
+    "type": "MUST",
+    "topic": "General",
+    "statement": "For the initial review this must at a minimum include: 14.2.2.1."
+  },
+  {
+    "control_id": "QCB-CCR-P16-I29",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 16,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Register & Reporting",
+    "statement": "The annual assessment must include an update and review of all the contracts in the Register, material or otherwise."
+  },
+  {
+    "control_id": "QCB-CCR-P16-I31",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 16,
+    "clause": null,
+    "type": "MUST",
+    "topic": "General",
+    "statement": "The annual assessment must report on all contracts where there has been a failure to meet contractual requirements."
+  },
+  {
+    "control_id": "QCB-CCR-P16-I33",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 16,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Data Protection",
+    "statement": "The annual assessment must include information from the CSP about breaches of data, security or confidentiality in relation to the contract."
+  },
+  {
+    "control_id": "QCB-CCR-P17-I1",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 17,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Outsourcing & Vendor Risk",
+    "statement": "The annual assessment must report any changes of location by the CSP and any (approved) changes of location for the contract itself."
+  },
+  {
+    "control_id": "QCB-CCR-P17-I4",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 17,
+    "clause": null,
+    "type": "MUST",
+    "topic": "General",
+    "statement": "For Material Arrangements the assessment must cover: 15.1.6.1."
+  },
+  {
+    "control_id": "QCB-CCR-P17-I18",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 17,
+    "clause": null,
+    "type": "MUST",
+    "topic": "General",
+    "statement": "An Entity must use the compliance to the policy as per clause (8.4) and requirements in this regulation as a criterion to renew a Cloud Computing Arrangement."
+  },
+  {
+    "control_id": "QCB-CCR-P17-I21",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 17,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Security Controls",
+    "statement": "An Entity must aim to have enforceable contractual rights that allow an Entity to have the same access rights as if it was directly managing its Cloud Computing environment."
+  },
+  {
+    "control_id": "QCB-CCR-P17-I23",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 17,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Regulatory Approval",
+    "statement": "An Entity must ensure that QCB has the same rights to audit as if the function were not outsourced in its Cloud Computing Arrangement contracts as per clause (13.3.8)."
+  },
+  {
+    "control_id": "QCB-CCR-P17-I25",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 17,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Assurance & Audit",
+    "statement": "An Entity must contractually have reasonable access to necessary information to assist in any investigation arising due to an incident in the cloud or audit inspection, to the extent that it is does not contravene any other legal obligations."
+  },
+  {
+    "control_id": "QCB-CCR-P18-I1",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 18,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Assurance & Audit",
+    "statement": "An Entity must ensure that there are no restrictions on the number of requests the Entity or its auditor can make to access or receive data."
+  },
+  {
+    "control_id": "QCB-CCR-P18-I3",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 18,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Security Controls",
+    "statement": "An Entity must have access to information on controls applied on the business premises in scope of the Cloud Computing Arrangement."
+  },
+  {
+    "control_id": "QCB-CCR-P18-I5",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 18,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Outsourcing & Vendor Risk",
+    "statement": "An Entity must be able to conduct an onsite visit to the relevant premises, as permitted by the CSP."
+  },
+  {
+    "control_id": "QCB-CCR-P18-I7",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 18,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Regulatory Approval",
+    "statement": "An Entity must ensure that QCB has the right to a business premises and to communicate with , as permitted by the CSP."
+  },
+  {
+    "control_id": "QCB-CCR-P18-I10",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 18,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Resilience & BCP",
+    "statement": "An Entity must integrate its Cloud Computing Arrangements within its Business Continuity Plans (BCP)."
+  },
+  {
+    "control_id": "QCB-CCR-P18-I12",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 18,
+    "clause": null,
+    "type": "MUST",
+    "topic": "General",
+    "statement": "An Entity must detail how to switch over to the Cloud Computing disaster recovery environment and then switch back to normal cloud production within its IT disaster recovery plan."
+  },
+  {
+    "control_id": "QCB-CCR-P18-I14",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 18,
+    "clause": null,
+    "type": "MUST",
+    "topic": "General",
+    "statement": "An Entity must assess its ability to find alternate vendors."
+  },
+  {
+    "control_id": "QCB-CCR-P18-I20",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 18,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Outsourcing & Vendor Risk",
+    "statement": "An Entity must evaluate if the CSP s BCP against required standards to determine that the CSP has satisfactory BCP in place."
+  },
+  {
+    "control_id": "QCB-CCR-P18-I22",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 18,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Outsourcing & Vendor Risk",
+    "statement": "An Entity must evaluate and satisfy itself that the interdependency risk arising from Cloud Computing Outsourcing can be adequately mitigated."
+  },
+  {
+    "control_id": "QCB-CCR-P18-I24",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 18,
+    "clause": null,
+    "type": "MUST",
+    "topic": "General",
+    "statement": "An Entity must evaluate the likelihood and impact of an unexpected disruption to the continuity of its operations."
+  },
+  {
+    "control_id": "QCB-CCR-P18-I26",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 18,
+    "clause": null,
+    "type": "MUST",
+    "topic": "General",
+    "statement": "An Entity must proactively seek assurance on the state of BCP preparedness."
+  },
+  {
+    "control_id": "QCB-CCR-P18-I30",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 18,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Security Testing",
+    "statement": "An Entity must regularly update its BCP and test arrangement with the CSP to ensure their effectiveness."
+  },
+  {
+    "control_id": "QCB-CCR-P18-I32",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 18,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Outsourcing & Vendor Risk",
+    "statement": "An Entity must have a defined incident response plan and develop effective crisis communication measures integrated with the CSP."
+  },
+  {
+    "control_id": "QCB-CCR-P19-I2",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 19,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Outsourcing & Vendor Risk",
+    "statement": "In the event of contract termination with the CSP, either on expiry or prematurely, an Entity must have the , including backups."
+  },
+  {
+    "control_id": "QCB-CCR-P19-I4",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 19,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Outsourcing & Vendor Risk",
+    "statement": "Upon terminatio n, the CSP must transfer all data from its environment to the Entity and remove it from its environment."
+  },
+  {
+    "control_id": "QCB-CCR-P19-I6",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 19,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Outsourcing & Vendor Risk",
+    "statement": "An Entity must ensure that the contract clearly stipulates the situations in which the Entity must have the right to terminate the outsourcing agreement in the event of default, or under circumstances, including but not limited to: 18.3.1."
+  },
+  {
+    "control_id": "QCB-CCR-P19-I19",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 19,
+    "clause": null,
+    "type": "MUST",
+    "topic": "General",
+    "statement": "An Entity must specify a minimum period to execute a termination provision in its agreement."
+  },
+  {
+    "control_id": "QCB-CCR-P19-I21",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 19,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Outsourcing & Vendor Risk",
+    "statement": "An Entity must have a legal agreement that commits the CSP to assist in the exit process so as not to unreasonably impede the exit."
+  },
+  {
+    "control_id": "QCB-CCR-P19-I22",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 19,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Security Controls",
+    "statement": "These must include the format and manner in which data is to be returned to the Entity, as well as support from the CSP to ensure the accessibility of the data to ensure there is a smooth transition."
+  },
+  {
+    "control_id": "QCB-CCR-P19-I26",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 19,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Outsourcing & Vendor Risk",
+    "statement": "An Entity and the CSP must agree on the data to be returned upon termination of the Cloud Computing Arrangement and review whenever there are material changes to the arrangement."
+  },
+  {
+    "control_id": "QCB-CCR-P19-I29",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 19,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Outsourcing & Vendor Risk",
+    "statement": "An Entity must develop and maintain a documented exit plan, Materiality, which must cover and differentiate between situations where an Entity exits an outsourcing agreement."
+  },
+  {
+    "control_id": "QCB-CCR-P19-I31",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 19,
+    "clause": null,
+    "type": "MUST",
+    "topic": "General",
+    "statement": "An Entity must ensure that its exit plan covers both stressed exit and managed exit."
+  },
+  {
+    "control_id": "QCB-CCR-P20-I1",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 20,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Resilience & BCP",
+    "statement": "An Entity must have plans how it would transition to an alternative service provider (or back to the Entity) and maintain business continuity."
+  },
+  {
+    "control_id": "QCB-CCR-P20-I3",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 20,
+    "clause": null,
+    "type": "MAY",
+    "topic": "General",
+    "statement": "An Entity may consider the available tools that could facilitate a stressed exit from a Cloud Computing Arrangement."
+  },
+  {
+    "control_id": "QCB-CCR-P20-I6",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 20,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Outsourcing & Vendor Risk",
+    "statement": "An Entity must remain accountable for the key management and ensure that the CSP is executing the applicable Sector-Specific Security Regulations and requirements, regardless of if the keys are hosted within the CSP data center or in the Entity's premise s as long as the key cryptography controls are meeting the applicable standards."
+  },
+  {
+    "control_id": "QCB-CCR-P20-I8",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 20,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Outsourcing & Vendor Risk",
+    "statement": "An Entity must ensure that the CSP retains a record, documents and regularly monitors the implementation of the required and applicable security controls including any changes to such controls."
+  },
+  {
+    "control_id": "QCB-CCR-P20-I10",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 20,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Security Controls",
+    "statement": "An Entity must ensure that a procedure for key management access is documented and implemented."
+  },
+  {
+    "control_id": "QCB-CCR-P20-I12",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 20,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Security Controls",
+    "statement": "CSPs must limit KMS access to specific individuals for a limited time to conduct a task , based on the agreed procedure with the Entity."
+  },
+  {
+    "control_id": "QCB-CCR-P20-I14",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 20,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Security Controls",
+    "statement": "An Entity must ensure that the principle of least privilege is adopted when granting access to the CSP."
+  },
+  {
+    "control_id": "QCB-CCR-P20-I16",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 20,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Security Controls",
+    "statement": "An Entity must retain the right to access all the logs generated by the procured services."
+  },
+  {
+    "control_id": "QCB-CCR-P20-I20",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 20,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Security Controls",
+    "statement": "An Entity must only grant service providers access to their information on a need-to-know and need-to-have basis for the purposes of the Cloud Computing Arrangement."
+  },
+  {
+    "control_id": "QCB-CCR-P20-I22",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 20,
+    "clause": null,
+    "type": "MUST",
+    "topic": "General",
+    "statement": "An Entity must ensure its data and information is segregated where the Cloud Computing Arrangement is using a multi-tenancy environment."
+  },
+  {
+    "control_id": "QCB-CCR-P20-I24",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 20,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Data Protection",
+    "statement": "An Entity must implement technical and process-based controls to protect the integrity, confidentially of the data while the data is at rest or in motion or resident in the memory , as defined in the Sector -Specific Security"
+  },
+  {
+    "control_id": "QCB-CCR-P21-I2",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 21,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Data Residency",
+    "statement": "An Entity must ensure that PII and financial information is processed within Qatar only."
+  },
+  {
+    "control_id": "QCB-CCR-P21-I4",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 21,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Regulatory Approval",
+    "statement": "An Entity must receive approval from QCB prior to entering into a Cloud Arrangement."
+  },
+  {
+    "control_id": "QCB-CCR-P21-I6",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 21,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Data Protection",
+    "statement": "When using cloud services for processing personal data, an Entity must ensure compliance with all applicable laws or regulations relating to the protection and processing of personal data and must require CSPs to comply with all requirements relating to the protection and processing of personal data, as applicable to such Entities."
+  },
+  {
+    "control_id": "QCB-CCR-P21-I9",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 21,
+    "clause": null,
+    "type": "MAY",
+    "topic": "Security Testing",
+    "statement": "An Entity may hire a reputable third party to assess and conduct the tests mentioned in clause (22.3) and in accordance with the Sector-Specific Security Regulation."
+  },
+  {
+    "control_id": "QCB-CCR-P21-I11",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 21,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Outsourcing & Vendor Risk",
+    "statement": "When an Entity is not permitted to conduct a certain security assessment on the cloud environment, the CSP must provide the Entity with an assessment report conducted by a reputable third party."
+  },
+  {
+    "control_id": "QCB-CCR-P21-I15",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 21,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Regulatory Approval",
+    "statement": "An Entity seeking an exemption from any requirement within this regulation must request it from QCB."
+  },
+  {
+    "control_id": "QCB-CCR-P21-I18",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 21,
+    "clause": null,
+    "type": "MUST",
+    "topic": "General",
+    "statement": "An Entity must link its exemption request to a specific requirement in this regulation from which it is seeking a waiver."
+  },
+  {
+    "control_id": "QCB-CCR-P21-I20",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 21,
+    "clause": null,
+    "type": "MUST",
+    "topic": "General",
+    "statement": "An Entity must support its exemption request with a clear and documented business case or rationale."
+  },
+  {
+    "control_id": "QCB-CCR-P22-I1",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 22,
+    "clause": null,
+    "type": "MUST",
+    "topic": "General",
+    "statement": "An Entity must ensure that the appropriate individuals or levels of authority within the Entity consistently approve the exemption."
+  },
+  {
+    "control_id": "QCB-CCR-P22-I3",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 22,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Register & Reporting",
+    "statement": "An Entity must duly r exemptions Register any approved exemptions and assign an expiration date the date by which the exemption will be mitigated or resolved by the Entity seeking the exemption."
+  },
+  {
+    "control_id": "QCB-CCR-P22-I5",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 22,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Risk Management",
+    "statement": "An Entity must remain accountable for any risks stemming from approved exemptions."
+  },
+  {
+    "control_id": "QCB-CCR-P22-I8",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 22,
+    "clause": null,
+    "type": "MUST",
+    "topic": "Regulatory Approval",
+    "statement": "Along with the QCB Law and this regulation, the Entity must also comply with the below mentioned secondary regulations, and their subsequent amendments, while operating in Qatar: 24.1.1."
+  },
+  {
+    "control_id": "QCB-CCR-P22-I11",
+    "doc_id": "cloud_computing_regulation",
+    "doc_title": "Cloud Computing Regulation.pdf",
+    "page": 22,
+    "clause": null,
+    "type": "MAY",
+    "topic": "Regulatory Approval",
+    "statement": "Regulations or Guidelines that may be issued by QCB, including those related to emerging technology."
+  }
+]

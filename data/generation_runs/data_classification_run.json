@@ -1,0 +1,36 @@
+{
+  "blueprint": {
+    "policy_name": "Data Classification",
+    "selected_control_files": [
+      "ncsa_csga_national_data_classification_policy_en_v3.0_controls.json"
+    ],
+    "selected_profile_file": "My Fintech.json",
+    "profile_summary": {
+      "profile_name": "My Fintech",
+      "country": "Qatar",
+      "regulator": "QCB",
+      "sector": "Government",
+      "business_type": "Insurance",
+      "business_model": "B2B2C",
+      "target_customers": "Consumers",
+      "other_users": "Banks, Corporates and agents",
+      "key_stakeholders": "QCB, Partner banks/FIs, Board, Compliance, IT/SecOps, Vendors",
+      "performs_kyc": "Not applicable",
+      "mandated_kyc": "Not applicable",
+      "lending_model": "Not applicable",
+      "lending_partners": "",
+      "cloud_use": "Yes",
+      "cloud_service_model": "Mixed",
+      "cloud_providers": [
+        "GCP"
+      ],
+      "hosting_region": "Qatar",
+      "data_residency_required": "Yes",
+      "handles_pii": "Yes",
+      "handles_financial_data": "Yes"
+    },
+    "sample_policy_text": "",
+    "drafting_instructions": "Use a formal policy structure. Keep it business-specific and align responsibilities to the operating model."
+  },
+  "generated_policy_preview": "```markdown\n# Data Classification Policy\n\n## Purpose\nTo ensure compliance with national data classification regulations and maintain the security and privacy of sensitive information.\n\n## Scope\nThis policy applies to all data classified as \"High\" and \"Very High\" by the National Cyber Governance and Assurance Affairs (NCGAA) of Qatar.\n\n## Policy Statements\n1. **VERSION3.0 MAY NATIONAL DATA CLASSIFICATION POLICY [IAP-NAT-DCLS]**: Review and implement version 3.0 of the policy.\n2. **Any reproduction of the present document either in part or full and irrespective of the means of reproduction; shall acknowledge NCSA as the source and owner of the “National Data Classification Policy”.**\n3. **Any reproduction concerning this document with intent of commercialization shall seek a written authorization from the NCSA.**\n4. **NCSA shall reserve the right to assess the functionality and applicability of all such reproductions developed for commercial intent.**\n5. **The authorization from NCSA shall not be construed as an endorsement of the developed reproduction and the developer shall in no way publicize or misinterpret this in any form of media or personal / social discussions.**\n6. **Abstract Review/Approval DateVersionReviewed/ApprovedDept./RoleName May 20233.0 National Cyber Governance and Assurance Affairs Director of National Cyber Governance and Assurance Affairs Revision History DateRevision DescriptionAuthor(s)Version January 2010 PublishedictQATAR1.0 February 2014PublishedMOTC2.0 May 2023PublishedNCSA – National Cyber Governance & Assurance Affairs3.0**\n\n## Roles and Responsibilities\n- **QCB (Qatar Cyber Authority)**: Responsible for enforcing the policy and ensuring compliance.\n- **Partner Banks/FIs**: Comply with the policy and report any issues to QCB.\n- **Board**: Approve the policy and ensure its implementation.\n- **Compliance**: Monitor compliance and provide guidance.\n- **IT/SecOps**: Implement and maintain the policy.\n- **Vendors**: Ensure compliance with the policy.\n\n## Review\nThe policy will be reviewed annually to ensure it remains relevant and effective. The review will include a review of the policy statements and the implementation of the controls.\n\n## Implementation\n- **Review and implement version 3.0 of the policy**.\n- **Ensure all reproductions include NCSA acknowledgment**.\n- **Obtain written authorization for any commercial reproduction**.\n- **Review and update reproduction policies annually**.\n- **Ensure all communications and public statements align with NCSA authorization guidelines**.\n- **Maintain and update the review/revision history in a centralized system**.\n\n## Enforcement\n- **Compliance**: Ensure all stakeholders comply with the policy.\n- **Penalties**: Non-compliance may result in disciplinary action.\n\n## Policy Tags\n- **DataClassification**\n- **RegulatoryCompliance**\n- **DataPolicy**\n- **Ownership**\n- **DataPrivacyPolicy**\n- **IntellectualProperty**\n- **DataPrivacy**\n- **DataSecurity**\n- **DataReduction**\n- **DataP"
+}

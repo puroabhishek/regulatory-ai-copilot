@@ -1,0 +1,63 @@
+policy_name,control_id,policy_tag_match,source_doc_title,source_page,business_type,sector
+Data Classification,QCB-DC-P1-I0,"DataClassification, RegulatoryCompliance",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,1,Insurance,Government
+Data Classification,QCB-DC-P3-I2,"DataPolicy, Ownership",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,3,Insurance,Government
+Data Classification,QCB-DC-P3-I3,"DataPrivacyPolicy, IntellectualProperty",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,3,Insurance,Government
+Data Classification,QCB-DC-P3-I4,"DataReduction, DataSecurity",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,3,Insurance,Government
+Data Classification,QCB-DC-P3-I5,"DataPrivacy, Compliance",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,3,Insurance,Government
+Data Classification,QCB-DC-P4-I1,"National Cyber Governance, Assurance Affairs",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,4,Insurance,Government
+Data Classification,QCB-DC-P5-I7,"LawCompliance, LegalFramework",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,5,Insurance,Government
+Data Classification,QCB-DC-P5-I8,"ContractPolicy, Compliance",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,5,Insurance,Government
+Data Classification,QCB-DC-P5-I9,"Qatar Laws, Legal Compliance",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,5,Insurance,Government
+Data Classification,QCB-DC-P7-I6,"DataManagementPolicy, DataGovernancePolicy",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,7,Insurance,Government
+Data Classification,QCB-DC-P8-I2,"DataManagement, SecurityPolicy",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,8,Insurance,Government
+Data Classification,QCB-DC-P9-I14,"DataClassificationPolicy, InformationAssurance",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,9,Insurance,Government
+Data Classification,QCB-DC-P10-I3,"DataClassification, DataGovernance",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,10,Insurance,Government
+Data Classification,QCB-DC-P10-I4,"DataGovernancePolicy, DataSecurityPolicy",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,10,Insurance,Government
+Data Classification,QCB-DC-P10-I9,"DataLifecycleManagement, DataClassification",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,10,Insurance,Government
+Data Classification,QCB-DC-P10-I12,"DataPrivacyPolicy, DataSecurityPolicy",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,10,Insurance,Government
+Data Classification,QCB-DC-P10-I15,"DataClassificationPolicy, DataProtectionPolicy",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,10,Insurance,Government
+Data Classification,QCB-DC-P11-I3,"OrganizationalPolicy, GovernancePolicy",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,11,Insurance,Government
+Data Classification,QCB-DC-P11-I6,"DataClassificationPolicy, DataGovernance",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,11,Insurance,Government
+Data Classification,QCB-DC-P11-I7,"DataLifecycleManagement, DataProtection",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,11,Insurance,Government
+Data Classification,QCB-DC-P13-I1,"DataClassificationPolicy, InformationSecurityPolicy",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,13,Insurance,Government
+Data Classification,QCB-DC-P13-I2,"DataSecurityPolicy, DataClassificationPolicy",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,13,Insurance,Government
+Data Classification,QCB-DC-P13-I6,"DataClassificationPolicy, DataHandlingPolicy",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,13,Insurance,Government
+Data Classification,QCB-DC-P13-I7,"DataClassification, SecurityPolicy",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,13,Insurance,Government
+Data Classification,QCB-DC-P14-I5,"DataPrivacy, DataSecurity",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,14,Insurance,Government
+Data Classification,QCB-DC-P14-I8,"DataPrivacyPolicy, DataSecurityPolicy",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,14,Insurance,Government
+Data Classification,QCB-DC-P14-I13,"DataManagementPolicy, EmployeeTraining",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,14,Insurance,Government
+Data Classification,QCB-DC-P14-I14,"DataClassificationPolicy, EmployeeTraining",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,14,Insurance,Government
+Data Classification,QCB-DC-P14-I16,"DataClassification, DataProtection",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,14,Insurance,Government
+Data Classification,QCB-DC-P14-I20,"DataProtectionPolicy, DataClassification",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,14,Insurance,Government
+Data Classification,QCB-DC-P15-I2,"DataClassificationPolicy, Compliance",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,15,Insurance,Government
+Data Classification,QCB-DC-P15-I13,"DataPrivacyPolicy, DataSecurityPolicy",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,15,Insurance,Government
+Data Classification,QCB-DC-P16-I4,"DataGovernance, GovernmentCompliance",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,16,Insurance,Government
+Data Classification,QCB-DC-P16-I5,"DataManagementPolicy, ClassificationPolicy",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,16,Insurance,Government
+Data Classification,QCB-DC-P16-I7,"DataClassificationPolicy, DataGovernance",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,16,Insurance,Government
+Data Classification,QCB-DC-P16-I10,"DataClassificationPolicy, DataManagement",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,16,Insurance,Government
+Data Classification,QCB-DC-P16-I12,"DataPrivacyPolicy, SecurityClassificationPolicy",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,16,Insurance,Government
+Data Classification,QCB-DC-P16-I14,"DataClassificationPolicy, DataManagementPolicy",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,16,Insurance,Government
+Data Classification,QCB-DC-P16-I16,"Data Governance Policy, Data Lifecycle Management",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,16,Insurance,Government
+Data Classification,QCB-DC-P16-I18,"DataManagement, Policy",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,16,Insurance,Government
+Data Classification,QCB-DC-P16-I22,"DataClassification, DataGovernance",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,16,Insurance,Government
+Data Classification,QCB-DC-P16-I33,"Cybersecurity Policy, Regulatory Compliance",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,16,Insurance,Government
+Data Classification,QCB-DC-P17-I12,"DataPrivacyPolicy, CyberSecurityPolicy",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,17,Insurance,Government
+Data Classification,QCB-DC-P20-I1,"Data Governance Policy, Data Compliance Policy",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,20,Insurance,Government
+Data Classification,QCB-DC-P20-I5,"Risk Management Policy, Compliance Controls",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,20,Insurance,Government
+Data Classification,QCB-DC-P20-I9,"DataProtectionPolicy, DataRetentionPolicy",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,20,Insurance,Government
+Data Classification,QCB-DC-P20-I10,"DataRetentionPolicy, LegalCompliance",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,20,Insurance,Government
+Data Classification,QCB-DC-P20-I11,"DataGovernance, Compliance",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,20,Insurance,Government
+Data Classification,QCB-DC-P20-I13,"DataPrivacyPolicy, DataRetentionPolicy",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,20,Insurance,Government
+Data Classification,QCB-DC-P20-I15,"GDPR, Qatar PDPPL",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,20,Insurance,Government
+Data Classification,QCB-DC-P20-I17,"DataPrivacyPolicy, InformationSecurityPolicy",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,20,Insurance,Government
+Data Classification,QCB-DC-P20-I18,"DataPrivacy, DataRetention",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,20,Insurance,Government
+Data Classification,QCB-DC-P20-I19,"DataPrivacyPolicy, DataHandlingPolicy",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,20,Insurance,Government
+Data Classification,QCB-DC-P20-I20,"DataProtection, SecurityTraining",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,20,Insurance,Government
+Data Classification,QCB-DC-P21-I1,"SecurityPolicy, TechnicalControls",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,21,Insurance,Government
+Data Classification,QCB-DC-P21-I3,"DataManagementPolicy, CompliancePolicy",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,21,Insurance,Government
+Data Classification,QCB-DC-P21-I4,"Data Governance, Data Management",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,21,Insurance,Government
+Data Classification,QCB-DC-P21-I5,"ComplianceBudget, HumanResources",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,21,Insurance,Government
+Data Classification,QCB-DC-P21-I13,"Risk Management Policy, Compliance",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,21,Insurance,Government
+Data Classification,QCB-DC-P21-I14,"AccessPolicy, SecurityPolicy",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,21,Insurance,Government
+Data Classification,QCB-DC-P22-I1,"Risk Management Policy, Compliance",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,22,Insurance,Government
+Data Classification,QCB-DC-P22-I9,"RiskAssessmentPolicy, ComplianceControlPolicy",NCSA_CSGA_National_Data_Classification_Policy_EN_V3.0.pdf,22,Insurance,Government
