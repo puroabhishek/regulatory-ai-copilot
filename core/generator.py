@@ -1,8 +1,8 @@
-import json
 import csv
+import json
 import re
 from pathlib import Path
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 
 from core.llm import ollama_chat
 
@@ -141,14 +141,13 @@ def _build_profile_context(profile_summary: Dict[str, Any]) -> str:
 def generate_policy_md_from_blueprint(
     blueprint: Dict[str, Any],
     controls: List[Dict[str, Any]],
-    model: str = "qwen2.5:1.5b",
+    model: Optional[str] = None,
 ) -> str:
     policy_name = blueprint["policy_name"]
     profile_summary = blueprint["profile_summary"]
     sample_policy_text = blueprint.get("sample_policy_text", "")
     drafting_instructions = blueprint.get("drafting_instructions", "")
 
-    # Reduce prompt size for local model
     controls_for_prompt = controls[:6]
     sample_policy_text = sample_policy_text[:1200]
 
@@ -187,7 +186,12 @@ Requirements:
 6. Return only markdown.
 """
 
-    return ollama_chat(prompt=prompt, model=model, temperature=0.1)
+    return ollama_chat(
+        prompt=prompt,
+        model=model,
+        temperature=0.1,
+        purpose="policy_generation",
+    )
 
 
 def build_project_plan_rows(policy_name: str, controls: List[Dict[str, Any]], profile_summary: Dict[str, Any]) -> List[Dict[str, Any]]:

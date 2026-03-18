@@ -87,6 +87,7 @@ def extract_controls_from_pages(
     prefix: str = "QCB-CCR",
     min_len: int = 50,
     max_len: int = 500,
+    model: str = "qwen2.5:1.5b",
 ) -> List[Dict[str, Any]]:
     """
     Extract requirement-like controls from page text and enrich with LLM classification.
@@ -126,9 +127,8 @@ def extract_controls_from_pages(
 
             control_id = _make_control_id(prefix, clause, page_num, i)
 
-            # LLM classification
             try:
-                extra = classify_control(statement, model="qwen2.5:3b")
+                extra = classify_control(statement, model=model)
             except Exception:
                 extra = {
                     "category": "",
@@ -190,7 +190,6 @@ def save_controls_csv(controls: List[Dict[str, Any]], out_path: str) -> str:
         writer.writeheader()
         for c in controls:
             row = dict(c)
-            # CSV can’t store lists nicely; stringify policy_tags
             if isinstance(row.get("policy_tags"), list):
                 row["policy_tags"] = "; ".join(row["policy_tags"])
             writer.writerow({k: row.get(k) for k in fields})

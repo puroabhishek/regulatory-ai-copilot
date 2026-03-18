@@ -1,6 +1,6 @@
 [
   {
-    "control_id": "QCB-DP-P4-I8",
+    "control_id": "QCB-GAP-P4-I8",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 4,
@@ -8,14 +8,17 @@
     "type": "MUST",
     "topic": "General",
     "statement": "Sensitive Financial Information must be classified as per a Financial Institution’s highest classification tier.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "FinancialInstitutionClassification",
+      "DataProtection"
+    ],
+    "implementation_hint": "Implement a system to classify sensitive financial information according to the highest classification tier of the financial institution."
   },
   {
-    "control_id": "QCB-DP-P4-I14",
+    "control_id": "QCB-GAP-P4-I14",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 4,
@@ -23,14 +26,17 @@
     "type": "MUST",
     "topic": "General",
     "statement": "Introduction As data is a cornerstone of financial operations, the secure handling and protection of sensitive information is a critical activity financial institutions must undertake.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Medium",
+    "policy_tags": [
+      "Data Security",
+      "Compliance"
+    ],
+    "implementation_hint": "Implement strict access controls and encryption for sensitive financial data."
   },
   {
-    "control_id": "QCB-DP-P5-I1",
+    "control_id": "QCB-GAP-P5-I1",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 5,
@@ -38,14 +44,17 @@
     "type": "MUST",
     "topic": "Regulatory Approval",
     "statement": "Organizational Governance 4.1 All data collected, stored, or processed by a Financial Institution or through a Third Party on behalf of a Financial Institution must be handled in accordance with QCB Law, this regulation, the Qatar Data Privacy Protection Law and any other relevant laws and regulations.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "QCB Law",
+      "Qatar Data Privacy Protection Law"
+    ],
+    "implementation_hint": "Ensure compliance with QCB Law, Qatar Data Privacy Protection Law, and other relevant laws and regulations."
   },
   {
-    "control_id": "QCB-DP-P5-I2",
+    "control_id": "QCB-GAP-P5-I2",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 5,
@@ -53,14 +62,17 @@
     "type": "MUST",
     "topic": "Governance",
     "statement": "4.2 A Financial Institution must establish a dedicated data governance business unit, or assign it to an existing function.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Governance",
+      "Financial Institution"
+    ],
+    "implementation_hint": "Designate a dedicated team or assign an existing function to oversee data governance processes."
   },
   {
-    "control_id": "QCB-DP-P5-I8",
+    "control_id": "QCB-GAP-P5-I8",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 5,
@@ -68,14 +80,17 @@
     "type": "MAY",
     "topic": "Risk Management",
     "statement": "4.3 A Financial Institution may establish a data governance committee with representation from senior management, risk, information technology, information security, legal and compliance as well as other relevant functions.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Operational",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Governance",
+      "Compliance Committee"
+    ],
+    "implementation_hint": "Establish a committee with representation from key departments to oversee data management and compliance."
   },
   {
-    "control_id": "QCB-DP-P5-I9",
+    "control_id": "QCB-GAP-P5-I9",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 5,
@@ -83,14 +98,17 @@
     "type": "MAY",
     "topic": "Data Protection",
     "statement": "Such a committee may engage in tasks including: 4.3.1 Reviewing data privacy and protection risks.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Operational",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Privacy",
+      "Risk Management"
+    ],
+    "implementation_hint": "Ensure regular reviews of data privacy and protection risks are conducted."
   },
   {
-    "control_id": "QCB-DP-P5-I12",
+    "control_id": "QCB-GAP-P5-I12",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 5,
@@ -98,14 +116,17 @@
     "type": "MUST",
     "topic": "Regulatory Approval",
     "statement": "4.4 A Financial Institution must appoint a Data Privacy Officer (DPO) who possesses the necessary knowledge and experience in data privacy, notifying QCB of the appointed DPO and submit the required Fit and Proper Form as per QCB Licensing Regulations.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Privacy Officer (DPO)",
+      "Licensing Regulations"
+    ],
+    "implementation_hint": "Ensure the appointment of a DPO and submit the Fit and Proper Form as per QCB Licensing Regulations."
   },
   {
-    "control_id": "QCB-DP-P5-I13",
+    "control_id": "QCB-GAP-P5-I13",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 5,
@@ -113,14 +134,17 @@
     "type": "MAY",
     "topic": "General",
     "statement": "1 A Financial Institution may appoint a DPO to an existing role, ensuring that it is independent of conflicts of interests and operate independently without being directed in the performance of their tasks.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Protection",
+      "Compliance"
+    ],
+    "implementation_hint": "Ensure the DPO is independent and operates independently."
   },
   {
-    "control_id": "QCB-DP-P5-I14",
+    "control_id": "QCB-GAP-P5-I14",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 5,
@@ -128,14 +152,17 @@
     "type": "MUST",
     "topic": "General",
     "statement": "2 A Financial Institution must ensure that the DPO is not involved within Financial Institution operations.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Protection",
+      "Compliance"
+    ],
+    "implementation_hint": "Ensure the Data Protection Officer (DPO) is not part of the financial institution's operational team."
   },
   {
-    "control_id": "QCB-DP-P5-I15",
+    "control_id": "QCB-GAP-P5-I15",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 5,
@@ -143,14 +170,18 @@
     "type": "MAY",
     "topic": "Data Protection",
     "statement": "3 A Foreign Financial Institution may appoint a DPO based within their headquarters, ensuring that a Qatar-based representative is assigned responsibility to liaise and facilitate in order to ensure data privacy and protection requirements are met consistently.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Privacy",
+      "Data Protection",
+      "DPO"
+    ],
+    "implementation_hint": "Ensure a DPO is appointed within the headquarters, with a Qatar-based representative responsible for liaising and facilitating data privacy and protection requirements."
   },
   {
-    "control_id": "QCB-DP-P5-I16",
+    "control_id": "QCB-GAP-P5-I16",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 5,
@@ -158,14 +189,17 @@
     "type": "MUST",
     "topic": "Data Protection",
     "statement": "4.5 A Financial Institution must ensure its DPO’s roles and responsibilities include: 4.5.1 Assessing the Financial Institution’s compliance to data privacy and protection requirements as per relevant laws and regulations.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Privacy",
+      "Compliance"
+    ],
+    "implementation_hint": "Ensure the DPO's responsibilities include assessing compliance with data privacy and protection requirements."
   },
   {
-    "control_id": "QCB-DP-P6-I2",
+    "control_id": "QCB-GAP-P6-I2",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 6,
@@ -173,14 +207,17 @@
     "type": "MUST",
     "topic": "Data Protection",
     "statement": "4.6 A Financial Institution must ensure its DPO reports directly to the CEO or the most senior management position, who must ensure data privacy and protection risks are communicated to the board.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Privacy",
+      "Board Oversight"
+    ],
+    "implementation_hint": "Ensure DPO reports directly to the CEO or the most senior management position to ensure data privacy and protection risks are communicated to the board."
   },
   {
-    "control_id": "QCB-DP-P6-I3",
+    "control_id": "QCB-GAP-P6-I3",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 6,
@@ -188,14 +225,18 @@
     "type": "MUST",
     "topic": "Data Protection",
     "statement": "4.7 A Financial Institution must provide the required training and awareness to promote skill development for its employees and relevant stakeholders to ensure that they regularly update their knowledge of data privacy and management, data classification, data handling, data cataloguing, data stewardship, data backup up, disaster recovery, etc.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Privacy",
+      "Data Management",
+      "Data Security"
+    ],
+    "implementation_hint": "Ensure regular training and awareness sessions for employees and relevant stakeholders."
   },
   {
-    "control_id": "QCB-DP-P6-I5",
+    "control_id": "QCB-GAP-P6-I5",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 6,
@@ -203,14 +244,16 @@
     "type": "MUST",
     "topic": "Security Controls",
     "statement": "Framework, policies and procedures 5.1 A Financial Institution must establish an internal data governance policy that applies to all their business processes and operational procedures to ensure proper handling in the collection, class ification, security, integrity, storage, retention, access, use, transfer and destruction of data throughout its lifecycle.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Governance Policy"
+    ],
+    "implementation_hint": "Develop and enforce a comprehensive data governance policy that includes all business processes and operational procedures."
   },
   {
-    "control_id": "QCB-DP-P6-I6",
+    "control_id": "QCB-GAP-P6-I6",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 6,
@@ -218,14 +261,17 @@
     "type": "MUST",
     "topic": "Governance",
     "statement": "5.2 A Financial Institution must ensure that its data governance policy includes: 5.2.1 Identification of all relevant laws and regulations the Financial Institution must adhere to.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Governance",
+      "Regulatory Compliance"
+    ],
+    "implementation_hint": "Ensure compliance by identifying and adhering to all relevant laws and regulations."
   },
   {
-    "control_id": "QCB-DP-P6-I19",
+    "control_id": "QCB-GAP-P6-I19",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 6,
@@ -233,14 +279,17 @@
     "type": "MUST",
     "topic": "Governance",
     "statement": "5.3 A Financial Institution must assess requirements of leading data governance standards, while ensuring they maintain compliance with the requirements of this regulation.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Governance",
+      "Compliance"
+    ],
+    "implementation_hint": "Conduct regular assessments of leading data governance standards to ensure compliance with regulatory requirements."
   },
   {
-    "control_id": "QCB-DP-P6-I20",
+    "control_id": "QCB-GAP-P6-I20",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 6,
@@ -248,14 +297,18 @@
     "type": "MUST",
     "topic": "Security Controls",
     "statement": "5.4 A Financial Institution must publish its External Privacy Policy statement on externally hosted channels, to the extent necessary, informing customers of their rights and how their data will be collected, accessed, processed, shared and retained.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "ExternalPrivacyPolicy",
+      "CustomerRights",
+      "DataCollectionAccess"
+    ],
+    "implementation_hint": "Ensure the External Privacy Policy is accessible on publicly visible channels."
   },
   {
-    "control_id": "QCB-DP-P6-I21",
+    "control_id": "QCB-GAP-P6-I21",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 6,
@@ -263,14 +316,17 @@
     "type": "MUST",
     "topic": "Security Controls",
     "statement": "5.5 A Financial Institution must publish its Internal Privacy Policy in an easily-accessible and context-specific manner, to the extent necessary for all staff involved.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Privacy Policy",
+      "Staff Access"
+    ],
+    "implementation_hint": "Ensure the privacy policy is easily accessible and context-specific to all staff."
   },
   {
-    "control_id": "QCB-DP-P7-I0",
+    "control_id": "QCB-GAP-P7-I0",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 7,
@@ -278,14 +334,17 @@
     "type": "MUST",
     "topic": "General",
     "statement": "Data Handling and Protection Regulation 7 5.6 A Financial Institution must develop data mapping procedures to define data assets and their paths through the entities’ processes.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Protection",
+      "Data Mapping"
+    ],
+    "implementation_hint": "Develop and document data mapping procedures to ensure clear identification and tracking of data assets throughout the organization's processes."
   },
   {
-    "control_id": "QCB-DP-P7-I1",
+    "control_id": "QCB-GAP-P7-I1",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 7,
@@ -293,14 +352,17 @@
     "type": "MUST",
     "topic": "General",
     "statement": "5.7 A Financial Institution must establish consent procedures for customer data processing that aligns with processes and technologies utilized within the Financial Institution.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Privacy",
+      "Customer Consent"
+    ],
+    "implementation_hint": "Implement clear and transparent consent procedures for customer data processing."
   },
   {
-    "control_id": "QCB-DP-P7-I2",
+    "control_id": "QCB-GAP-P7-I2",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 7,
@@ -308,14 +370,17 @@
     "type": "MUST",
     "topic": "General",
     "statement": "5.8 A Financial Institution must define specific destruction guidelines for data and hardware that has reached the end of its retention period.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Destruction",
+      "Retention Period"
+    ],
+    "implementation_hint": "Develop and enforce clear guidelines for securely destroying data and hardware beyond their retention period."
   },
   {
-    "control_id": "QCB-DP-P7-I3",
+    "control_id": "QCB-GAP-P7-I3",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 7,
@@ -323,14 +388,17 @@
     "type": "MUST",
     "topic": "Governance",
     "statement": "5.9 A Financial Institution must align its business continuity plans, disaster recovery plans and backup strategy with the requirements of this regulation and their data governance frameworks, policies, and procedu res.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Medium",
+    "policy_tags": [
+      "Data Governance",
+      "Regulatory Compliance"
+    ],
+    "implementation_hint": "Ensure alignment between business continuity, disaster recovery, and backup strategies with regulatory requirements and data governance policies."
   },
   {
-    "control_id": "QCB-DP-P7-I4",
+    "control_id": "QCB-GAP-P7-I4",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 7,
@@ -338,14 +406,17 @@
     "type": "MUST",
     "topic": "Assurance & Audit",
     "statement": "5.10 A Financial Institution must ensure it identifies risks associated with data privacy and the mitigating controls.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Privacy",
+      "Risk Management"
+    ],
+    "implementation_hint": "Implement data privacy policies and conduct regular audits."
   },
   {
-    "control_id": "QCB-DP-P7-I5",
+    "control_id": "QCB-GAP-P7-I5",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 7,
@@ -353,14 +424,17 @@
     "type": "MUST",
     "topic": "Register & Reporting",
     "statement": "5.11 A Financial Institution must maintain a detailed inventory of all assets within its processing environment, including Third Party assets, mapped to its critical processes and services.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Operational",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Asset Inventory",
+      "Third Party Management"
+    ],
+    "implementation_hint": "Ensure all assets, including Third Party assets, are inventoried and mapped to critical processes and services."
   },
   {
-    "control_id": "QCB-DP-P7-I7",
+    "control_id": "QCB-GAP-P7-I7",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 7,
@@ -368,14 +442,17 @@
     "type": "MUST",
     "topic": "General",
     "statement": "Data Classification Framework 6.1 A Financial Institution must develop and maintain a data classification policy based on industry leading practices, which includes Financial Institution-wide responsibilities for classifying data.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Classification Policy",
+      "Data Protection"
+    ],
+    "implementation_hint": "Develop and maintain a comprehensive data classification policy based on industry best practices."
   },
   {
-    "control_id": "QCB-DP-P7-I8",
+    "control_id": "QCB-GAP-P7-I8",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 7,
@@ -383,14 +460,17 @@
     "type": "MUST",
     "topic": "General",
     "statement": "6.2 A Financial Institution must develop and maintain a data handling guideline that details how to handle data of different classifications.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Handling Guidelines",
+      "Data Classification"
+    ],
+    "implementation_hint": "Develop and maintain a comprehensive data handling guideline that clearly outlines how to handle data of different classifications."
   },
   {
-    "control_id": "QCB-DP-P7-I9",
+    "control_id": "QCB-GAP-P7-I9",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 7,
@@ -398,14 +478,16 @@
     "type": "MAY",
     "topic": "General",
     "statement": "A Financial Institution may utilize the National Cyber Security Agency’s National Data Classification Policy.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Classification Policy"
+    ],
+    "implementation_hint": "Ensure compliance with the National Cyber Security Agency’s National Data Classification Policy by implementing appropriate data classification measures."
   },
   {
-    "control_id": "QCB-DP-P7-I10",
+    "control_id": "QCB-GAP-P7-I10",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 7,
@@ -413,14 +495,17 @@
     "type": "MUST",
     "topic": "Security Controls",
     "statement": "6.3 A Financial Institution must define the following for each classification level: classification definition, data examples, storage requirements, labelling requirements, cybersecurity controls, physical access controls, logical access controls, data masking requirements, transmission requirements and destruction mechanism.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Protection",
+      "Security Controls"
+    ],
+    "implementation_hint": "Develop clear guidelines and implement robust security measures."
   },
   {
-    "control_id": "QCB-DP-P7-I12",
+    "control_id": "QCB-GAP-P7-I12",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 7,
@@ -428,14 +513,16 @@
     "type": "MUST",
     "topic": "General",
     "statement": "1 A Financial Institution must conduct annual reviews of their ROPA, or conduct reviews that are triggered by changes to the Financial Institution.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Financial Institution Compliance"
+    ],
+    "implementation_hint": "Ensure annual reviews of ROPA or trigger reviews upon changes to the Financial Institution."
   },
   {
-    "control_id": "QCB-DP-P7-I13",
+    "control_id": "QCB-GAP-P7-I13",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 7,
@@ -443,14 +530,17 @@
     "type": "MAY",
     "topic": "General",
     "statement": "These changes may include but are not limited to: organizational restructure, new regulatory requirements, changes to the da ta processing environment, etc.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Operational",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Governance",
+      "Regulatory Compliance"
+    ],
+    "implementation_hint": "Review and update policies to align with new regulatory requirements."
   },
   {
-    "control_id": "QCB-DP-P7-I14",
+    "control_id": "QCB-GAP-P7-I14",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 7,
@@ -458,14 +548,18 @@
     "type": "MAY",
     "topic": "General",
     "statement": "2 A Financial Institution may implement tools that automate updates to their ROPA.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Technical",
+    "control_type": "Governance",
+    "severity": "Low",
+    "policy_tags": [
+      "FinancialInstitution",
+      "AutomatedUpdates",
+      "ROPA"
+    ],
+    "implementation_hint": "Implement automated tools for updating ROPA to ensure compliance and efficiency."
   },
   {
-    "control_id": "QCB-DP-P7-I15",
+    "control_id": "QCB-GAP-P7-I15",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 7,
@@ -473,14 +567,17 @@
     "type": "MUST",
     "topic": "Assurance & Audit",
     "statement": "3 A Financial Institution must document and justify any data excluded from the ROPA and detail the associated risks.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Exclusion Documentation",
+      "Risk Justification"
+    ],
+    "implementation_hint": "Ensure all data excluded from the ROPA is documented and justified, including associated risks."
   },
   {
-    "control_id": "QCB-DP-P7-I16",
+    "control_id": "QCB-GAP-P7-I16",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 7,
@@ -488,14 +585,17 @@
     "type": "MUST",
     "topic": "General",
     "statement": "6.5 A Financial Institution must conduct Data Mapping to outline all data assets and their flow across organizational processes.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Management",
+      "Data Governance"
+    ],
+    "implementation_hint": "Ensure all data assets are mapped and documented to maintain transparency and traceability."
   },
   {
-    "control_id": "QCB-DP-P8-I0",
+    "control_id": "QCB-GAP-P8-I0",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 8,
@@ -503,14 +603,17 @@
     "type": "MUST",
     "topic": "General",
     "statement": "Data Handling and Protection Regulation 8 6.5.1 A Financial Institution must review data maps annually, to ensure current and accurate representation of data flows, or conduct reviews that are triggered by c hanges to the Financial Institution.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Protection",
+      "Data Flow Management"
+    ],
+    "implementation_hint": "Regularly review data maps to ensure accuracy and timely updates."
   },
   {
-    "control_id": "QCB-DP-P8-I1",
+    "control_id": "QCB-GAP-P8-I1",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 8,
@@ -518,14 +621,17 @@
     "type": "MAY",
     "topic": "General",
     "statement": "These changes may include but are not limited to: organizational restructure, new regulatory requirements, changes to the data processing environment, etc.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Governance",
+      "Regulatory Compliance"
+    ],
+    "implementation_hint": "Review and update organizational structure, data processing environment, and regulatory requirements."
   },
   {
-    "control_id": "QCB-DP-P8-I2",
+    "control_id": "QCB-GAP-P8-I2",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 8,
@@ -533,14 +639,17 @@
     "type": "MUST",
     "topic": "General",
     "statement": "2 A Financial Institution must complete Data Mapping exercises for their environments.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Governance",
+      "Data Mapping"
+    ],
+    "implementation_hint": "Conduct thorough Data Mapping exercises to ensure accurate representation of data across environments."
   },
   {
-    "control_id": "QCB-DP-P8-I3",
+    "control_id": "QCB-GAP-P8-I3",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 8,
@@ -548,14 +657,17 @@
     "type": "MUST",
     "topic": "Assurance & Audit",
     "statement": "3 A Financial Institution must document and justify any data or processes excluded from the data map and detail the associated risks.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Exclusion Documentation",
+      "Risk Justification"
+    ],
+    "implementation_hint": "Ensure all data and processes are documented and justified, and risks are clearly explained."
   },
   {
-    "control_id": "QCB-DP-P8-I5",
+    "control_id": "QCB-GAP-P8-I5",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 8,
@@ -563,14 +675,17 @@
     "type": "MUST",
     "topic": "Data Residency",
     "statement": "Data Handling 7.1 A Financial Institution must identify data that is Personally Identifiable Information (PII), Sensitive Personal Information (SPI), Sensitive Financial Information (SFI) and Technical Information, as defined in this regulation.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Technical",
+    "control_type": "Identification",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Protection",
+      "Privacy"
+    ],
+    "implementation_hint": "Develop a comprehensive data classification policy and ensure all employees are trained on the classification process."
   },
   {
-    "control_id": "QCB-DP-P8-I6",
+    "control_id": "QCB-GAP-P8-I6",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 8,
@@ -578,14 +693,17 @@
     "type": "MUST",
     "topic": "Data Residency",
     "statement": "7.2 A Financial Institution must classify data that is PII and Technical Data, as per the Financial Institution’s data classification framework.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Classification",
+      "Data Protection"
+    ],
+    "implementation_hint": "Ensure that all personal identifiable information (PII) and technical data are appropriately classified according to the institution's established framework."
   },
   {
-    "control_id": "QCB-DP-P8-I7",
+    "control_id": "QCB-GAP-P8-I7",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 8,
@@ -593,14 +711,18 @@
     "type": "MUST",
     "topic": "General",
     "statement": "7.3 A Financial Institution must classify and manage SPI and SFI as per the highest, most strict classification available.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "High",
+    "policy_tags": [
+      "FinancialInstitution",
+      "Classification",
+      "SPIandSFI"
+    ],
+    "implementation_hint": "Ensure SPI and SFI are classified and managed according to the highest and most stringent classification available."
   },
   {
-    "control_id": "QCB-DP-P8-I8",
+    "control_id": "QCB-GAP-P8-I8",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 8,
@@ -608,14 +730,17 @@
     "type": "MUST",
     "topic": "Data Residency",
     "statement": "7.4 A Financial Institution must process PII, SPI and SFI only when one of the following conditions (at least) is met: 7.4.1 The Financial Institution has received explicit consent from the Data Subject.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Protection",
+      "Consent Management"
+    ],
+    "implementation_hint": "Ensure that processing of PII, SPI, and SFI is only authorized when explicit consent has been obtained from the data subject."
   },
   {
-    "control_id": "QCB-DP-P8-I11",
+    "control_id": "QCB-GAP-P8-I11",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 8,
@@ -623,14 +748,19 @@
     "type": "MUST",
     "topic": "Data Residency",
     "statement": "7.5 A Financial Institution must put in place a process to remediate previously collected PII, SPI and SFI that does not adhere to requirement 7.4.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Technical",
+    "control_type": "Governance",
+    "severity": "Medium",
+    "policy_tags": [
+      "PII",
+      "SPI",
+      "SFI",
+      "Regulatory Compliance"
+    ],
+    "implementation_hint": "Implement a process to ensure all collected personal information adheres to the specified requirements."
   },
   {
-    "control_id": "QCB-DP-P8-I12",
+    "control_id": "QCB-GAP-P8-I12",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 8,
@@ -638,14 +768,17 @@
     "type": "MUST",
     "topic": "Data Residency",
     "statement": "7.6 A Financial Institution must ensure its primary environment, the main data storage and processing environment, for PII, SPI and SFI resides within the State of Qatar.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Security",
+      "Data Storage"
+    ],
+    "implementation_hint": "Ensure the primary environment for PII, SPI, and SFI is located within the State of Qatar."
   },
   {
-    "control_id": "QCB-DP-P8-I13",
+    "control_id": "QCB-GAP-P8-I13",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 8,
@@ -653,14 +786,19 @@
     "type": "MAY",
     "topic": "Regulatory Approval",
     "statement": "7.7 A Financial Institution may utilize a primary storage and processing environment for PII, SPI and SFI outside the State of Qatar only after receiving explicit approval from QCB.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "PII",
+      "SPI",
+      "SFI",
+      "QCB Approval"
+    ],
+    "implementation_hint": "Ensure explicit approval from QCB is obtained before using the primary storage and processing environment for PII, SPI, and SFI outside the State of Qatar."
   },
   {
-    "control_id": "QCB-DP-P8-I14",
+    "control_id": "QCB-GAP-P8-I14",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 8,
@@ -668,14 +806,17 @@
     "type": "MUST",
     "topic": "Regulatory Approval",
     "statement": "7.8 A Financial Institution must adhere to Bank Secrecy requirements, especially when processing SFI as per QCB Law and any other relevant laws and regulations.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Bank Secrecy Act",
+      "QCB Law"
+    ],
+    "implementation_hint": "Ensure compliance with Bank Secrecy Act and QCB Law through regular audits and adherence to industry standards."
   },
   {
-    "control_id": "QCB-DP-P8-I15",
+    "control_id": "QCB-GAP-P8-I15",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 8,
@@ -683,14 +824,17 @@
     "type": "MUST",
     "topic": "General",
     "statement": "7.9 A Financial Institution must limit its data collection activities to data it requires to provide services to the customer, or to adhere to legal and regulatory requirements.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Operational",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Collection Limits",
+      "Compliance"
+    ],
+    "implementation_hint": "Implement a clear data collection policy that specifies the minimum data required for service provision and adherence to legal and regulatory requirements."
   },
   {
-    "control_id": "QCB-DP-P8-I17",
+    "control_id": "QCB-GAP-P8-I17",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 8,
@@ -698,14 +842,17 @@
     "type": "MUST",
     "topic": "General",
     "statement": "Data Security 8.1 A Financial Institution must develop robust data quality controls and validation processes to ensure the accuracy and reliability of processed data.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Technical",
+    "control_type": "Governance",
+    "severity": "Medium",
+    "policy_tags": [
+      "Data Quality",
+      "Validation Processes"
+    ],
+    "implementation_hint": "Establish clear guidelines and procedures for data quality checks and validation."
   },
   {
-    "control_id": "QCB-DP-P9-I0",
+    "control_id": "QCB-GAP-P9-I0",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 9,
@@ -713,14 +860,17 @@
     "type": "MUST",
     "topic": "Data Residency",
     "statement": "Data Handling and Protection Regulation 9 8.2 A Financial Institution must develop dedicated security controls for all data that is classified as PII, SPI or SFI, while applying requirements as per the Sector-Specific Security Regulation to protect it based on criticality and assumed risks.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Technical",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Protection",
+      "Security Controls"
+    ],
+    "implementation_hint": "Implement specific security measures for PII, SPI, and SFI data."
   },
   {
-    "control_id": "QCB-DP-P9-I1",
+    "control_id": "QCB-GAP-P9-I1",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 9,
@@ -728,14 +878,17 @@
     "type": "MUST",
     "topic": "Data Residency",
     "statement": "8.3 A Financial Institution must update its security controls for all data tha t is classified as PII, SPI or SFI, while accounting for the changing threat landscape.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Technical",
+    "control_type": "Implementation",
+    "severity": "Medium",
+    "policy_tags": [
+      "Data Protection",
+      "Security Controls"
+    ],
+    "implementation_hint": "Regularly review and update security controls for PII, SPI, and SFI data to adapt to evolving threats."
   },
   {
-    "control_id": "QCB-DP-P9-I2",
+    "control_id": "QCB-GAP-P9-I2",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 9,
@@ -743,14 +896,17 @@
     "type": "MAY",
     "topic": "Security Testing",
     "statement": "8.4 A Financial Institution may utilize tools and technologies to operationalize its data classification and management requirements, while ensuring regular testing and pat ching of the systems and that they are kept up to date.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Operational",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Governance",
+      "Data Management"
+    ],
+    "implementation_hint": "Implement regular audits and updates to ensure compliance with data classification and management requirements."
   },
   {
-    "control_id": "QCB-DP-P9-I4",
+    "control_id": "QCB-GAP-P9-I4",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 9,
@@ -758,14 +914,17 @@
     "type": "MUST",
     "topic": "Risk Management",
     "statement": "8.5 A Financial Institution must review its data classification on regular basis t o mitigate risks of misclassification.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Governance",
+      "Data Classification"
+    ],
+    "implementation_hint": "Schedule regular reviews to ensure accurate data classification."
   },
   {
-    "control_id": "QCB-DP-P9-I5",
+    "control_id": "QCB-GAP-P9-I5",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 9,
@@ -773,14 +932,17 @@
     "type": "MUST",
     "topic": "Security Controls",
     "statement": "8.6 A Financial Institution must transfer its data through secure and encrypted mediums, as per leading industry standards and the Sector-Specific Security Regulation.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Technical",
+    "control_type": "Implementation",
+    "severity": "Medium",
+    "policy_tags": [
+      "Data Security",
+      "Compliance"
+    ],
+    "implementation_hint": "Ensure all data transfers are conducted through secure and encrypted channels."
   },
   {
-    "control_id": "QCB-DP-P9-I6",
+    "control_id": "QCB-GAP-P9-I6",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 9,
@@ -788,14 +950,17 @@
     "type": "MUST",
     "topic": "General",
     "statement": "8.7 A Financial Institution must use specialized, reputable and secure physical transportation methods, when transporting data on a physical medium such a documents or storage tapes.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Protection",
+      "Transportation Controls"
+    ],
+    "implementation_hint": "Implement secure physical transportation methods for data on physical media."
   },
   {
-    "control_id": "QCB-DP-P9-I9",
+    "control_id": "QCB-GAP-P9-I9",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 9,
@@ -803,14 +968,17 @@
     "type": "MUST",
     "topic": "Assurance & Audit",
     "statement": "9.2 A Financial Institution must assess its Third Party’s compliance to relevant data protection laws and regulations, as well as any certifications or audit reports.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Protection",
+      "Compliance"
+    ],
+    "implementation_hint": "Implement a comprehensive third-party assessment process to ensure compliance with relevant data protection laws and regulations, and verify certifications or audit reports."
   },
   {
-    "control_id": "QCB-DP-P9-I10",
+    "control_id": "QCB-GAP-P9-I10",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 9,
@@ -818,14 +986,17 @@
     "type": "MAY",
     "topic": "Assurance & Audit",
     "statement": "9.3 A Financial Institution may only share sensitive information with Third Parties they have non-disclosure and confidentiality requirements in place with, dependent on the associated risks.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Security",
+      "Third-Party Access"
+    ],
+    "implementation_hint": "Implement strict non-disclosure and confidentiality agreements with third parties."
   },
   {
-    "control_id": "QCB-DP-P9-I11",
+    "control_id": "QCB-GAP-P9-I11",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 9,
@@ -833,14 +1004,17 @@
     "type": "MUST",
     "topic": "Data Protection",
     "statement": "9.4 A Financial Institution must ensure that any data breaches or data privacy breaches involving its data are promptly reported by the Third Party involved to a designated representative within the Financial Institution.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Operational",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Breach Reporting",
+      "Third Party Compliance"
+    ],
+    "implementation_hint": "Ensure that the Third Party involved reports data breaches or privacy breaches to the designated representative within the Financial Institution promptly."
   },
   {
-    "control_id": "QCB-DP-P9-I12",
+    "control_id": "QCB-GAP-P9-I12",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 9,
@@ -848,14 +1022,18 @@
     "type": "MUST",
     "topic": "Data Protection",
     "statement": "9.5 A Financial Institution must include provisions for data protection, confidentiality, and co mpliance with regulatory requirements within its contractual agreements with Third Parties.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Protection",
+      "Confidentiality",
+      "Regulatory Compliance"
+    ],
+    "implementation_hint": "Ensure all contracts with third parties include provisions for data protection, confidentiality, and compliance with regulatory requirements."
   },
   {
-    "control_id": "QCB-DP-P9-I13",
+    "control_id": "QCB-GAP-P9-I13",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 9,
@@ -863,14 +1041,17 @@
     "type": "MUST",
     "topic": "General",
     "statement": "9.6 A Financial Institution must collect consent from customers and employees prior to sharing their information with a Third Party, unless this is shared for legal purposes, regulatory purposes, or contract fulfilment.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Privacy",
+      "Third Party Access"
+    ],
+    "implementation_hint": "Ensure compliance by obtaining explicit consent from customers and employees before sharing their information with a Third Party."
   },
   {
-    "control_id": "QCB-DP-P9-I14",
+    "control_id": "QCB-GAP-P9-I14",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 9,
@@ -878,14 +1059,18 @@
     "type": "MUST",
     "topic": "General",
     "statement": "9.7 A Financial Institution must inform the customer of the impact of not granting consent to information sharing with the Third Party.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Customer Consent",
+      "Data Sharing",
+      "Third Party"
+    ],
+    "implementation_hint": "Ensure clear communication with customers about the consequences of not granting consent for information sharing with a Third Party."
   },
   {
-    "control_id": "QCB-DP-P9-I15",
+    "control_id": "QCB-GAP-P9-I15",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 9,
@@ -893,14 +1078,17 @@
     "type": "MUST",
     "topic": "General",
     "statement": "9.8 A Financial Institution must ensure its Third Parties handle data in a manner that meets the requirements of this regulation.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Medium",
+    "policy_tags": [
+      "Data Protection",
+      "Third Party Management"
+    ],
+    "implementation_hint": "Implement a comprehensive third-party management policy and ensure all third-party vendors adhere to the regulatory requirements."
   },
   {
-    "control_id": "QCB-DP-P9-I16",
+    "control_id": "QCB-GAP-P9-I16",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 9,
@@ -908,14 +1096,17 @@
     "type": "MUST",
     "topic": "Risk Management",
     "statement": "9.9 A Financial Institution must implement risk-based data protection controls for data residing in all environments and data hosted by its Third Parties.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Medium",
+    "policy_tags": [
+      "Data Protection",
+      "Third-Party Data"
+    ],
+    "implementation_hint": "Implement risk-based data protection controls for data residing in all environments and data hosted by third parties."
   },
   {
-    "control_id": "QCB-DP-P10-I1",
+    "control_id": "QCB-GAP-P10-I1",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 10,
@@ -923,14 +1114,17 @@
     "type": "MUST",
     "topic": "General",
     "statement": "Assessments and Reporting 10.1 A Financial Institution must document a policy mandating ongoing data handling and management assessments including those defined within this section.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Governance",
+      "Data Management"
+    ],
+    "implementation_hint": "Implement a regular data assessment and reporting process."
   },
   {
-    "control_id": "QCB-DP-P10-I2",
+    "control_id": "QCB-GAP-P10-I2",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 10,
@@ -938,14 +1132,17 @@
     "type": "MUST",
     "topic": "General",
     "statement": "10.2 A Financial Institution must subject its primary, secondary, Disaster Recovery (DR) and backup environments to the assessments defined within this section.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Security",
+      "Disaster Recovery"
+    ],
+    "implementation_hint": "Ensure regular assessments of primary, secondary, DR, and backup environments are conducted."
   },
   {
-    "control_id": "QCB-DP-P10-I3",
+    "control_id": "QCB-GAP-P10-I3",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 10,
@@ -953,14 +1150,17 @@
     "type": "MUST",
     "topic": "Security Testing",
     "statement": "10.3 A Financial Institution must define a process for conducting Privacy Impact Assessments (PIA) for all sensitive processes, in order to test whether privacy objectives are met and to ensure that data processin g adheres to processing requirements, retention requirements and appropriate access controls.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Privacy",
+      "Data Protection"
+    ],
+    "implementation_hint": "Establish a dedicated team or role to oversee Privacy Impact Assessments (PIA)."
   },
   {
-    "control_id": "QCB-DP-P10-I4",
+    "control_id": "QCB-GAP-P10-I4",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 10,
@@ -968,14 +1168,17 @@
     "type": "MUST",
     "topic": "General",
     "statement": "The process must include: 10.3.1 Defining what a sensitive process is and when a PIA is required.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Protection",
+      "Security Practices"
+    ],
+    "implementation_hint": "Develop a clear definition of sensitive processes and establish a process for identifying when a PIA (Privacy Impact Assessment) is required."
   },
   {
-    "control_id": "QCB-DP-P10-I10",
+    "control_id": "QCB-GAP-P10-I10",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 10,
@@ -983,14 +1186,17 @@
     "type": "MUST",
     "topic": "General",
     "statement": "10.4 A Financial Institution must conduct a PIA in the following cases: 10.4.1 Initiating a new activity that involves a sensitive process.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Operational",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "PIA",
+      "Sensitive Process"
+    ],
+    "implementation_hint": "Perform a Process Impact Assessment (PIA) before starting new activities involving sensitive processes."
   },
   {
-    "control_id": "QCB-DP-P10-I12",
+    "control_id": "QCB-GAP-P10-I12",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 10,
@@ -998,14 +1204,17 @@
     "type": "MAY",
     "topic": "Data Protection",
     "statement": "3 Observing significant changes to laws and regulations of relevant jurisdictions that may impact Data Subject privacy.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Medium",
+    "policy_tags": [
+      "DataPrivacy",
+      "RegulatoryCompliance"
+    ],
+    "implementation_hint": "Monitor and review changes in laws and regulations that could impact Data Subject privacy to ensure compliance."
   },
   {
-    "control_id": "QCB-DP-P10-I13",
+    "control_id": "QCB-GAP-P10-I13",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 10,
@@ -1013,14 +1222,17 @@
     "type": "MUST",
     "topic": "General",
     "statement": "10.5 A Financial Institution must review its PIA methodologies for accuracy and relevance and update as needed.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "PIA Review",
+      "Methodology Update"
+    ],
+    "implementation_hint": "Regularly audit and update PIA methodologies to ensure accuracy and relevance."
   },
   {
-    "control_id": "QCB-DP-P10-I14",
+    "control_id": "QCB-GAP-P10-I14",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 10,
@@ -1028,14 +1240,17 @@
     "type": "MUST",
     "topic": "Security Controls",
     "statement": "10.6 A Financial Institution must establish a foreign data handling assessment that ensures data stored in, passing through or accessible from foreign jurisdictions continues to meet regulatory requirements and data protection standards.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Medium",
+    "policy_tags": [
+      "Data Protection",
+      "Regulatory Compliance"
+    ],
+    "implementation_hint": "Implement a comprehensive data handling assessment to ensure compliance with regulatory requirements and data protection standards."
   },
   {
-    "control_id": "QCB-DP-P10-I15",
+    "control_id": "QCB-GAP-P10-I15",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 10,
@@ -1043,14 +1258,17 @@
     "type": "MUST",
     "topic": "Regulatory Approval",
     "statement": "10.7 A Financial Institution must monitor changes in the legal and regulatory landscape of foreign jurisdictions to promptly assess and address any potential impact, on ongoing basis, reporting significant findings to QCB.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Compliance",
+      "Legal"
+    ],
+    "implementation_hint": "Regularly review and update legal and regulatory compliance policies."
   },
   {
-    "control_id": "QCB-DP-P10-I16",
+    "control_id": "QCB-GAP-P10-I16",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 10,
@@ -1058,14 +1276,17 @@
     "type": "MUST",
     "topic": "General",
     "statement": "10.8 A Financial Institution must develop a procedure that defines the mechanisms by which these assessments will be completed.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Operational",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Compliance",
+      "Risk Management"
+    ],
+    "implementation_hint": "Develop a detailed procedure outlining the assessment mechanisms."
   },
   {
-    "control_id": "QCB-DP-P10-I17",
+    "control_id": "QCB-GAP-P10-I17",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 10,
@@ -1073,14 +1294,17 @@
     "type": "MUST",
     "topic": "Assurance & Audit",
     "statement": "This must include the following: 10.8.1 Assessment owner 10.8.2 Assessment stakeholders 10.8.3 Timeline and Frequency 10.8.4 Expected outcomes and recommendations 10.9 A Financial Institution must audit its data handling and management activities, and assess its compliance to data protection laws, regulations and leading industry standards as per the Financial Institution’s defined audit cycle.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Protection",
+      "Compliance"
+    ],
+    "implementation_hint": "Ensure that the assessment owner, stakeholders, timeline, and expected outcomes are clearly documented and communicated."
   },
   {
-    "control_id": "QCB-DP-P11-I1",
+    "control_id": "QCB-GAP-P11-I1",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 11,
@@ -1088,14 +1312,17 @@
     "type": "MUST",
     "topic": "General",
     "statement": "Data Retention 11.1 A Financial Institution must ensure its retention of different categories of data considers legal, regulatory, and business requirements.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Retention",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Retention",
+      "Legal Compliance"
+    ],
+    "implementation_hint": "Implement a retention policy that aligns with legal, regulatory, and business requirements."
   },
   {
-    "control_id": "QCB-DP-P11-I2",
+    "control_id": "QCB-GAP-P11-I2",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 11,
@@ -1103,14 +1330,17 @@
     "type": "MUST",
     "topic": "General",
     "statement": "11.2 A Financial Institution must comply to data retention requirements specified in the relevant AML / CFT laws and regulations.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "AML/CFT Compliance",
+      "Data Retention"
+    ],
+    "implementation_hint": "Ensure compliance with data retention requirements as specified in relevant AML/CFT laws and regulations."
   },
   {
-    "control_id": "QCB-DP-P11-I3",
+    "control_id": "QCB-GAP-P11-I3",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 11,
@@ -1118,14 +1348,16 @@
     "type": "MUST",
     "topic": "Data Protection",
     "statement": "11.3 A Financial Institution must retain data as per the following table: Data Minimum Retention Period SFI 10 years Personal Data, PII and SPI 10 years Technical Information 1 year All other data To be defined by the Financial Institution 11.4 A Financial Institution must retain data beyond the minimum retention periods defined within 11.3, if the extended data retention is obligated by a legal or regulatory mandate.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Retention Policy"
+    ],
+    "implementation_hint": "Ensure compliance with the retention periods outlined in the table."
   },
   {
-    "control_id": "QCB-DP-P11-I5",
+    "control_id": "QCB-GAP-P11-I5",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 11,
@@ -1133,14 +1365,18 @@
     "type": "MUST",
     "topic": "Data Protection",
     "statement": "Disaster Recovery & Business Continuity Backup 12.1 A Financial Institution must establish a Business Continuity and Disaster Recovery plan, emphasizing resilient data protection and privacy safeguards.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "BCDR",
+      "Data Protection",
+      "Privacy"
+    ],
+    "implementation_hint": "Ensure regular testing and drills for the BCDR plan."
   },
   {
-    "control_id": "QCB-DP-P11-I6",
+    "control_id": "QCB-GAP-P11-I6",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 11,
@@ -1148,14 +1384,19 @@
     "type": "MUST",
     "topic": "Security Testing",
     "statement": "The plan must include: 12.1.1 Local and foreign DR and backup requirements 12.1.2 Policy and processes for DR and data backup 12.1.3 Data retention periods 12.1.4 Backup frequency 12.1.5 Data storage and destruction processes 12.1.6 Defined trigger events 12.1.7 Ongoing testing and assessments 12.2 A Financial Institution must integrate its disaster recovery plan process into the Financial Institution’s overall governance processes and risk management framework.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "High",
+    "policy_tags": [
+      "DR",
+      "Data Backup",
+      "Risk Management",
+      "GRC"
+    ],
+    "implementation_hint": "Ensure all DR and backup requirements are documented and integrated into the governance framework."
   },
   {
-    "control_id": "QCB-DP-P11-I8",
+    "control_id": "QCB-GAP-P11-I8",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 11,
@@ -1163,14 +1404,18 @@
     "type": "MUST",
     "topic": "General",
     "statement": "12.3 A Financial Institution must ensure continuous availability of critical systems and processes through redundancy controls and failover processes which include but are not limited to: conducting real -time or scheduled backups of critical data, ensuring that backup frequency aligns with the criticality and volatility of the data.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Technical",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Backup",
+      "Redundancy",
+      "Failover"
+    ],
+    "implementation_hint": "Implement real-time or scheduled backups of critical data to ensure continuous availability."
   },
   {
-    "control_id": "QCB-DP-P11-I9",
+    "control_id": "QCB-GAP-P11-I9",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 11,
@@ -1178,14 +1423,19 @@
     "type": "MUST",
     "topic": "Security Controls",
     "statement": "12.4 A Financial Institution must implement security controls including robust encryption and data security measures for DR and backups, as per the Sector-Specific Security Regulation.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Technical",
+    "control_type": "Implementation",
+    "severity": "High",
+    "policy_tags": [
+      "DR",
+      "Backup",
+      "Encryption",
+      "Security Regulation"
+    ],
+    "implementation_hint": "Ensure all data is encrypted and backed up using industry-standard practices."
   },
   {
-    "control_id": "QCB-DP-P11-I10",
+    "control_id": "QCB-GAP-P11-I10",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 11,
@@ -1193,14 +1443,20 @@
     "type": "MUST",
     "topic": "Security Controls",
     "statement": "12.5 A Financial Institution must define and implement physical access management controls and processes to protect DR and backup data centers, network equipment rooms, storage sites, servers and workstations, in accordance with the Sector-Specific Security Regulation.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Technical",
+    "control_type": "Physical Access Management",
+    "severity": "Low",
+    "policy_tags": [
+      "DR and Backup Data Center",
+      "Network Equipment Rooms",
+      "Storage Sites",
+      "Servers",
+      "Workstations"
+    ],
+    "implementation_hint": "Implement physical access controls and processes to ensure secure access to DR and backup data centers, network equipment rooms, storage sites, servers, and workstations."
   },
   {
-    "control_id": "QCB-DP-P11-I11",
+    "control_id": "QCB-GAP-P11-I11",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 11,
@@ -1208,14 +1464,17 @@
     "type": "MUST",
     "topic": "Security Testing",
     "statement": "12.6 A Financial Institution must regularly test its Business Continuity and Disaster Recovery plans.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Operational",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Business Continuity",
+      "Disaster Recovery"
+    ],
+    "implementation_hint": "Schedule regular testing of Business Continuity and Disaster Recovery plans."
   },
   {
-    "control_id": "QCB-DP-P12-I0",
+    "control_id": "QCB-GAP-P12-I0",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 12,
@@ -1223,14 +1482,17 @@
     "type": "MUST",
     "topic": "General",
     "statement": "Data Handling and Protection Regulation 12 12.7 A Financial Institution must consider any legal, reputational and operational impediments within its disaster recovery plan.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Disaster Recovery",
+      "Regulatory Compliance"
+    ],
+    "implementation_hint": "Ensure regular audits and updates to the disaster recovery plan to address legal, reputational, and operational risks."
   },
   {
-    "control_id": "QCB-DP-P12-I1",
+    "control_id": "QCB-GAP-P12-I1",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 12,
@@ -1238,14 +1500,17 @@
     "type": "MUST",
     "topic": "Assurance & Audit",
     "statement": "12.8 A Financial Institution must assess jurisdictional, legal, regulatory, political, and environmental risks associated with foreign DR and backup locations.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Security",
+      "Compliance"
+    ],
+    "implementation_hint": "Implement a risk assessment process to identify and mitigate jurisdictional, legal, regulatory, political, and environmental risks associated with foreign DR and backup locations."
   },
   {
-    "control_id": "QCB-DP-P12-I2",
+    "control_id": "QCB-GAP-P12-I2",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 12,
@@ -1253,14 +1518,17 @@
     "type": "MUST",
     "topic": "General",
     "statement": "12.9 A Financial Institution must remain responsible and accountable for its disaster recovery readiness activities.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Disaster Recovery",
+      "Responsibility"
+    ],
+    "implementation_hint": "Ensure regular audits and reviews of disaster recovery plans."
   },
   {
-    "control_id": "QCB-DP-P12-I3",
+    "control_id": "QCB-GAP-P12-I3",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 12,
@@ -1268,14 +1536,17 @@
     "type": "MUST",
     "topic": "Regulatory Approval",
     "statement": "12.10 A Financial Institution must develop a disaster recovery communication plan with relevant stakeholders, including QCB, shareholders, employees, key group entities, Third Parties, customers, regulators and the media.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Disaster Recovery",
+      "Communication Plan"
+    ],
+    "implementation_hint": "Develop a clear and comprehensive communication plan with all stakeholders."
   },
   {
-    "control_id": "QCB-DP-P12-I4",
+    "control_id": "QCB-GAP-P12-I4",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 12,
@@ -1283,14 +1554,17 @@
     "type": "MUST",
     "topic": "Outsourcing & Vendor Risk",
     "statement": "12.11 A Financial Institution must ensure that business continuity is not disrupted by dependencies on outsourcing contracts with Third Party service providers.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Business Continuity",
+      "Outsourcing"
+    ],
+    "implementation_hint": "Review and update outsourcing contracts to ensure they do not disrupt business continuity."
   },
   {
-    "control_id": "QCB-DP-P12-I5",
+    "control_id": "QCB-GAP-P12-I5",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 12,
@@ -1298,14 +1572,17 @@
     "type": "MUST",
     "topic": "General",
     "statement": "12.12 A Financial Institution must maintain its backup and DR environments as per the following table: Local Banks & Insurance Companies Branches of Foreign Banks & Insurance Companies Other Local Financial Institutions Branches of Other Foreign Financial Institutions Local DR Mandatory Qatar-Based Systems – Mandatory Other – Recommended Mandatory Qatar-Based Systems – Mandatory Other – Recommended Foreign DR Optional.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Backup and DR Management",
+      "Regulatory Compliance"
+    ],
+    "implementation_hint": "Ensure that backup and DR environments are maintained according to the specified table for local, foreign, and foreign branches."
   },
   {
-    "control_id": "QCB-DP-P12-I6",
+    "control_id": "QCB-GAP-P12-I6",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 12,
@@ -1313,14 +1590,17 @@
     "type": "MUST",
     "topic": "Regulatory Approval",
     "statement": "However, the QCB reserves the right to direct any Financial Institution to maintain a foreign DR at its discretion Local backup Mandatory Mandatory Mandatory Mandatory Foreign backup Mandatory Mandatory Recommended Recommended 12.13 A Financial Institution must request approval from QCB when it utilizes foreign DR and backup environments, in alignment with section 15 below.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "High",
+    "policy_tags": [
+      "DR Governance",
+      "DR Approval"
+    ],
+    "implementation_hint": "Ensure compliance with QCB's approval process for utilizing foreign DR and backup environments."
   },
   {
-    "control_id": "QCB-DP-P12-I8",
+    "control_id": "QCB-GAP-P12-I8",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 12,
@@ -1328,14 +1608,17 @@
     "type": "MUST",
     "topic": "Data Protection",
     "statement": "Data Privacy Protection Requirements 13.1 A Financial Institution must ensure that Personal Data, PII and SPI is: 13.1.1 Processed in compliance to the Law No.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Privacy",
+      "Compliance"
+    ],
+    "implementation_hint": "Ensure adherence to legal and regulatory requirements through robust data protection measures."
   },
   {
-    "control_id": "QCB-DP-P12-I12",
+    "control_id": "QCB-GAP-P12-I12",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 12,
@@ -1343,14 +1626,17 @@
     "type": "MUST",
     "topic": "Data Protection",
     "statement": "13.2 A Financial Institution must ensure that the systems and controls address the following: 13.2.1 Ensure the confidentiality, integrity and availability of data and information.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Technical",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Security",
+      "Compliance"
+    ],
+    "implementation_hint": "Implement encryption, access controls, and regular security audits."
   },
   {
-    "control_id": "QCB-DP-P13-I0",
+    "control_id": "QCB-GAP-P13-I0",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 13,
@@ -1358,14 +1644,17 @@
     "type": "MUST",
     "topic": "Risk Management",
     "statement": "Data Handling and Protection Regulation 13 13.3 A Financial Institution must deploy systems and controls that enable it to identify, assess, monitor and manage data protection risk.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Technical",
+    "control_type": "Governance",
+    "severity": "Medium",
+    "policy_tags": [
+      "Data Protection",
+      "Risk Management"
+    ],
+    "implementation_hint": "Implement a comprehensive data protection policy and establish a dedicated risk management team."
   },
   {
-    "control_id": "QCB-DP-P13-I1",
+    "control_id": "QCB-GAP-P13-I1",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 13,
@@ -1373,14 +1662,17 @@
     "type": "MUST",
     "topic": "Data Protection",
     "statement": "13.4 A Financial Institution must assess privacy protection and data protection controls when processing data in a semi-autonomous or autonomous manner.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Protection",
+      "Privacy Controls"
+    ],
+    "implementation_hint": "Implement appropriate privacy and data protection controls when handling semi-autonomous or autonomous data processing."
   },
   {
-    "control_id": "QCB-DP-P13-I2",
+    "control_id": "QCB-GAP-P13-I2",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 13,
@@ -1388,14 +1680,17 @@
     "type": "MUST",
     "topic": "Regulatory Approval",
     "statement": "13.5 A Financial Institution must seek approval from QCB prior to processing data and information within fully autonomous decision-making systems.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "High",
+    "policy_tags": [
+      "Data Privacy",
+      "Decision-Making Controls"
+    ],
+    "implementation_hint": "Ensure all data and information processed by fully autonomous systems are reviewed and approved by QCB."
   },
   {
-    "control_id": "QCB-DP-P13-I4",
+    "control_id": "QCB-GAP-P13-I4",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 13,
@@ -1403,14 +1698,17 @@
     "type": "MAY",
     "topic": "General",
     "statement": "Customer Data Protection 14.1 A Financial Institution may process Data Subject information only when one of the follow ing conditions (at least) is met: 14.1.1 The Financial Institution has received explicit consent from the Data Subject.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Consent",
+      "Data Protection"
+    ],
+    "implementation_hint": "Ensure that explicit consent is obtained from Data Subjects before processing their information."
   },
   {
-    "control_id": "QCB-DP-P13-I7",
+    "control_id": "QCB-GAP-P13-I7",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 13,
@@ -1418,14 +1716,17 @@
     "type": "MUST",
     "topic": "Security Controls",
     "statement": "14.2 A Financial Institution must establish proper procedures to obtain consent from its customers to collect, access, process, share, and retain data, unless it is necessary for regulatory activity, legal activity or contract fulfilment.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Privacy",
+      "Customer Consent"
+    ],
+    "implementation_hint": "Implement a clear and transparent consent process for data collection and processing."
   },
   {
-    "control_id": "QCB-DP-P13-I11",
+    "control_id": "QCB-GAP-P13-I11",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 13,
@@ -1433,14 +1734,17 @@
     "type": "MUST",
     "topic": "General",
     "statement": "14.3 A Financial Institution must periodically review its consent procedures to ensure that consent is freely given, specific, informed and unambiguous.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Consent Procedures Review",
+      "Informed Consent"
+    ],
+    "implementation_hint": "Schedule quarterly reviews of consent procedures to ensure compliance with ethical standards."
   },
   {
-    "control_id": "QCB-DP-P13-I12",
+    "control_id": "QCB-GAP-P13-I12",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 13,
@@ -1448,14 +1752,17 @@
     "type": "MUST",
     "topic": "Data Protection",
     "statement": "14.4 A Financial Institution must establish the necessary procedures to ensure that customers: 14.4.1 Obtain confirmation of whether their personal data is being processed.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Operational",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Protection",
+      "Customer Rights"
+    ],
+    "implementation_hint": "Implement a verification process for customer consent and data processing."
   },
   {
-    "control_id": "QCB-DP-P13-I17",
+    "control_id": "QCB-GAP-P13-I17",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 13,
@@ -1463,14 +1770,17 @@
     "type": "SHALL",
     "topic": "Resilience & BCP",
     "statement": "The Financial Institution shall establish a policy for data deletion that considers the following conditions: 14.4.5.1 Deletion will not impact the overall business continuity of the Financial Institution.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Governance",
+      "Data Deletion Policy"
+    ],
+    "implementation_hint": "Develop and enforce a clear data deletion policy that ensures compliance with business continuity requirements without compromising the institution's operations."
   },
   {
-    "control_id": "QCB-DP-P13-I20",
+    "control_id": "QCB-GAP-P13-I20",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 13,
@@ -1478,14 +1788,17 @@
     "type": "MUST",
     "topic": "Assurance & Audit",
     "statement": "14.5 A Financial Institution processing information associated with a minor must verify that the person giv ing consent, holds parental responsibility “legitimate interest” for the minor.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Consent Verification",
+      "Minor Consent"
+    ],
+    "implementation_hint": "Implement a system that verifies parental consent for minors, ensuring compliance with legal standards."
   },
   {
-    "control_id": "QCB-DP-P13-I21",
+    "control_id": "QCB-GAP-P13-I21",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 13,
@@ -1493,14 +1806,17 @@
     "type": "MUST",
     "topic": "General",
     "statement": "14.6 A Financial Institution must define rejection use cases for requests made as per requirement (14.4), whilst maintaining the right to reject the requests.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Operational",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Rejection Use Cases",
+      "Request Management"
+    ],
+    "implementation_hint": "Ensure that rejection use cases are clearly defined and maintained for requests made in accordance with the requirement."
   },
   {
-    "control_id": "QCB-DP-P14-I0",
+    "control_id": "QCB-GAP-P14-I0",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 14,
@@ -1508,14 +1824,17 @@
     "type": "MAY",
     "topic": "General",
     "statement": "Data Handling and Protection Regulation 14 14.7 A Financial Institution may define a process for expiring consent and consent renewal, if required by certain activities undertaken by the financial institution.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Protection",
+      "Consent Management"
+    ],
+    "implementation_hint": "Implement a process for expiring consent and renewing consent as required by the financial institution's activities."
   },
   {
-    "control_id": "QCB-DP-P14-I1",
+    "control_id": "QCB-GAP-P14-I1",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 14,
@@ -1523,14 +1842,17 @@
     "type": "MUST",
     "topic": "General",
     "statement": "14.8 A Financial Institution must ensure that the customer has the right to refuse and withdraw consent at any time, except where processing is necessary for legal and regulatory obligations or contract fulfilment.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Customer Consent",
+      "Data Privacy"
+    ],
+    "implementation_hint": "Implement a clear and accessible opt-out mechanism for customers."
   },
   {
-    "control_id": "QCB-DP-P14-I2",
+    "control_id": "QCB-GAP-P14-I2",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 14,
@@ -1538,14 +1860,17 @@
     "type": "MAY",
     "topic": "General",
     "statement": "14.9 A Financial Institution may establish a consent management portal for customers to view and update the consent they have granted a Financial Institution.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Consent Management Portal",
+      "Customer Consent"
+    ],
+    "implementation_hint": "Develop a user-friendly consent management portal for customers to view and update their consent preferences."
   },
   {
-    "control_id": "QCB-DP-P14-I3",
+    "control_id": "QCB-GAP-P14-I3",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 14,
@@ -1553,14 +1878,17 @@
     "type": "MUST",
     "topic": "General",
     "statement": "14.10 A Financial Institution must maintain a record of the consent granted including but not limited to the following: 14.10.1 Purpose of Data Processing.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Protection",
+      "Consent Management"
+    ],
+    "implementation_hint": "Implement a system to track and record all consent processes, including the purpose of data processing."
   },
   {
-    "control_id": "QCB-DP-P14-I9",
+    "control_id": "QCB-GAP-P14-I9",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 14,
@@ -1568,14 +1896,17 @@
     "type": "MUST",
     "topic": "General",
     "statement": "14.11 A Financial Institution must inform the customer of the impact of not granting or withdrawing consent on the provision of services to the customer.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Customer Consent",
+      "Service Provision"
+    ],
+    "implementation_hint": "Implement a clear notification process for customers regarding the consequences of not granting or withdrawing consent for service provision."
   },
   {
-    "control_id": "QCB-DP-P14-I11",
+    "control_id": "QCB-GAP-P14-I11",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 14,
@@ -1583,14 +1914,18 @@
     "type": "MUST",
     "topic": "Regulatory Approval",
     "statement": "Foreign Data Storage and Transfer Requirements 15.1 A Financial Institution must not store or transfer Personal Data, PII, SPI and SFI to a foreign jurisdiction unless it has received approval from QCB.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "High",
+    "policy_tags": [
+      "Data Protection",
+      "Data Transfer",
+      "Approval"
+    ],
+    "implementation_hint": "Ensure all data transfers to foreign jurisdictions are approved by QCB."
   },
   {
-    "control_id": "QCB-DP-P14-I12",
+    "control_id": "QCB-GAP-P14-I12",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 14,
@@ -1598,14 +1933,17 @@
     "type": "MUST",
     "topic": "Assurance & Audit",
     "statement": "15.2 A Financial Institution must conduct due diligence on jurisdictions and Third Parties that would require foreign data transfers or storage, which includes but may not be limited to: 15.2.1 A risk assessment which includes risks associated with data security and storing data in foreign jurisdictions.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Security",
+      "Compliance"
+    ],
+    "implementation_hint": "Implement a thorough risk assessment for data transfers and storage in foreign jurisdictions."
   },
   {
-    "control_id": "QCB-DP-P14-I14",
+    "control_id": "QCB-GAP-P14-I14",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 14,
@@ -1613,14 +1951,18 @@
     "type": "MUST",
     "topic": "Security Controls",
     "statement": "15.3 A Financial Institution must establish mechanisms to control access to data stored in the foreign jurisdiction, including procedures for granting and revoking access, monitoring user activity, and detecting unauthorized access or data breaches.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Technical",
+    "control_type": "Governance",
+    "severity": "Medium",
+    "policy_tags": [
+      "Data Security",
+      "Access Control",
+      "Compliance"
+    ],
+    "implementation_hint": "Implement multi-factor authentication, log access attempts, and conduct regular audits."
   },
   {
-    "control_id": "QCB-DP-P14-I15",
+    "control_id": "QCB-GAP-P14-I15",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 14,
@@ -1628,14 +1970,18 @@
     "type": "MUST",
     "topic": "Data Protection",
     "statement": "15.4 A Financial Institution must ensure at all times that any transfer of personal data to a foreign jurisdiction maintains an adequate level of protection in accordance with the standards defined within this regulation and any other relevant laws and regulations.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "High",
+    "policy_tags": [
+      "Data Protection",
+      "Data Transfer",
+      "Regulatory Compliance"
+    ],
+    "implementation_hint": "Ensure all data transfers comply with the institution's internal policies and legal standards."
   },
   {
-    "control_id": "QCB-DP-P14-I16",
+    "control_id": "QCB-GAP-P14-I16",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 14,
@@ -1643,14 +1989,17 @@
     "type": "MUST",
     "topic": "Assurance & Audit",
     "statement": "15.5 A Financial Institution must identify risks associated with operational processes and systems at separate geographic locations.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Operational",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Operational Risks",
+      "Geographic Location"
+    ],
+    "implementation_hint": "Implement geographically isolated systems and processes to mitigate operational risks."
   },
   {
-    "control_id": "QCB-DP-P14-I17",
+    "control_id": "QCB-GAP-P14-I17",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 14,
@@ -1658,14 +2007,17 @@
     "type": "MUST",
     "topic": "General",
     "statement": "15.6 A Financial Institution must assess the legal and regulatory requirements of foreign jurisdictions where they process data that may restrict a Financial Institution’s ability to meet regulatory obligations in Qatar.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Legal",
+    "control_type": "Governance",
+    "severity": "High",
+    "policy_tags": [
+      "Data Privacy",
+      "Compliance"
+    ],
+    "implementation_hint": "Ensure compliance with relevant legal and regulatory requirements in all jurisdictions where data is processed."
   },
   {
-    "control_id": "QCB-DP-P15-I1",
+    "control_id": "QCB-GAP-P15-I1",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 15,
@@ -1673,14 +2025,17 @@
     "type": "MUST",
     "topic": "Regulatory Approval",
     "statement": "Data Breaches 16.1 A Financial Institution must report Data Breaches and Data Privacy Breaches as per QCB’s incident reporting guidelines.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Breach Reporting",
+      "Incident Reporting"
+    ],
+    "implementation_hint": "Ensure compliance by following QCB’s incident reporting guidelines for both data breaches and data privacy breaches."
   },
   {
-    "control_id": "QCB-DP-P15-I2",
+    "control_id": "QCB-GAP-P15-I2",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 15,
@@ -1688,14 +2043,17 @@
     "type": "MUST",
     "topic": "Regulatory Approval",
     "statement": "16.2 A Financial Institution must classify any Data Breach or Data Privacy Beach as an incident and adhere to incident reporting guidelines as directed by the QCB.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "IncidentResponse",
+      "DataPrivacy"
+    ],
+    "implementation_hint": "Ensure compliance with incident reporting guidelines."
   },
   {
-    "control_id": "QCB-DP-P15-I3",
+    "control_id": "QCB-GAP-P15-I3",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 15,
@@ -1703,14 +2061,17 @@
     "type": "MUST",
     "topic": "Regulatory Approval",
     "statement": "16.3 A Financial Institution must report Data Breaches and Data Privacy Breaches to QCB and the authorized agencies in Qatar which includes the National Cyber Security Agency and the Ministry of Interior.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Operational",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Breach Reporting",
+      "Data Privacy Breach Reporting"
+    ],
+    "implementation_hint": "Ensure compliance by implementing a system that automatically reports data breaches and data privacy breaches to QCB and authorized agencies in Qatar."
   },
   {
-    "control_id": "QCB-DP-P15-I4",
+    "control_id": "QCB-GAP-P15-I4",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 15,
@@ -1718,14 +2079,17 @@
     "type": "MUST",
     "topic": "General",
     "statement": "16.4 A Financial Institution must assess the impact of the breach, upon identification.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Operational",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Breach Management",
+      "Risk Assessment"
+    ],
+    "implementation_hint": "Implement a breach notification and impact assessment process."
   },
   {
-    "control_id": "QCB-DP-P15-I5",
+    "control_id": "QCB-GAP-P15-I5",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 15,
@@ -1733,14 +2097,17 @@
     "type": "MUST",
     "topic": "General",
     "statement": "16.5 A Financial Institution must assess the need to report a breach to its customers.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Operational",
+    "control_type": "Technical",
+    "severity": "Medium",
+    "policy_tags": [
+      "Data Breach Reporting",
+      "Customer Notification"
+    ],
+    "implementation_hint": "Implement a system to automatically notify customers of data breaches."
   },
   {
-    "control_id": "QCB-DP-P15-I6",
+    "control_id": "QCB-GAP-P15-I6",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 15,
@@ -1748,14 +2115,18 @@
     "type": "MUST",
     "topic": "General",
     "statement": "16.6 A Financial Institution must trigger action from relevant stakeholders, including employees and customers, to circumvent potential impact of the breach.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Operational",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Data Breach Response",
+      "Employee Training",
+      "Customer Communication"
+    ],
+    "implementation_hint": "Implement a clear and concise notification process for employees and customers in case of a breach."
   },
   {
-    "control_id": "QCB-DP-P15-I8",
+    "control_id": "QCB-GAP-P15-I8",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 15,
@@ -1763,14 +2134,17 @@
     "type": "MUST",
     "topic": "Regulatory Approval",
     "statement": "Exemptions 17.1 A Financial Institution seeking an exemption from any requirement within this regulation must request it from QCB.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "RegulatoryExemptions",
+      "QCBExemptionRequest"
+    ],
+    "implementation_hint": "Financial institutions should request exemptions from QCB through the QCB portal."
   },
   {
-    "control_id": "QCB-DP-P15-I10",
+    "control_id": "QCB-GAP-P15-I10",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 15,
@@ -1778,14 +2152,17 @@
     "type": "MUST",
     "topic": "General",
     "statement": "17.2 A Financial Institution must link its exemption request to a specific requirement in this regulation from which it is seeking a waiver.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "ExemptionRequest",
+      "WaiverRequirement"
+    ],
+    "implementation_hint": "Ensure all exemption requests are linked to specific requirements in the regulation that allow for waivers."
   },
   {
-    "control_id": "QCB-DP-P15-I11",
+    "control_id": "QCB-GAP-P15-I11",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 15,
@@ -1793,14 +2170,17 @@
     "type": "MUST",
     "topic": "General",
     "statement": "17.3 A Financial Institution must support its exemption request with a clear and documented business case or rationale.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "ExemptionRequest",
+      "Documentation"
+    ],
+    "implementation_hint": "Ensure all exemption requests are accompanied by a clear and documented business case or rationale."
   },
   {
-    "control_id": "QCB-DP-P15-I12",
+    "control_id": "QCB-GAP-P15-I12",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 15,
@@ -1808,14 +2188,16 @@
     "type": "MUST",
     "topic": "General",
     "statement": "17.4 A Financial Institution must ensure that the appropriate individuals or levels of authority within the Financial Institution consistently approve the exemption.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Exemption Approval"
+    ],
+    "implementation_hint": "Implement a centralized approval process for exemption requests."
   },
   {
-    "control_id": "QCB-DP-P15-I13",
+    "control_id": "QCB-GAP-P15-I13",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 15,
@@ -1823,14 +2205,17 @@
     "type": "MUST",
     "topic": "Register & Reporting",
     "statement": "17.5 A Financial Institution must duly record in the Financial Institution’s exemptions register any approved exemptions and assign an expiration date – the date by which the exemption will be mitigated or resolved by the Financial Institution seeking the exemption.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Exemptions Register",
+      "Exemption Management"
+    ],
+    "implementation_hint": "Ensure the Financial Institution's exemptions register is regularly updated and accessible."
   },
   {
-    "control_id": "QCB-DP-P15-I14",
+    "control_id": "QCB-GAP-P15-I14",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 15,
@@ -1838,14 +2223,17 @@
     "type": "MUST",
     "topic": "Risk Management",
     "statement": "17.6 A Financial Institution must remain accountable for any risks stemming from approved exemptions.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "RiskManagement",
+      "Compliance"
+    ],
+    "implementation_hint": "Ensure that the institution has a clear accountability framework for approved exemptions."
   },
   {
-    "control_id": "QCB-DP-P15-I16",
+    "control_id": "QCB-GAP-P15-I16",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 15,
@@ -1853,14 +2241,18 @@
     "type": "MUST",
     "topic": "Regulatory Approval",
     "statement": "Compliance with Secondary Regulations Along with the QCB Law and this regulation, the Financial Institution must also comply with the below mentioned secondary regulations, and their subsequent amendments, while operating in Qatar: 18.1 Sector-Specific Security Regulation.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Secondary Regulations",
+      "QCB Law",
+      "Compliance"
+    ],
+    "implementation_hint": "Ensure compliance with secondary regulations and their amendments by regularly reviewing and updating the institution's policies and procedures."
   },
   {
-    "control_id": "QCB-DP-P15-I19",
+    "control_id": "QCB-GAP-P15-I19",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 15,
@@ -1868,14 +2260,17 @@
     "type": "MAY",
     "topic": "Regulatory Approval",
     "statement": "18.4 Regulations or Guidelines that may be issued by QCB, including those related to emerging technology.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "QCB Regulations",
+      "Emerging Technology Guidelines"
+    ],
+    "implementation_hint": "Review and update QCB regulations and guidelines periodically to ensure they remain relevant and effective."
   },
   {
-    "control_id": "QCB-DP-P16-I3",
+    "control_id": "QCB-GAP-P16-I3",
     "doc_id": "data_handling_and_protection_regulation",
     "doc_title": "Data Handling and Protection Regulation.pdf",
     "page": 16,
@@ -1883,10 +2278,13 @@
     "type": "MAY",
     "topic": "General",
     "statement": "The following table lists the requirements that may be considered as recommendations by certain financial institutions.",
-    "category": "",
-    "control_type": "",
-    "severity": "",
-    "policy_tags": [],
-    "implementation_hint": ""
+    "category": "Governance",
+    "control_type": "Technical",
+    "severity": "Low",
+    "policy_tags": [
+      "Financial Compliance",
+      "Regulatory Compliance"
+    ],
+    "implementation_hint": "Ensure compliance with financial regulations by regularly reviewing and updating the list of requirements."
   }
 ]

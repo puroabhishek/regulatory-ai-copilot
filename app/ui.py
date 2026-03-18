@@ -1,18 +1,27 @@
 import os
+import sys
 import tempfile
 import time
 from pathlib import Path
 
+ROOT_DIR = Path(__file__).resolve().parent.parent
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+
 import streamlit as st
 
+st.set_page_config(page_title="Regulatory AI Copilot", layout="wide")
+
 try:
+    from gap_analyzer_tab import render_gap_analyzer_tab_v2
+
     from core.control_registry import (
-    register_controls_to_master,
-    map_controls_to_company,
-    load_controls_master,
-    load_company_controls,
-    update_company_control,
-    get_company_control_summary,
+        register_controls_to_master,
+        map_controls_to_company,
+        load_controls_master,
+        load_company_controls,
+        update_company_control,
+        get_company_control_summary,
     )
     from core.ingest import pdf_to_pages, save_pages
     from core.chunk import load_pages_jsonl, pages_to_chunks
@@ -33,12 +42,10 @@ try:
     )
 
 except Exception as e:
-    st.set_page_config(page_title="Regulatory AI Copilot", layout="wide")
     st.title("🚨 App crashed during import")
     st.exception(e)
     st.stop()
 
-st.set_page_config(page_title="Regulatory AI Copilot", layout="wide")
 st.title("📘 Regulatory AI Copilot")
 
 Path("data/processed").mkdir(parents=True, exist_ok=True)
@@ -49,8 +56,9 @@ Path("data/references").mkdir(parents=True, exist_ok=True)
 Path("data/blueprints").mkdir(parents=True, exist_ok=True)
 Path("data/generation_runs").mkdir(parents=True, exist_ok=True)
 Path("data/control_registry").mkdir(parents=True, exist_ok=True)
+Path("data/gap_analysis").mkdir(parents=True, exist_ok=True)
 
-tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(
+tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8 = st.tabs(
     [
         "1) Upload & Save",
         "2) Index & Search",
@@ -59,6 +67,7 @@ tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(
         "5) Policy Blueprint",
         "6) Artifact Generator",
         "7) Control Registry",
+        "8) Policy Gap Analyzer",
     ]
 )
 
@@ -177,7 +186,7 @@ with tab2:
 # ----------------------------
 with tab3:
     st.write("Extract **Controls** from processed PDFs → save as JSON/CSV.")
-    st.caption("First run may be slower because local LLM classification is applied to controls.")
+    st.caption("Classification model is resolved centrally by the backend configuration.")
 
     processed_dir = Path("data/processed")
     files = sorted([f.name for f in processed_dir.glob("*_pages.jsonl")])
@@ -207,6 +216,7 @@ with tab3:
                         prefix=prefix,
                         min_len=min_len,
                         max_len=max_len,
+                        model=None,
                     )
 
                     out_json = f"data/controls/{doc_id}_controls.json"
@@ -466,6 +476,7 @@ with tab6:
         st.info("No blueprints available. Create one in Tab 5 first.")
     else:
         selected_blueprint = st.selectbox("Select blueprint", blueprint_files, key="gen_blueprint_select")
+        st.caption("Generation model is resolved centrally by the backend configuration.")
 
         if st.button("Generate Artifacts from Blueprint", key="gen_from_blueprint_btn"):
             try:
@@ -484,7 +495,7 @@ with tab6:
                 policy_md = generate_policy_md_from_blueprint(
                     blueprint=blueprint,
                     controls=merged_controls,
-                    model="qwen2.5:1.5b",
+                    model=None,
                 )
 
                 plan_rows = build_project_plan_rows(policy_name, merged_controls, blueprint["profile_summary"])
@@ -719,3 +730,9 @@ with tab7:
         st.write("### Current Company Control Inventory")
         st.dataframe(company_rows[:100], use_container_width=True)
         st.caption(f"Total company controls: {len(company_rows)}")
+
+# ----------------------------
+# TAB 8: Policy Gap Analyzer
+# ----------------------------
+with tab8:
+    render_gap_analyzer_tab_v2()

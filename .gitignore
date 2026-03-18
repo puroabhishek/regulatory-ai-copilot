@@ -1,9 +1,34 @@
-cat > .gitignore << 'EOF'
-.venv/
-.env
+# Python
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+
+# Virtual env
+.venv/
+venv/
+
+# Environment variables
+.env
+
+# macOS
 .DS_Store
+
+# Streamlit / local caches
+.streamlit/
+
+# Data folders that should stay local
+data/processed/
 data/chroma_db/
+data/cache/
+data/artifacts/
+data/generation_runs/
+data/control_registry/
+data/references/
+
+# Keep folder structure if needed
+!data/.gitkeep
+
+# Logs
 logs/
-EOF
+*.log

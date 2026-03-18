@@ -9,3 +9,4 @@ tqdm
 tiktoken
 sentence-transformers
 google-genai
+requests
