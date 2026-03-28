@@ -2,6 +2,9 @@ import json
 from pathlib import Path
 from typing import Dict, Any, List
 
+from schemas.common import ensure_schema
+from schemas.policy import Policy
+
 
 def summarize_profile(profile: Dict[str, Any]) -> Dict[str, Any]:
     """
@@ -39,26 +42,26 @@ def build_blueprint(
     sample_policy_text: str,
     drafting_instructions: str,
 ) -> Dict[str, Any]:
-    return {
-        "policy_name": policy_name.strip(),
-        "selected_control_files": selected_control_files,
-        "selected_profile_file": selected_profile_file,
-        "profile_summary": summarize_profile(profile_data),
-        "sample_policy_text": sample_policy_text.strip(),
-        "drafting_instructions": drafting_instructions.strip(),
-    }
+    return Policy(
+        policy_name=policy_name.strip(),
+        selected_control_files=selected_control_files,
+        selected_profile_file=selected_profile_file,
+        profile_summary=summarize_profile(profile_data),
+        sample_policy_text=sample_policy_text.strip(),
+        drafting_instructions=drafting_instructions.strip(),
+    ).to_dict()
 
 
 def save_blueprint(blueprint: Dict[str, Any], out_path: str) -> str:
     Path(out_path).parent.mkdir(parents=True, exist_ok=True)
     with open(out_path, "w", encoding="utf-8") as f:
-        json.dump(blueprint, f, ensure_ascii=False, indent=2)
+        json.dump(ensure_schema(blueprint, Policy).to_dict(), f, ensure_ascii=False, indent=2)
     return out_path
 
 
 def load_blueprint(path: str) -> Dict[str, Any]:
     with open(path, "r", encoding="utf-8") as f:
-        return json.load(f)
+        return ensure_schema(json.load(f), Policy).to_dict()
 
 
 def list_blueprints(blueprint_dir: str = "data/blueprints") -> List[str]:

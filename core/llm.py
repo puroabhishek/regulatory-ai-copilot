@@ -1,14 +1,17 @@
-import json
+"""Compatibility wrapper for the legacy LLM module path.
+
+The real LLM implementation now lives under ``services.llm``. This module keeps
+the old import path working during migration so current startup and workflows do
+not break while callers move to the new service layer.
+"""
+
 import os
-from pathlib import Path
-from typing import Dict, Any, Optional
+from typing import Any, Dict, Optional
 
-import requests
-from dotenv import load_dotenv
-
-
-ROOT_DIR = Path(__file__).resolve().parent.parent
-load_dotenv(dotenv_path=ROOT_DIR / ".env")
+from services.llm.client import llm_json as service_llm_json
+from services.llm.client import ollama_chat as service_ollama_chat
+from services.llm.parser import parse_json_response
+from services.llm.router import resolve_model
 
 
 DEFAULT_LLM_MODEL = os.getenv("DEFAULT_LLM_MODEL", "").strip()
@@ -17,52 +20,9 @@ GAP_ANALYSIS_MODEL = os.getenv("GAP_ANALYSIS_MODEL", "").strip()
 POLICY_GENERATION_MODEL = os.getenv("POLICY_GENERATION_MODEL", "").strip()
 
 
-def resolve_model(purpose: str = "default", override: Optional[str] = None) -> str:
-    """
-    Resolve the model from:
-    1. explicit override
-    2. purpose-specific env var
-    3. default env var
-    """
-    if override and str(override).strip():
-        return str(override).strip()
-
-    purpose_map = {
-        "control_classifier": CONTROL_CLASSIFIER_MODEL,
-        "gap_analysis": GAP_ANALYSIS_MODEL,
-        "policy_generation": POLICY_GENERATION_MODEL,
-        "default": DEFAULT_LLM_MODEL,
-    }
-
-    resolved = purpose_map.get(purpose) or DEFAULT_LLM_MODEL
-    resolved = str(resolved or "").strip()
-
-    if not resolved:
-        raise ValueError(
-            f"No LLM model configured for purpose='{purpose}'. "
-            "Set the appropriate value in .env, for example DEFAULT_LLM_MODEL or GAP_ANALYSIS_MODEL."
-        )
-
-    return resolved
-
-
 def _json_loads_loose(s: str) -> Dict[str, Any]:
-    s = str(s or "").strip()
-
-    if not s:
-        raise ValueError("Model returned empty output.")
-
-    try:
-        return json.loads(s)
-    except Exception:
-        pass
-
-    start = s.find("{")
-    end = s.rfind("}")
-    if start != -1 and end != -1 and end > start:
-        return json.loads(s[start : end + 1])
-
-    raise ValueError("Model did not return valid JSON.")
+    """Legacy helper retained for compatibility with the previous module API."""
+    return parse_json_response(s)
 
 
 def ollama_chat(
@@ -70,39 +30,18 @@ def ollama_chat(
     model: Optional[str] = None,
     temperature: float = 0.1,
     purpose: str = "default",
+    timeout: Optional[float] = None,
+    max_retries: Optional[int] = None,
 ) -> str:
-    url = "http://localhost:11434/api/chat"
-    resolved_model = resolve_model(purpose=purpose, override=model)
-
-    payload = {
-        "model": resolved_model,
-        "messages": [{"role": "user", "content": prompt}],
-        "options": {"temperature": temperature},
-        "stream": False,
-    }
-
-    try:
-        response = requests.post(url, json=payload, timeout=600)
-    except requests.RequestException as e:
-        raise RuntimeError(f"Failed to connect to Ollama at {url}: {type(e).__name__}: {e}") from e
-
-    if not response.ok:
-        raise RuntimeError(
-            f"Ollama error {response.status_code} for model '{resolved_model}': {response.text}"
-        )
-
-    try:
-        data = response.json()
-    except Exception as e:
-        raise ValueError(f"Failed to parse Ollama response as JSON: {response.text}") from e
-
-    message = data.get("message", {})
-    content = message.get("content", "")
-
-    if not content:
-        raise ValueError(f"Ollama returned empty message content: {data}")
-
-    return content
+    """Compatibility wrapper around the new service-layer LLM client."""
+    return service_ollama_chat(
+        prompt=prompt,
+        model=model,
+        temperature=temperature,
+        purpose=purpose,
+        timeout=timeout,
+        max_retries=max_retries,
+    )
 
 
 def llm_json(
@@ -110,11 +49,15 @@ def llm_json(
     model: Optional[str] = None,
     temperature: float = 0.1,
     purpose: str = "default",
+    timeout: Optional[float] = None,
+    max_retries: Optional[int] = None,
 ) -> Dict[str, Any]:
-    output = ollama_chat(
+    """Compatibility wrapper that preserves the previous structured-response API."""
+    return service_llm_json(
         prompt=prompt,
         model=model,
         temperature=temperature,
         purpose=purpose,
+        timeout=timeout,
+        max_retries=max_retries,
     )
-    return _json_loads_loose(output)

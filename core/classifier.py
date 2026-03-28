@@ -3,7 +3,7 @@ import hashlib
 from pathlib import Path
 from typing import Dict, Any
 
-from core.llm import llm_json
+from services.llm.client import llm_json
 
 CACHE_PATH = Path("data/cache/control_classification_cache.json")
 

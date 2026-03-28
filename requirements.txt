@@ -1,6 +1,8 @@
 streamlit
 python-dotenv
 pydantic
+sqlalchemy
+alembic
 chromadb
 llama-index
 openai

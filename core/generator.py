@@ -4,7 +4,8 @@ import re
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-from core.llm import ollama_chat
+from domain.policies.blueprint import build_structured_policy_blueprint
+from domain.policies.generator import generate_policy_markdown_from_blueprint
 
 
 def load_json(path: str) -> Any:
@@ -92,50 +93,15 @@ def merge_controls(control_sets: List[Any], source_files: List[str]) -> List[Dic
     return merged
 
 
-def _build_controls_context(controls: List[Dict[str, Any]]) -> str:
-    lines = []
-
-    for i, c in enumerate(controls, start=1):
-        if isinstance(c, str):
-            lines.append(
-                f"""
-Control {i}
-- control_id:
-- source_doc:
-- page:
-- statement: {c}
-- category:
-- control_type:
-- severity:
-- policy_tags:
-- implementation_hint:
-"""
-            )
-            continue
-
-        if not isinstance(c, dict):
-            continue
-
-        lines.append(
-            f"""
-Control {i}
-- control_id: {c.get('control_id', '')}
-- source_doc: {c.get('doc_title', '')}
-- page: {c.get('page', '')}
-- statement: {c.get('statement', '')}
-- category: {c.get('category', '')}
-- control_type: {c.get('control_type', '')}
-- severity: {c.get('severity', '')}
-- policy_tags: {c.get('policy_tags', [])}
-- implementation_hint: {c.get('implementation_hint', '')}
-"""
-        )
-
-    return "\n".join(lines)
-
-
-def _build_profile_context(profile_summary: Dict[str, Any]) -> str:
-    return json.dumps(profile_summary, ensure_ascii=False, indent=2)
+def generate_structured_policy_blueprint(
+    blueprint: Dict[str, Any],
+    controls: List[Dict[str, Any]],
+) -> Dict[str, Any]:
+    """Compatibility wrapper for the new structured policy blueprint stage."""
+    return build_structured_policy_blueprint(
+        source_blueprint=blueprint,
+        controls=controls,
+    )
 
 
 def generate_policy_md_from_blueprint(
@@ -143,54 +109,13 @@ def generate_policy_md_from_blueprint(
     controls: List[Dict[str, Any]],
     model: Optional[str] = None,
 ) -> str:
-    policy_name = blueprint["policy_name"]
-    profile_summary = blueprint["profile_summary"]
-    sample_policy_text = blueprint.get("sample_policy_text", "")
-    drafting_instructions = blueprint.get("drafting_instructions", "")
-
-    controls_for_prompt = controls[:6]
-    sample_policy_text = sample_policy_text[:1200]
-
-    prompt = f"""
-You are drafting a bespoke regulatory policy for a business.
-
-Return ONLY markdown.
-Do not explain your reasoning.
-
-POLICY NAME:
-{policy_name}
-
-BUSINESS PROFILE:
-{_build_profile_context(profile_summary)}
-
-SELECTED CONTROLS:
-{_build_controls_context(controls_for_prompt)}
-
-OPTIONAL SAMPLE POLICY STYLE / REFERENCE:
-{sample_policy_text}
-
-OPTIONAL DRAFTING INSTRUCTIONS:
-{drafting_instructions}
-
-Requirements:
-1. Draft a business-specific policy.
-2. Use the business profile.
-3. Reflect the selected controls.
-4. If lending-related context exists, reflect partner/KYC/accountability structure where relevant.
-5. Use these sections:
-   - Purpose
-   - Scope
-   - Policy Statements
-   - Roles and Responsibilities
-   - Review
-6. Return only markdown.
-"""
-
-    return ollama_chat(
-        prompt=prompt,
+    policy_blueprint = generate_structured_policy_blueprint(
+        blueprint=blueprint,
+        controls=controls,
+    )
+    return generate_policy_markdown_from_blueprint(
+        policy_blueprint=policy_blueprint,
         model=model,
-        temperature=0.1,
-        purpose="policy_generation",
     )
 
 

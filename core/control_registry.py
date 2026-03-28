@@ -3,6 +3,9 @@ import csv
 from pathlib import Path
 from typing import List, Dict, Any
 
+from schemas.common import ensure_schema, ensure_schema_list
+from schemas.control import Control
+
 
 MASTER_PATH = Path("data/control_registry/controls_master.json")
 COMPANY_PATH = Path("data/control_registry/company_controls.json")
@@ -62,27 +65,27 @@ def register_controls_to_master(controls: List[Dict[str, Any]]) -> int:
     seen_ids = {r.get("control_id", "") for r in existing}
 
     added = 0
-    for c in controls:
-        cid = c.get("control_id", "")
+    for control in ensure_schema_list(controls, Control):
+        cid = control.control_id
         if not cid or cid in seen_ids:
             continue
 
         existing.append(
             {
-                "control_id": c.get("control_id", ""),
-                "doc_id": c.get("doc_id", ""),
-                "doc_title": c.get("doc_title", ""),
-                "page": c.get("page", ""),
-                "statement": c.get("statement", ""),
-                "type": c.get("type", ""),
-                "topic": c.get("topic", ""),
-                "category": c.get("category", ""),
-                "control_type": c.get("control_type", ""),
-                "severity": c.get("severity", ""),
-                "policy_tags": c.get("policy_tags", []),
-                "implementation_hint": c.get("implementation_hint", ""),
-                "evidence_type": infer_evidence_type(c),
-                "automation_possible": infer_automation_possible(c),
+                "control_id": control.control_id,
+                "doc_id": control.doc_id,
+                "doc_title": control.doc_title,
+                "page": control.page,
+                "statement": control.statement,
+                "type": control.type,
+                "topic": control.topic,
+                "category": control.category,
+                "control_type": control.control_type,
+                "severity": control.severity,
+                "policy_tags": control.policy_tags,
+                "implementation_hint": control.implementation_hint,
+                "evidence_type": infer_evidence_type(control),
+                "automation_possible": infer_automation_possible(control),
             }
         )
         seen_ids.add(cid)
@@ -92,9 +95,10 @@ def register_controls_to_master(controls: List[Dict[str, Any]]) -> int:
     return added
 
 
-def infer_evidence_type(control: Dict[str, Any]) -> str:
-    control_type = (control.get("control_type") or "").lower()
-    statement = (control.get("statement") or "").lower()
+def infer_evidence_type(control: Any) -> str:
+    control_model = ensure_schema(control, Control)
+    control_type = (control_model.control_type or "").lower()
+    statement = (control_model.statement or "").lower()
 
     if control_type == "technical":
         return "Configuration / Logs / Screenshot"
@@ -107,9 +111,10 @@ def infer_evidence_type(control: Dict[str, Any]) -> str:
     return "Documentary Evidence"
 
 
-def infer_automation_possible(control: Dict[str, Any]) -> str:
-    control_type = (control.get("control_type") or "").lower()
-    statement = (control.get("statement") or "").lower()
+def infer_automation_possible(control: Any) -> str:
+    control_model = ensure_schema(control, Control)
+    control_type = (control_model.control_type or "").lower()
+    statement = (control_model.statement or "").lower()
 
     if control_type == "technical":
         return "Yes"
@@ -128,27 +133,24 @@ def map_controls_to_company(profile: Dict[str, Any], selected_controls: List[Dic
     lending_model = profile.get("lending_model", "")
 
     rows = []
-    for c in selected_controls:
-        if not isinstance(c, dict):
-            continue
-
+    for control in ensure_schema_list(selected_controls, Control):
         applicability = "Applicable"
         reason = "Selected in blueprint"
 
-        statement = (c.get("statement") or "").lower()
+        statement = (control.statement or "").lower()
 
         if business_type != "Lending" and "kyc" in statement:
             applicability = "Needs Review"
             reason = "KYC-related control may not fully apply outside lending"
 
         owner = "Compliance"
-        if c.get("control_type") == "Technical":
+        if control.control_type == "Technical":
             owner = "Engineering / Security"
-        elif c.get("control_type") == "Operational":
+        elif control.control_type == "Operational":
             owner = "Operations / Compliance"
-        elif c.get("control_type") == "Governance":
+        elif control.control_type == "Governance":
             owner = "Leadership / Compliance"
-        elif c.get("control_type") == "Legal":
+        elif control.control_type == "Legal":
             owner = "Legal / Compliance"
 
         if business_type == "Lending" and "kyc" in statement:
@@ -162,21 +164,21 @@ def map_controls_to_company(profile: Dict[str, Any], selected_controls: List[Dic
                 "company_name": company_name,
                 "sector": sector,
                 "business_type": business_type,
-                "control_id": c.get("control_id", ""),
-                "statement": c.get("statement", ""),
-                "category": c.get("category", ""),
-                "severity": c.get("severity", ""),
-                "control_type": c.get("control_type", ""),
+                "control_id": control.control_id,
+                "statement": control.statement,
+                "category": control.category,
+                "severity": control.severity,
+                "control_type": control.control_type,
                 "applicability": applicability,
                 "applicability_reason": reason,
                 "owner": owner,
                 "status": "Not Assessed",
-                "evidence_type": c.get("evidence_type", "Documentary Evidence"),
+                "evidence_type": control.evidence_type or "Documentary Evidence",
                 "evidence_link": "",
                 "last_review_date": "",
                 "next_review_date": "",
-                "source_doc_title": c.get("doc_title", ""),
-                "source_page": c.get("page", ""),
+                "source_doc_title": control.doc_title,
+                "source_page": control.page,
             }
         )
 

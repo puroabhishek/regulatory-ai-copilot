@@ -23,7 +23,8 @@ data/chroma_db/
 data/cache/
 data/artifacts/
 data/generation_runs/
-data/control_registry/
+data/control_registry/*
+!data/control_registry/.gitkeep
 data/references/
 
 # Keep folder structure if needed
