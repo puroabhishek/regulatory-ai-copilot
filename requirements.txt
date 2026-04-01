@@ -3,6 +3,9 @@ python-dotenv
 pydantic
 sqlalchemy
 alembic
+python-docx
+pandas
+openpyxl
 chromadb
 llama-index
 openai

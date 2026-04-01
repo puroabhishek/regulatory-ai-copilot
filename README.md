@@ -140,7 +140,13 @@ pip install -r requirements.txt
 
 ## 3. Configure Environment Variables
 
-Create a local `.env` file in the project root.
+Copy the example file and then edit it if needed:
+
+```bash
+cp .env.example .env
+```
+
+The repo now includes a real `.env.example` with sensible defaults for local development.
 
 Example:
 
@@ -253,16 +259,10 @@ Important caveats:
 
 - `.pdf` must be text-based. OCR is not available yet.
 - legacy `.doc` is not supported directly
-- `.docx` support requires `python-docx`
-- `.xlsx` support requires `pandas` and a compatible Excel engine such as `openpyxl`
+- `.docx` support uses `python-docx`
+- `.xlsx` support uses `pandas` and `openpyxl`
 
-If you need those optional readers, install:
-
-```bash
-pip install python-docx pandas openpyxl
-```
-
-If you only use PDF, TXT, and MD workflows, the base setup is enough.
+These ingestion dependencies are now included in `requirements.txt`, so setup is one-command for the currently supported file types.
 
 ## Current Storage Model
 
@@ -407,17 +407,17 @@ streamlit run app/ui.py
 git clone https://github.com/puroabhishek/regulatory-ai-copilot.git
 cd regulatory-ai-copilot
 ./setup.sh
+cp .env.example .env
 ./run.sh
 ```
 
-Create `.env` manually using the example in this README before the first real LLM-backed run.
+Edit `.env` if you want different models or endpoints before the first real LLM-backed run.
 
 ## Current Limitations
 
 - no OCR for scanned PDFs
 - DB-backed persistence is not the default flow yet
 - keyword search is the default search backend today
-- some optional file readers require extra packages not listed in `requirements.txt`
 - parts of the codebase still use compatibility modules under `core/`
 
 ## Contributing
