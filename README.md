@@ -25,7 +25,7 @@ This project is useful for:
 
 ## Current Product Capabilities
 
-The current Streamlit app provides 8 tabs:
+The current Streamlit app provides 9 tabs:
 
 1. `Upload & Save`
    Save text-based PDF pages into JSONL for downstream processing.
@@ -43,11 +43,14 @@ The current Streamlit app provides 8 tabs:
    Review the control master and update company-specific control inventory fields like status and owner.
 8. `Policy Gap Analyzer`
    Compare a policy or current-state narrative against controls and produce gap results.
+9. `Classification Admin`
+   Review and edit the external control taxonomy and statement-level classification overrides.
 
 ## Important Product Notes
 
 - The app is currently local-first and file-backed for most workflows.
 - The LLM layer expects a locally reachable Ollama-compatible endpoint by default.
+- On macOS, the app now performs a startup Ollama health check and will try to auto-launch `Ollama.app` once if the local endpoint is unavailable.
 - The current search backend defaults to a safe keyword index, not semantic vector search.
 - OCR is not implemented yet. Scanned PDFs are not supported.
 - The database layer exists as a foundation, but the main user workflows are still mostly file-based today.
@@ -60,6 +63,38 @@ The current Streamlit app provides 8 tabs:
 - SQLAlchemy
 - Ollama-compatible LLM endpoint
 - JSON / CSV local persistence
+
+## Editable Control Taxonomy
+
+Control classification is now externalized into two files:
+
+- `configs/control_taxonomy.json`
+  Holds the editable taxonomy for modality priority, topic keyword rules, and the allowed values and aliases for `category`, `control_type`, and `severity`.
+- `data/control_classification_overrides.json`
+  Holds user corrections keyed by a stable hash of the control statement. These overrides are applied after the model output is normalized, so corrections win without changing Python code.
+
+Useful helper functions:
+
+- `core.classifier.save_classification_override(control_text, updates, note="...")`
+- `core.classifier.list_classification_overrides()`
+- `core.classifier.delete_classification_override(control_text)`
+
+Example:
+
+```python
+from core.classifier import save_classification_override
+
+save_classification_override(
+    "Access to customer data must be reviewed quarterly.",
+    {
+        "control_type": "Governance",
+        "severity": "High",
+    },
+    note="Updated after SME review",
+)
+```
+
+This keeps the default taxonomy editable in config, while keeping statement-specific corrections in a separate runtime store.
 
 ## Repository Structure
 
@@ -186,6 +221,15 @@ What matters most:
 
 If you want the LLM-backed features to work, start Ollama and make sure your selected models are available.
 
+Current startup behavior:
+
+- when the app starts, it checks whether Ollama is reachable
+- on macOS with a local Ollama URL, it will try to launch `Ollama.app` automatically one time
+- if Ollama is still unavailable, the app shows a startup warning banner instead of only failing later inside generation
+- if Ollama is running but the configured model is missing, the app tells you which `ollama pull ...` command to run
+
+This means you may not always need to start Ollama manually first, but you still need the configured models to exist locally.
+
 Example:
 
 ```bash
@@ -199,6 +243,12 @@ ollama pull qwen2.5:3b
 ```
 
 If you use different models, update `.env` accordingly.
+
+If the app is configured for a different model, pull that exact model instead. For example:
+
+```bash
+ollama pull qwen2.5:1.5b
+```
 
 ## 5. Run The App
 
@@ -335,6 +385,12 @@ Check:
 - the configured model names are valid
 - the model is actually pulled locally
 
+Also note:
+
+- on macOS the app will try to auto-launch `Ollama.app` once
+- auto-launch does not pull models for you
+- if you see a startup banner saying models are missing, run the exact `ollama pull ...` command shown there
+
 ### I get `No LLM model configured`
 
 Set at least:
@@ -350,6 +406,15 @@ Check:
 - `OLLAMA_URL`
 - Ollama server status
 - firewall or localhost access issues
+
+If you are using the default local setup on macOS:
+
+```bash
+open -a Ollama
+curl http://localhost:11434/api/tags
+```
+
+If the health check works but generation still fails, the model in `.env` is likely missing locally.
 
 ### PDF upload says little or no text was extracted
 
