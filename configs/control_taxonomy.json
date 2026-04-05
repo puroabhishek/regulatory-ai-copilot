@@ -1,0 +1,117 @@
+{
+  "version": "2026-04-05",
+  "modality": {
+    "priority": [
+      "must",
+      "shall",
+      "should",
+      "may"
+    ]
+  },
+  "topic": {
+    "default": "General",
+    "rules": [
+      {
+        "label": "Regulatory Approval",
+        "keywords": ["approval", "qcb"]
+      },
+      {
+        "label": "Register & Reporting",
+        "keywords": ["register", "inventory", "disclose"]
+      },
+      {
+        "label": "Assurance & Audit",
+        "keywords": ["audit", "soc"]
+      },
+      {
+        "label": "Security Testing",
+        "keywords": ["test", "penetration", "vulnerability"]
+      },
+      {
+        "label": "Security Controls",
+        "keywords": ["encrypt", "authentication", "access"]
+      },
+      {
+        "label": "Data Protection",
+        "keywords": ["confidential", "privacy", "personal data"]
+      },
+      {
+        "label": "Data Residency",
+        "keywords": ["pii", "within qatar"]
+      },
+      {
+        "label": "Outsourcing & Vendor Risk",
+        "keywords": ["outsourcing", "csp"]
+      },
+      {
+        "label": "Risk Management",
+        "keywords": ["risk"]
+      },
+      {
+        "label": "Governance",
+        "keywords": ["governance", "board", "strategy"]
+      },
+      {
+        "label": "Resilience & BCP",
+        "keywords": ["business continuity", "resilien"]
+      }
+    ]
+  },
+  "fields": {
+    "category": {
+      "default": "",
+      "allow_custom": true,
+      "allowed": [
+        "Governance",
+        "Operational",
+        "Technical",
+        "Legal",
+        "Data Protection",
+        "Data Handling",
+        "Risk Management",
+        "Retention",
+        "Register & Reporting",
+        "Regulatory Approval",
+        "Assurance & Audit",
+        "Security Controls",
+        "Security Testing",
+        "Data Residency",
+        "Outsourcing & Vendor Risk",
+        "Resilience & BCP",
+        "General"
+      ],
+      "aliases": {
+        "data governance": "Governance",
+        "compliance": "Governance"
+      }
+    },
+    "control_type": {
+      "default": "",
+      "allowed": [
+        "Technical",
+        "Operational",
+        "Governance",
+        "Legal"
+      ],
+      "aliases": {
+        "implementation": "Operational",
+        "sub scope implementation": "Operational",
+        "identification": "Operational",
+        "physical access management": "Operational"
+      }
+    },
+    "severity": {
+      "default": "",
+      "allowed": [
+        "High",
+        "Medium",
+        "Low"
+      ],
+      "aliases": {
+        "critical": "High",
+        "moderate": "Medium",
+        "minor": "Low"
+      }
+    }
+  }
+}

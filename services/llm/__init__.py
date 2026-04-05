@@ -1,1 +1,1 @@
-"""LLM service package for model clients, parsing, and routing."""
+"""LLM service package for model clients, parsing, routing, and health checks."""
