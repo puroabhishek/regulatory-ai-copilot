@@ -4,14 +4,17 @@ Regulatory AI Copilot is a local-first compliance workbench for turning regulato
 
 It is designed for teams who want to:
 
+- capture organization-specific business context
+- recommend likely regulations and guidelines from that business profile
+- draft policies from profile context plus applicable regulations
+- run policy gap assessments against profile-linked regulation sources
 - upload regulatory PDFs and extract usable text
 - search regulation content
 - generate structured controls from regulation text
-- capture organization-specific business context
-- build policy blueprints
-- draft policies from those blueprints
+- build reusable policy blueprints
+- generate implementation and audit artifacts from those blueprints
 - maintain a control registry and company control inventory
-- run policy gap assessments against controls
+- review and tune statement classification behavior
 
 ## Who This Is For
 
@@ -27,22 +30,22 @@ This project is useful for:
 
 The current Streamlit app provides 9 tabs:
 
-1. `Upload & Save`
-   Save text-based PDF pages into JSONL for downstream processing.
-2. `Index & Search`
+1. `Business Profile`
+   Capture business context, review suggested regulations and guidelines, and save the applicable set with the profile.
+2. `Policy Generator`
+   Draft a policy from scratch using the selected profile, applicable regulations, optional uploaded PDFs, and optional reference policy text.
+3. `Gap Analysis`
+   Compare a policy or current-state narrative against controls resolved from the selected profile's regulations, existing control files, and optional uploaded PDFs.
+4. `Policy Implementation`
+   Generate a policy document, implementation plan, audit register, traceability matrix, and company control inventory from a saved blueprint.
+5. `Regulation Upload`
+   Save text-based PDF pages into JSONL for downstream indexing and control extraction.
+6. `Index & Search`
    Build a searchable index from saved JSONL files and retrieve requirement-like statements.
-3. `Controls`
+7. `Controls`
    Extract controls from processed regulations and save them as JSON and CSV.
-4. `Business Profile`
-   Capture organization context such as regulator, sector, business model, and cloud/data posture.
-5. `Policy Blueprint`
-   Create a saved blueprint using controls, profile context, and optional reference policy text.
-6. `Artifact Generator`
-   Generate a policy draft, implementation plan, audit register, and traceability matrix from a blueprint.
-7. `Control Registry`
+8. `Control Registry`
    Review the control master and update company-specific control inventory fields like status and owner.
-8. `Policy Gap Analyzer`
-   Compare a policy or current-state narrative against controls and produce gap results.
 9. `Classification Admin`
    Review and edit the external control taxonomy and statement-level classification overrides.
 
@@ -52,6 +55,8 @@ The current Streamlit app provides 9 tabs:
 - The LLM layer expects a locally reachable Ollama-compatible endpoint by default.
 - On macOS, the app now performs a startup Ollama health check and will try to auto-launch `Ollama.app` once if the local endpoint is unavailable.
 - The current search backend defaults to a safe keyword index, not semantic vector search.
+- Business profiles now store `applicable_regulations` and `recommended_regulations`, which feed the policy-generation and gap-analysis workflows.
+- A curated regulation catalog is bundled in code so the app can recommend likely obligations and map them back to local control files when available.
 - OCR is not implemented yet. Scanned PDFs are not supported.
 - The database layer exists as a foundation, but the main user workflows are still mostly file-based today.
 
@@ -95,6 +100,35 @@ save_classification_override(
 ```
 
 This keeps the default taxonomy editable in config, while keeping statement-specific corrections in a separate runtime store.
+
+## Profile-Linked Regulation Catalog
+
+The app now includes a curated regulation catalog in `domain/regulations/catalog.py`.
+
+What it does:
+
+- recommends likely regulations and guidelines from a saved business profile
+- marks whether each catalog entry already has a matching local control file
+- lets shared workflows resolve a mix of catalog-linked regulations, uploaded PDFs, and manually selected control files
+
+Current bundled catalog entries include:
+
+- `QCB Data Handling and Protection Regulation`
+- `QCB Cloud Computing Regulation`
+- `QCB eKYC Regulation`
+- `Qatar Personal Data Privacy Law (Law No. 13 of 2016)`
+- `National Data Classification Policy v3.0`
+
+Saved profiles now persist both:
+
+- `applicable_regulations`
+- `recommended_regulations`
+
+Those fields are then reused by:
+
+- `Policy Generator`
+- `Gap Analysis`
+- `orchestrators/regulation_source_workflow.py`
 
 ## Repository Structure
 
@@ -277,22 +311,22 @@ http://localhost:8501
 
 If you are starting from scratch, the smoothest order is:
 
-1. Go to `Upload & Save`
-   Upload a text-based regulatory PDF and save the extracted pages.
-2. Go to `Index & Search`
-   Build the index and search for clauses or obligations.
+1. Go to `Business Profile`
+   Save the organization profile and confirm the applicable regulations suggested for that business.
+2. Go to `Regulation Upload`
+   Upload any text-based regulation PDFs that are not already represented in the local control library.
 3. Go to `Controls`
-   Extract controls from the saved processed regulation.
-4. Go to `Business Profile`
-   Save the organization profile you want the generated outputs to reflect.
-5. Go to `Policy Blueprint`
-   Select controls and a business profile, then save a blueprint.
-6. Go to `Artifact Generator`
-   Generate the policy draft and supporting CSV artifacts.
-7. Go to `Control Registry`
-   Review and update the company-specific control inventory.
-8. Go to `Policy Gap Analyzer`
-   Compare an existing policy or current-state text against selected controls.
+   Extract controls from the newly uploaded regulations when needed.
+4. Go to `Policy Generator`
+   Select the profile, choose the applicable regulations or guidelines, and draft a policy from scratch.
+5. Go to `Policy Implementation`
+   Generate the supporting implementation plan, audit register, traceability matrix, and company control inventory.
+6. Go to `Gap Analysis`
+   Compare an existing policy or current-state text against the profile-linked regulations and controls.
+7. Use `Index & Search` when you need clause lookup or requirement discovery from saved regulations.
+8. Use `Control Registry` and `Classification Admin` to maintain the shared control library and classification quality.
+
+If the needed regulations already have control files in `data/controls/`, you can often start at `Business Profile` and go straight to `Policy Generator` or `Gap Analysis`.
 
 ## Supported Input Files
 
@@ -323,15 +357,15 @@ Examples:
 - `data/processed/`
   extracted page-level JSONL files
 - `data/controls/`
-  extracted controls JSON and CSV
+  extracted controls JSON and CSV, including catalog-linked control files used by profile-led workflows
 - `data/profiles/`
-  saved business profiles
+  saved business profiles with applicable and recommended regulations
 - `data/blueprints/`
-  saved policy blueprints
+  saved reusable policy blueprints plus source-context metadata
 - `data/artifacts/`
   generated policy and CSV artifacts
 - `data/control_registry/`
-  local control registry data
+  local control registry data, including the control master and company inventory
 - `data/gap_analysis/`
   saved gap runs
 
@@ -503,6 +537,6 @@ If someone new is onboarding to the project, the fastest path is:
 2. configure `.env`
 3. start Ollama
 4. run Streamlit
-5. follow the 8 tabs in order from ingestion to gap analysis
+5. create a `Business Profile`, then use the profile-led `Policy Generator` / `Gap Analysis` flow or the advanced regulation-upload workspaces when you need new source documents
 
 That should be enough for a new user to clone the repo, start the product locally, and use the main workflows without reading the code first.

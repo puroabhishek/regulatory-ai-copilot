@@ -1,5 +1,5 @@
 import json
-from dataclasses import dataclass, asdict
+from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Dict, Any, List
 
@@ -29,7 +29,7 @@ class BusinessProfile:
     # ---- Cloud & Tech ----
     cloud_use: str = "Yes"
     cloud_service_model: str = "SaaS"
-    cloud_providers: List[str] = None
+    cloud_providers: List[str] = field(default_factory=list)
     hosting_region: str = "Qatar"
     data_residency_required: str = "Yes"
 
@@ -58,11 +58,11 @@ class BusinessProfile:
     has_risk_register: str = "No"
     has_cloud_register: str = "No"
     has_audit_plan: str = "No"
+    applicable_regulations: List[str] = field(default_factory=list)
+    recommended_regulations: List[str] = field(default_factory=list)
 
     def to_dict(self) -> Dict[str, Any]:
         d = asdict(self)
-        if d.get("cloud_providers") is None:
-            d["cloud_providers"] = []
         return d
 
 
@@ -87,7 +87,11 @@ def load_profile(path: str) -> Dict[str, Any]:
     - So Streamlit can preview it and generator can use it.
     """
     with open(path, "r", encoding="utf-8") as f:
-        return json.load(f)
+        data = json.load(f)
+    data.setdefault("cloud_providers", [])
+    data.setdefault("applicable_regulations", [])
+    data.setdefault("recommended_regulations", [])
+    return data
 
 
 def list_profiles(profile_dir: str = "data/profiles") -> List[str]:

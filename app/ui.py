@@ -12,14 +12,14 @@ from services.llm.health import default_ollama_api_url, ensure_ollama_ready
 
 APP_TITLE = "📘 Regulatory AI Copilot"
 TAB_LABELS = [
-    "1) Upload & Save",
-    "2) Index & Search",
-    "3) Controls",
-    "4) Business Profile",
-    "5) Policy Blueprint",
-    "6) Artifact Generator",
-    "7) Control Registry",
-    "8) Policy Gap Analyzer",
+    "1) Business Profile",
+    "2) Policy Generator",
+    "3) Gap Analysis",
+    "4) Policy Implementation",
+    "5) Regulation Upload",
+    "6) Index & Search",
+    "7) Controls",
+    "8) Control Registry",
     "9) Classification Admin",
 ]
 OLLAMA_STATUS_SESSION_KEY = "_ollama_status"
@@ -62,14 +62,14 @@ def _load_page_renderers():
     from app.pages.upload_save_page import render_upload_save_page
 
     return [
+        render_business_profile_page,
+        render_policy_blueprint_page,
+        render_gap_analysis_page,
+        render_artifact_generator_page,
         render_upload_save_page,
         render_index_search_page,
         render_controls_page,
-        render_business_profile_page,
-        render_policy_blueprint_page,
-        render_artifact_generator_page,
         render_control_registry_page,
-        render_gap_analysis_page,
         render_classification_admin_page,
     ]
 
@@ -126,7 +126,11 @@ def _render_ollama_status_banner() -> None:
 
 def render_app() -> None:
     """Initialize the app shell and dispatch to the page renderers."""
-    st.set_page_config(page_title="Regulatory AI Copilot", layout="wide")
+    st.set_page_config(
+        page_title="Regulatory AI Copilot",
+        layout="wide",
+        initial_sidebar_state="collapsed",
+    )
     _ensure_app_directories()
 
     try:

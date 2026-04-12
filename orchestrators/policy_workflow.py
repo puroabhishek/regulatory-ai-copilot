@@ -28,6 +28,8 @@ from core.generator import (
     save_text,
 )
 from core.profiler import list_profiles, load_profile
+from domain.regulations.catalog import list_regulation_catalog, recommend_regulations_for_profile
+from orchestrators.regulation_source_workflow import resolve_regulation_control_inputs
 
 
 CONTROLS_DIR = Path("data/controls")
@@ -48,6 +50,7 @@ def list_policy_blueprint_inputs(
         "control_files": sorted(path.name for path in Path(controls_dir).glob("*_controls.json")),
         "profile_files": sorted(list_profiles(profiles_dir)),
         "reference_files": list_reference_policies(refs_dir),
+        "regulation_catalog": list_regulation_catalog(controls_dir=controls_dir),
     }
 
 
@@ -84,6 +87,8 @@ def create_policy_blueprint(
     selected_profile_file: str,
     sample_policy_text: str,
     drafting_instructions: str,
+    applicable_regulations: Optional[List[str]] = None,
+    source_context: Optional[Dict[str, Any]] = None,
     profiles_dir: str = str(PROFILES_DIR),
     blueprints_dir: str = str(BLUEPRINTS_DIR),
 ) -> Dict[str, Any]:
@@ -97,6 +102,8 @@ def create_policy_blueprint(
         profile_data=profile_data,
         sample_policy_text=sample_policy_text,
         drafting_instructions=drafting_instructions,
+        applicable_regulations=applicable_regulations or [],
+        source_context=source_context or {},
     )
 
     safe_name = policy_name.strip().replace(" ", "_")
@@ -106,6 +113,111 @@ def create_policy_blueprint(
     return {
         "blueprint": blueprint,
         "out_path": out_path,
+    }
+
+
+def build_policy_profile_context(
+    selected_profile_file: str,
+    profiles_dir: str = str(PROFILES_DIR),
+    controls_dir: str = str(CONTROLS_DIR),
+) -> Dict[str, Any]:
+    """Load one profile together with stored and recommended regulations."""
+
+    profile_data = load_profile(str(Path(profiles_dir) / selected_profile_file))
+    recommendations = recommend_regulations_for_profile(profile_data, controls_dir=controls_dir)
+    stored_regulations = list(profile_data.get("applicable_regulations", []) or [])
+
+    return {
+        "profile": profile_data,
+        "recommended_regulations": recommendations,
+        "stored_regulations": stored_regulations,
+        "default_regulations": stored_regulations or [item["title"] for item in recommendations],
+    }
+
+
+def create_policy_from_scratch(
+    policy_name: str,
+    policy_context: str,
+    selected_profile_file: str,
+    selected_regulations: List[str],
+    sample_policy_text: str,
+    drafting_instructions: str,
+    uploaded_regulation_files: Optional[List[Any]] = None,
+    additional_control_files: Optional[List[str]] = None,
+    profiles_dir: str = str(PROFILES_DIR),
+    blueprints_dir: str = str(BLUEPRINTS_DIR),
+    artifacts_dir: str = str(ARTIFACTS_DIR),
+    model: Optional[str] = None,
+) -> Dict[str, Any]:
+    """Create a saved blueprint and draft a bespoke policy from profile-led inputs."""
+
+    profile_data = load_profile(str(Path(profiles_dir) / selected_profile_file))
+    control_resolution = resolve_regulation_control_inputs(
+        selected_regulations=selected_regulations,
+        uploaded_regulation_files=uploaded_regulation_files,
+        manual_control_files=additional_control_files,
+        model=model,
+        upload_prefix="QCB-POL",
+        controls_dir=str(CONTROLS_DIR),
+    )
+
+    merged_controls = control_resolution["merged_controls"]
+    if not merged_controls:
+        raise ValueError("No controls could be derived from the selected regulation sources.")
+
+    used_control_files = list(
+        dict.fromkeys(control_resolution["resolved_control_files"] + control_resolution["new_control_files"])
+    )
+
+    instruction_parts = []
+    if policy_context.strip():
+        instruction_parts.append(f"Business and policy context:\n{policy_context.strip()}")
+    if drafting_instructions.strip():
+        instruction_parts.append(drafting_instructions.strip())
+    effective_instructions = "\n\n".join(instruction_parts)
+
+    blueprint = build_blueprint(
+        policy_name=policy_name,
+        selected_control_files=used_control_files,
+        applicable_regulations=selected_regulations,
+        selected_profile_file=selected_profile_file,
+        profile_data=profile_data,
+        sample_policy_text=sample_policy_text,
+        drafting_instructions=effective_instructions,
+        source_context={
+            "policy_context": policy_context.strip(),
+            "catalog_control_files": control_resolution["catalog_control_files"],
+            "manual_control_files": control_resolution["manual_control_files"],
+            "uploaded_control_files": control_resolution["new_control_files"],
+            "missing_regulations": control_resolution["missing_regulations"],
+        },
+    )
+
+    safe_name = policy_name.strip().replace(" ", "_")
+    blueprint_path = str(Path(blueprints_dir) / f"{safe_name}_blueprint.json")
+    save_blueprint(blueprint, blueprint_path)
+
+    policy_md = generate_policy_md_from_blueprint(
+        blueprint=blueprint,
+        controls=merged_controls,
+        model=model,
+    )
+
+    policy_slug = normalize_policy_name(policy_name)
+    policy_path = str(Path(artifacts_dir) / f"{policy_slug}.md")
+    save_text(policy_path, policy_md)
+    run_path = save_generation_run(policy_slug, blueprint, policy_md)
+
+    return {
+        "blueprint": blueprint,
+        "blueprint_path": blueprint_path,
+        "policy_md": policy_md,
+        "policy_path": policy_path,
+        "run_path": run_path,
+        "merged_controls": merged_controls,
+        "used_control_files": used_control_files,
+        "new_control_files_created": control_resolution["new_control_files"],
+        "missing_regulations": control_resolution["missing_regulations"],
     }
 
 

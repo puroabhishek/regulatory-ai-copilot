@@ -1,0 +1,50 @@
+{
+  "profile_name": "new business profile",
+  "country": "Qatar",
+  "regulator": "QFCRA",
+  "sector": "Other",
+  "business_type": "SaaS",
+  "business_model": "B2B",
+  "target_customers": "Logistics companies",
+  "other_users": "Logistics providers, container management companies, Importer and exporters",
+  "key_stakeholders": "",
+  "performs_kyc": "Not applicable",
+  "mandated_kyc": "Not applicable",
+  "lending_model": "Not applicable",
+  "lending_partners": "",
+  "cloud_use": "Yes",
+  "cloud_service_model": "SaaS",
+  "cloud_providers": [
+    "GCP"
+  ],
+  "hosting_region": "Qatar",
+  "data_residency_required": "Yes",
+  "handles_pii": "Yes",
+  "handles_financial_data": "Yes",
+  "handles_health_data": "No",
+  "handles_biometrics": "No",
+  "iam_maturity": "Basic",
+  "encryption_at_rest": "Yes",
+  "encryption_in_transit": "Yes",
+  "key_management": "CSP-managed",
+  "logging_monitoring": "Basic",
+  "vulnerability_mgmt": "Basic",
+  "penetration_testing": "No",
+  "sdlc_controls": "Basic",
+  "uses_third_parties": "Yes",
+  "sub_processors_possible": "Yes",
+  "vendor_due_diligence": "Basic",
+  "has_risk_register": "No",
+  "has_cloud_register": "No",
+  "has_audit_plan": "No",
+  "applicable_regulations": [
+    "Qatar Personal Data Privacy Law (Law No. 13 of 2016)",
+    "National Data Classification Policy v3.0",
+    "QCB Cloud Computing Regulation"
+  ],
+  "recommended_regulations": [
+    "Qatar Personal Data Privacy Law (Law No. 13 of 2016)",
+    "National Data Classification Policy v3.0",
+    "QCB Cloud Computing Regulation"
+  ]
+}

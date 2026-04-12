@@ -11,17 +11,18 @@ import time
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-from core.chunk import load_pages_jsonl
-from core.control_registry import map_controls_to_company, register_controls_to_master
-from core.controls import extract_controls_from_pages, save_controls_csv, save_controls_json
-from core.generator import load_json, merge_controls
-from core.ingest import save_pages
+from core.control_registry import map_controls_to_company
 from core.profiler import list_profiles, load_profile
 from domain.evidence.sufficiency import analyze_evidence_sufficiency
 from domain.gaps.aggregator import aggregate_gap_result, build_error_gap_result, summarize_gap_results
 from domain.gaps.implementation import analyze_implementation_gap
 from domain.gaps.policy_coverage import analyze_policy_coverage
-from services.ingestion.file_loader import parse_file_bytes, parse_uploaded_file
+from orchestrators.regulation_source_workflow import (
+    load_controls_for_source_files,
+    process_uploaded_regulations_to_controls as shared_process_uploaded_regulations_to_controls,
+    resolve_regulation_control_inputs,
+)
+from services.ingestion.file_loader import parse_file_bytes
 from schemas.common import ensure_schema_list
 from schemas.control import Control
 from schemas.gap import GapAssessment
@@ -103,13 +104,10 @@ def load_controls_for_gap_analysis(
     selected_control_files: List[str],
 ) -> List[Dict[str, Any]]:
     """Load and merge selected control files into one review set."""
-    control_sets: List[List[Dict[str, Any]]] = []
-
-    for file_name in selected_control_files:
-        file_path = Path(controls_dir) / file_name
-        control_sets.append(load_json(str(file_path)))
-
-    return merge_controls(control_sets, selected_control_files)
+    return load_controls_for_source_files(
+        selected_control_files=selected_control_files,
+        controls_dir=controls_dir,
+    )
 
 
 def process_uploaded_regulations_to_controls(
@@ -120,50 +118,15 @@ def process_uploaded_regulations_to_controls(
     model: Optional[str] = None,
 ) -> Dict[str, Any]:
     """Convert uploaded regulation PDFs into extracted control files."""
-    PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
-    CONTROLS_DIR.mkdir(parents=True, exist_ok=True)
-
-    new_control_files: List[str] = []
-    all_controls: List[Dict[str, Any]] = []
-
-    for uploaded in uploaded_files:
-        parsed_upload = parse_uploaded_file(uploaded, file_type="pdf")
-        doc_title = parsed_upload["source_name"]
-        doc_id = Path(doc_title).stem.lower().replace(" ", "_")
-        pages = parsed_upload.get("pages", [])
-
-        out_pages = PROCESSED_DIR / f"{doc_id}_pages.jsonl"
-        save_pages(
-            pages=pages,
-            out_path=str(out_pages),
-            doc_id=doc_id,
-            doc_title=doc_title,
-        )
-
-        pages_loaded = load_pages_jsonl(str(out_pages))
-        controls = extract_controls_from_pages(
-            pages=pages_loaded,
-            doc_id=doc_id,
-            doc_title=doc_title,
-            prefix=prefix,
-            min_len=min_len,
-            max_len=max_len,
-            model=model,
-        )
-
-        out_json = CONTROLS_DIR / f"{doc_id}_controls.json"
-        out_csv = CONTROLS_DIR / f"{doc_id}_controls.csv"
-        save_controls_json(controls, str(out_json))
-        save_controls_csv(controls, str(out_csv))
-        register_controls_to_master(controls)
-
-        new_control_files.append(out_json.name)
-        all_controls.extend(controls)
-
-    return {
-        "new_control_files": new_control_files,
-        "merged_controls": all_controls,
-    }
+    return shared_process_uploaded_regulations_to_controls(
+        uploaded_files=uploaded_files,
+        prefix=prefix,
+        min_len=min_len,
+        max_len=max_len,
+        model=model,
+        processed_dir=str(PROCESSED_DIR),
+        controls_dir=str(CONTROLS_DIR),
+    )
 
 
 def analyze_gap_dimensions(
@@ -210,10 +173,11 @@ def analyze_gap_dimensions(
 
 def run_gap_workflow(
     policy_text: str,
-    control_source_mode: str,
+    control_source_mode: Optional[str] = None,
     model: Optional[str] = None,
     max_controls: int = 8,
     selected_control_files: Optional[List[str]] = None,
+    selected_regulations: Optional[List[str]] = None,
     uploaded_regulation_files: Optional[List[Any]] = None,
     profile: Optional[Dict[str, Any]] = None,
     profile_name: Optional[str] = None,
@@ -221,6 +185,7 @@ def run_gap_workflow(
 ) -> Dict[str, Any]:
     """Run the end-to-end gap workflow while keeping the page layer thin."""
     selected_control_files = selected_control_files or []
+    selected_regulations = selected_regulations or []
     uploaded_regulation_files = uploaded_regulation_files or []
 
     if profile is None:
@@ -228,29 +193,34 @@ def run_gap_workflow(
             raise ValueError("A profile or profile_name is required to run gap analysis.")
         profile = load_profile_for_gap_workflow(profile_name=profile_name, profiles_dir=profiles_dir)
 
-    used_control_files: List[str] = []
-    new_control_files_created: List[str] = []
-    merged_controls: List[Dict[str, Any]] = []
+    control_resolution = resolve_regulation_control_inputs(
+        selected_regulations=selected_regulations,
+        uploaded_regulation_files=uploaded_regulation_files,
+        manual_control_files=selected_control_files,
+        model=model,
+        upload_prefix="QCB-GAP",
+        controls_dir=str(CONTROLS_DIR),
+    )
+    merged_controls = control_resolution["merged_controls"]
+    used_control_files = list(
+        dict.fromkeys(control_resolution["resolved_control_files"] + control_resolution["new_control_files"])
+    )
+    new_control_files_created = control_resolution["new_control_files"]
 
-    if control_source_mode == "existing":
-        merged_controls = load_controls_for_gap_analysis(
-            controls_dir=str(CONTROLS_DIR),
-            selected_control_files=selected_control_files,
-        )
-        used_control_files = selected_control_files
-    elif control_source_mode == "upload_new":
-        processed_output = process_uploaded_regulations_to_controls(
-            uploaded_files=uploaded_regulation_files,
-            prefix="QCB-GAP",
-            min_len=60,
-            max_len=500,
-            model=model,
-        )
-        merged_controls = processed_output["merged_controls"]
-        new_control_files_created = processed_output["new_control_files"]
-        used_control_files = new_control_files_created
-    else:
-        raise ValueError("control_source_mode must be 'existing' or 'upload_new'")
+    if not control_source_mode:
+        if selected_regulations and uploaded_regulation_files:
+            control_source_mode = "profile_and_upload"
+        elif selected_regulations:
+            control_source_mode = "profile_regulations"
+        elif selected_control_files and uploaded_regulation_files:
+            control_source_mode = "existing_and_upload"
+        elif uploaded_regulation_files:
+            control_source_mode = "upload_new"
+        else:
+            control_source_mode = "existing"
+
+    if not merged_controls:
+        raise ValueError("No controls could be resolved from the selected regulation sources.")
 
     company_control_rows = map_controls_to_company(profile, merged_controls)
     gap_row_models = analyze_gap_dimensions(
@@ -268,8 +238,10 @@ def run_gap_workflow(
         "run_id": run_id,
         "profile_name": profile.get("profile_name", profile_name or ""),
         "control_source_mode": control_source_mode,
+        "selected_regulations": selected_regulations,
         "used_control_files": used_control_files,
         "new_control_files_created": new_control_files_created,
+        "missing_regulations": control_resolution["missing_regulations"],
         "policy_text_length": len(policy_text),
         "max_controls_requested": max_controls,
         "controls_loaded": len(merged_controls),

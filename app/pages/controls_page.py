@@ -11,13 +11,14 @@ from orchestrators.control_workflow import (
 
 def render_controls_page() -> None:
     """Render the controls extraction workflow."""
-    st.write("Extract **Controls** from processed PDFs -> save as JSON/CSV.")
+    st.header("Controls")
+    st.caption("Advanced workspace: extract control points from saved regulation documents and persist them as JSON/CSV.")
     st.caption("Classification model is resolved centrally by the backend configuration.")
 
     files = list_processed_regulation_files()
 
     if not files:
-        st.info("No processed files yet. Go to Tab 1 and save a PDF first.")
+        st.info("No processed files yet. Go to Regulation Upload and save a PDF first.")
         return
 
     selected = st.selectbox("Select a processed JSONL file", files, key="controls_select")

@@ -1,6 +1,6 @@
 import json
 from pathlib import Path
-from typing import Dict, Any, List
+from typing import Any, Dict, List, Optional
 
 from schemas.common import ensure_schema
 from schemas.policy import Policy
@@ -31,6 +31,8 @@ def summarize_profile(profile: Dict[str, Any]) -> Dict[str, Any]:
         "data_residency_required": profile.get("data_residency_required", ""),
         "handles_pii": profile.get("handles_pii", ""),
         "handles_financial_data": profile.get("handles_financial_data", ""),
+        "applicable_regulations": profile.get("applicable_regulations", []),
+        "recommended_regulations": profile.get("recommended_regulations", []),
     }
 
 
@@ -41,14 +43,18 @@ def build_blueprint(
     profile_data: Dict[str, Any],
     sample_policy_text: str,
     drafting_instructions: str,
+    applicable_regulations: Optional[List[str]] = None,
+    source_context: Optional[Dict[str, Any]] = None,
 ) -> Dict[str, Any]:
     return Policy(
         policy_name=policy_name.strip(),
         selected_control_files=selected_control_files,
+        applicable_regulations=applicable_regulations or [],
         selected_profile_file=selected_profile_file,
         profile_summary=summarize_profile(profile_data),
         sample_policy_text=sample_policy_text.strip(),
         drafting_instructions=drafting_instructions.strip(),
+        source_context=source_context or {},
     ).to_dict()
 
 

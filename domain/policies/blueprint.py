@@ -68,6 +68,10 @@ def _profile_summary(source_blueprint: Dict[str, Any]) -> Dict[str, Any]:
     return source_blueprint.get("profile_summary", {}) or {}
 
 
+def _source_context(source_blueprint: Dict[str, Any]) -> Dict[str, Any]:
+    return source_blueprint.get("source_context", {}) or {}
+
+
 def _controls_sample(controls: List[Dict[str, Any]], limit: int = 12) -> List[Dict[str, Any]]:
     sample: List[Dict[str, Any]] = []
     for control in controls:
@@ -289,6 +293,7 @@ def build_structured_policy_blueprint(
     """Create the structured policy blueprint used for final markdown drafting."""
     title = _safe_text(source_blueprint.get("policy_name")) or "Policy"
     profile_summary = _profile_summary(source_blueprint)
+    source_context = _source_context(source_blueprint)
 
     plan = StructuredPolicyBlueprint(
         title=title,
@@ -304,7 +309,9 @@ def build_structured_policy_blueprint(
         drafting_instructions=_safe_text(source_blueprint.get("drafting_instructions")),
         style_reference_excerpt=_safe_text(source_blueprint.get("sample_policy_text"))[:1200],
         source_context={
+            **source_context,
             "policy_name": title,
+            "applicable_regulations": list(source_blueprint.get("applicable_regulations", []) or []),
             "selected_control_files": list(source_blueprint.get("selected_control_files", []) or []),
             "selected_profile_file": _safe_text(source_blueprint.get("selected_profile_file")),
             "profile_summary": profile_summary,

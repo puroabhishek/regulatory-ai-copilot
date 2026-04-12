@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Any, Iterable, List
+from typing import Any, Iterable, List, Optional
 
 from domain.gaps.aggregator import summarize_gap_results
 from schemas.common import ensure_schema_list
@@ -14,7 +14,7 @@ from schemas.readiness import AuditReadiness
 def build_readiness_snapshot(
     area: str,
     gap_rows: Iterable[Any],
-    evidence_items: Iterable[Any] | None = None,
+    evidence_items: Optional[Iterable[Any]] = None,
     owner: str = "",
     notes: str = "",
 ) -> dict:

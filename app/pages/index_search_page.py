@@ -15,7 +15,8 @@ from orchestrators.regulation_workflow import (
 def render_index_search_page() -> None:
     """Render the indexing and semantic-search workflow."""
     index_status = get_index_status()
-    st.write("Index saved JSONL files -> search stored chunks.")
+    st.header("Index & Search")
+    st.caption("Advanced workspace: index saved regulation text and run semantic search across the stored chunks.")
     st.caption(f"Index backend: `{index_status['backend']}`")
     st.info(index_status["notice"])
 
@@ -23,7 +24,7 @@ def render_index_search_page() -> None:
     files = list_processed_page_files(str(processed_dir))
 
     if not files:
-        st.info("No processed files yet. Go to Tab 1 and save a PDF first.")
+        st.info("No processed files yet. Go to Regulation Upload and save a PDF first.")
         return
 
     selected = st.selectbox("Select a processed JSONL file", files, key="index_select")

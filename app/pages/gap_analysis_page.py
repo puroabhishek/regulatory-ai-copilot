@@ -12,6 +12,8 @@ from typing import Iterable, List, Optional
 import pandas as pd
 import streamlit as st
 
+from core.profiler import load_profile
+from domain.regulations.catalog import list_regulation_catalog, recommend_regulations_for_profile
 from orchestrators.gap_workflow import (
     list_gap_control_files,
     list_gap_profile_files,
@@ -215,46 +217,88 @@ def _render_detail_panel(df: pd.DataFrame) -> None:
     c2.button("Assign Owner", disabled=True, help="Will plug into Compliance Cockpit")
 
 
-def _render_control_source_selector() -> tuple[str, list[str], list]:
-    st.markdown("## Step 1 - Select Regulation Source")
+def _render_control_source_selector() -> tuple[Optional[str], list[str], list[str], list]:
+    st.markdown("## Step 1 - Select Business Profile")
 
-    control_mode_label = st.radio(
-        "Choose control source",
-        options=["Use existing controls", "Upload new regulations"],
-        horizontal=True,
-        key="gap_control_source_mode",
+    profiles = _list_profile_files()
+    if not profiles:
+        st.info("No business profiles found yet. Create one in the Business Profile tab first.")
+        return None, [], [], []
+
+    selected_profile = st.selectbox(
+        "Business profile",
+        options=profiles,
+        help="The profile provides the business context and the default applicable regulations.",
+        key="gap_profile_name",
     )
 
-    control_source_mode = "existing" if control_mode_label == "Use existing controls" else "upload_new"
-    selected_control_files: list[str] = []
-    uploaded_regulation_files: list = []
+    profile_data = load_profile(str(PROFILES_DIR / selected_profile))
+    recommendations = recommend_regulations_for_profile(profile_data, controls_dir=str(CONTROLS_DIR))
+    default_regulations = list(profile_data.get("applicable_regulations", []) or [item["title"] for item in recommendations])
 
-    if control_source_mode == "existing":
-        available_controls = _list_control_files()
+    if st.session_state.get("gap_profile_seed") != selected_profile:
+        st.session_state["gap_selected_regulations"] = default_regulations
+        st.session_state["gap_profile_seed"] = selected_profile
+        st.session_state["gap_run_result"] = None
+
+    left, right = st.columns([1, 1])
+    with left:
+        st.markdown("### Profile snapshot")
+        st.json(
+            {
+                "profile_name": profile_data.get("profile_name", ""),
+                "country": profile_data.get("country", ""),
+                "regulator": profile_data.get("regulator", ""),
+                "sector": profile_data.get("sector", ""),
+                "business_type": profile_data.get("business_type", ""),
+                "cloud_use": profile_data.get("cloud_use", ""),
+                "handles_pii": profile_data.get("handles_pii", ""),
+            }
+        )
+    with right:
+        st.markdown("### Recommended regulation context")
+        if recommendations:
+            st.dataframe(
+                [
+                    {
+                        "Regulation / Guideline": item["title"],
+                        "Why suggested": " ".join(item.get("reasons", [])),
+                        "Ready in system": "Yes" if item.get("control_file_available") else "Upload needed",
+                    }
+                    for item in recommendations
+                ],
+                use_container_width=True,
+                hide_index=True,
+            )
+        else:
+            st.info("No direct catalog recommendation was found for this profile.")
+
+    catalog_titles = [item["title"] for item in list_regulation_catalog(str(CONTROLS_DIR))]
+    st.multiselect(
+        "Applicable regulations and guidelines",
+        options=catalog_titles,
+        key="gap_selected_regulations",
+        help="This defaults to the regulations stored with the selected business profile.",
+    )
+    selected_regulations = st.session_state.get("gap_selected_regulations", [])
+
+    uploaded_regulation_files = st.file_uploader(
+        "Upload additional regulation PDFs to include in this run (optional)",
+        type=["pdf"],
+        accept_multiple_files=True,
+        help="Use this when a selected regulation is not yet available locally or when you want to add another guideline.",
+        key="gap_uploaded_regulation_files",
+    )
+
+    with st.expander("Advanced options"):
         selected_control_files = st.multiselect(
-            "Select control sets",
-            options=available_controls,
-            help="These are already processed control JSON files from data/controls.",
+            "Additional existing control files",
+            options=_list_control_files(),
+            help="This preserves the direct control-file workflow for advanced users.",
             key="gap_selected_control_files",
         )
-        if selected_control_files:
-            st.success(f"Selected {len(selected_control_files)} control file(s).")
-        else:
-            st.info("Choose one or more control files.")
-    else:
-        uploaded_regulation_files = st.file_uploader(
-            "Upload new regulation PDFs",
-            type=["pdf"],
-            accept_multiple_files=True,
-            help="These files will be processed inline during this run.",
-            key="gap_uploaded_regulation_files",
-        )
-        if uploaded_regulation_files:
-            st.success(f"Uploaded {len(uploaded_regulation_files)} PDF(s).")
-        else:
-            st.info("Upload one or more regulation PDFs.")
 
-    return control_source_mode, selected_control_files, uploaded_regulation_files
+    return selected_profile, selected_regulations, selected_control_files, uploaded_regulation_files
 
 
 def _render_policy_input() -> str:
@@ -297,20 +341,8 @@ def _render_policy_input() -> str:
     return policy_text
 
 
-def _render_run_configuration() -> tuple[Optional[str], int, bool]:
+def _render_run_configuration() -> tuple[int, bool]:
     st.markdown("## Step 3 - Run Configuration")
-
-    profiles = _list_profile_files()
-    if not profiles:
-        st.info("No business profiles found yet. Create one in Tab 4 first.")
-        profile_name = None
-    else:
-        profile_name = st.selectbox(
-            "Business profile",
-            options=profiles,
-            help="Required to map controls into company context.",
-            key="gap_profile_name",
-        )
 
     max_controls = st.number_input(
         "Max controls",
@@ -322,24 +354,23 @@ def _render_run_configuration() -> tuple[Optional[str], int, bool]:
     )
 
     run_clicked = st.button("Run Gap Analysis", type="primary", use_container_width=True, key="gap_run_button")
-    return profile_name, max_controls, run_clicked
+    return max_controls, run_clicked
 
 
 def _validate_run_inputs(
     profile_name: Optional[str],
-    control_source_mode: str,
+    selected_regulations: Iterable[str],
     selected_control_files: Iterable[str],
     uploaded_regulation_files: Iterable,
     policy_text: str,
 ) -> list[str]:
     errors: list[str] = []
+    uploaded_regulation_files = uploaded_regulation_files or []
 
     if not profile_name:
         errors.append("Select a business profile.")
-    if control_source_mode == "existing" and not list(selected_control_files):
-        errors.append("Select at least one existing control file.")
-    if control_source_mode == "upload_new" and not list(uploaded_regulation_files):
-        errors.append("Upload at least one regulation PDF.")
+    if not list(selected_regulations) and not list(selected_control_files) and not list(uploaded_regulation_files):
+        errors.append("Select applicable regulations, choose control files, or upload regulation PDFs.")
     if not policy_text.strip():
         errors.append("Provide policy text to analyse.")
 
@@ -349,7 +380,7 @@ def _validate_run_inputs(
 def _run_gap_analysis(
     profile_name: str,
     policy_text: str,
-    control_source_mode: str,
+    selected_regulations: list[str],
     selected_control_files: list[str],
     uploaded_regulation_files: list,
     max_controls: int,
@@ -359,7 +390,7 @@ def _run_gap_analysis(
         profile_name=profile_name,
         profiles_dir=str(PROFILES_DIR),
         policy_text=policy_text,
-        control_source_mode=control_source_mode,
+        selected_regulations=selected_regulations,
         selected_control_files=selected_control_files,
         uploaded_regulation_files=uploaded_regulation_files,
         model=default_model,
@@ -474,24 +505,24 @@ def _render_export_section(result: dict, gap_rows: list, filtered_df: pd.DataFra
 
 def render_gap_analysis_page(default_model=None) -> None:
     """Render the gap-analysis page while delegating workflow logic outward."""
-    st.header("Tab 8 · Gap Analyzer")
-    st.caption("Run a policy-vs-regulation gap analysis using existing controls or newly uploaded regulation PDFs.")
+    st.header("Gap Analysis")
+    st.caption("Upload or paste the current policy, then assess it against the regulations and guidelines linked to the selected business profile.")
 
     if "gap_run_result" not in st.session_state:
         st.session_state["gap_run_result"] = None
 
-    control_source_mode, selected_control_files, uploaded_regulation_files = _render_control_source_selector()
+    profile_name, selected_regulations, selected_control_files, uploaded_regulation_files = _render_control_source_selector()
     st.divider()
 
     policy_text = _render_policy_input()
     st.divider()
 
-    profile_name, max_controls, run_clicked = _render_run_configuration()
+    max_controls, run_clicked = _render_run_configuration()
 
     if run_clicked:
         errors = _validate_run_inputs(
             profile_name=profile_name,
-            control_source_mode=control_source_mode,
+            selected_regulations=selected_regulations,
             selected_control_files=selected_control_files,
             uploaded_regulation_files=uploaded_regulation_files,
             policy_text=policy_text,
@@ -505,7 +536,7 @@ def render_gap_analysis_page(default_model=None) -> None:
                 st.session_state["gap_run_result"] = _run_gap_analysis(
                     profile_name=profile_name,
                     policy_text=policy_text,
-                    control_source_mode=control_source_mode,
+                    selected_regulations=selected_regulations,
                     selected_control_files=selected_control_files,
                     uploaded_regulation_files=uploaded_regulation_files,
                     max_controls=max_controls,

@@ -27,6 +27,7 @@ class Policy(SchemaModel):
     review_cycle: str = ""
     drafting_instructions: str = ""
     selected_control_files: List[str] = Field(default_factory=list)
+    applicable_regulations: List[str] = Field(default_factory=list)
     selected_profile_file: str = ""
     profile_summary: Dict[str, Any] = Field(default_factory=dict)
     sample_policy_text: str = ""

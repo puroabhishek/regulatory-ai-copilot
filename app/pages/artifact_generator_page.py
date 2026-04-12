@@ -13,12 +13,13 @@ from orchestrators.policy_workflow import (
 
 def render_artifact_generator_page() -> None:
     """Render the artifact-generation workflow."""
-    st.write("Generate bespoke artifacts from a saved **Policy Blueprint**.")
+    st.header("Policy Implementation")
+    st.caption("Keep the current implementation logic: use a saved blueprint to generate the implementation plan, audit register, traceability matrix, and company control inventory.")
     artifacts_dir = Path("data/artifacts")
     blueprint_files = list_available_blueprints()
 
     if not blueprint_files:
-        st.info("No blueprints available. Create one in Tab 5 first.")
+        st.info("No blueprints available yet. Create one in Policy Generator first.")
         return
 
     selected_blueprint = st.selectbox("Select blueprint", blueprint_files, key="gen_blueprint_select")

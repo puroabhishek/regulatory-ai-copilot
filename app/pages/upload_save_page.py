@@ -7,7 +7,8 @@ from orchestrators.regulation_workflow import prepare_uploaded_regulation_pages,
 
 def render_upload_save_page() -> None:
     """Render the upload-and-save workflow for text-based PDFs."""
-    st.write("Upload a **text-based PDF** -> extract text -> save as JSONL for indexing.")
+    st.header("Regulation Upload")
+    st.caption("Advanced workspace: upload a text-based regulation PDF, extract the text, and save it for downstream indexing or control extraction.")
     uploaded = st.file_uploader("Upload a PDF", type=["pdf"], key="upload_pdf")
 
     if not uploaded:

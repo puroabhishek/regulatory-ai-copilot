@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import time
 from pathlib import Path
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 
 from core.chunk import load_pages_jsonl
 from core.control_registry import (
@@ -44,7 +44,7 @@ def extract_controls_from_processed_file(
     prefix: str,
     min_len: int,
     max_len: int,
-    model: str | None = None,
+    model: Optional[str] = None,
     processed_dir: str = str(PROCESSED_DIR),
     controls_dir: str = str(CONTROLS_DIR),
 ) -> Dict[str, Any]:
