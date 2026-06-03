@@ -49,13 +49,187 @@ The current Streamlit app provides 9 tabs:
 9. `Classification Admin`
    Review and edit the external control taxonomy and statement-level classification overrides.
 
+## 4-Folder AI Project Structure
+
+The project now follows the standard 4-folder AI project structure that makes prompts versioned, output measurable, and the system tunable without touching Python code.
+
+```
+prompts/     ← LLM prompt templates as versioned Markdown files
+data/        ← regulation material, reference policies, eval datasets, runtime storage
+agents/      ← declarative agent configs (model, temperature, prompt files)
+evals/       ← evaluation framework for measuring and improving output quality
+```
+
+### `prompts/`
+
+All LLM prompts are externalized as `.md` files with `{{variable}}` placeholders.
+
+```
+prompts/
+  system/
+    policy_drafter.md          # Qatar-regulatory drafting persona
+    compliance_reviewer.md     # Strict QCB/QFCRA reviewer persona
+    control_classifier.md      # Control classification persona
+  tasks/
+    policy_generation.md       # Full policy drafting prompt
+    gap_analysis_coverage.md   # Control coverage analysis prompt
+    control_classification.md  # Control classification prompt
+    eval_judge_policy.md       # LLM-as-judge scoring prompt
+  tools/
+    json_output_strict.md      # Reusable JSON-only instruction block
+    qatar_regulatory_context.md # Qatar regulation reference block
+  loader.py                    # Zero-dependency template loader
+```
+
+**Template loader usage:**
+
+```python
+from prompts.loader import render_prompt, system_prompt
+
+# Render a task prompt with variables
+prompt = render_prompt("tasks.policy_generation",
+    blueprint_json=json.dumps(blueprint),
+    reference_policy_block=reference_excerpt,
+    drafting_instructions_block=instructions,
+)
+
+# Load a system persona
+system = system_prompt("policy_drafter")
+```
+
+Variables use `{{double_brace}}` syntax. Substitution is a simple `str.replace` loop — no template engine dependency.
+
+**Why this matters for output quality:** Every LLM call now sends a Qatar-specific system persona. Policy generation also injects the first 1500 characters of a user-supplied reference policy as a style example, grounding the model in Qatar-regulatory-quality writing rather than generic boilerplate.
+
+### `data/samples/`
+
+Place your own previously authored policy documents here as style references and evaluation ground truth.
+
+```
+data/samples/
+  README.md         # explains confidentiality, gitignore rules
+  [your_policy.md]  # gitignored — not committed to the repo
+```
+
+Supported formats: `.md`, `.docx`, `.pdf` (text-based only).
+
+These files serve two purposes:
+1. **Style grounding**: In the Policy Generator, select a reference policy from the dropdown. The first 1500 characters are injected into the generation prompt so the LLM mirrors your Qatar-regulatory writing style.
+2. **Eval ground truth**: Reference these files in `data/eval_datasets/` cases. When you run evals, the eval runner loads the policy text and scores model output against your real policies.
+
+Files in `data/samples/` (except `README.md`) are gitignored because they may contain confidential policy text.
+
+### `agents/`
+
+Declarative JSON configs that document each agent's model, temperature, and prompt configuration.
+
+```
+agents/
+  policy_generator.json
+  gap_analyzer.json
+  control_classifier.json
+  loader.py
+```
+
+Example — `agents/policy_generator.json`:
+
+```json
+{
+  "id": "policy_generator",
+  "purpose": "policy_generation",
+  "env_model_key": "POLICY_GENERATION_MODEL",
+  "temperature": 0.1,
+  "system_prompt": "prompts/system/policy_drafter.md",
+  "task_prompt": "prompts/tasks/policy_generation.md",
+  "output_format": "markdown",
+  "few_shot_source": "data/samples/",
+  "notes": "Larger models (14B+) produce noticeably better output for this task."
+}
+```
+
+These configs are readable documentation for the agent system. They also serve as the source of truth when `services/llm/router.py` resolves which model to use for each workflow purpose.
+
+### `evals/`
+
+End-to-end evaluation framework for measuring and improving output quality.
+
+```
+evals/
+  cases/                  # curated eval cases (symlink or copy from data/eval_datasets/)
+  runners/
+    base_runner.py        # EvalCase + EvalResult dataclasses, load_cases(), run_all()
+    gap_eval_runner.py    # calls analyze_policy_coverage() directly
+    policy_eval_runner.py # calls generate_policy_md_from_blueprint() directly
+  scorecards/
+    section_checker.py    # checks required ## Section headings are present
+    similarity_scorer.py  # difflib.SequenceMatcher ratio vs. reference policy
+    llm_judge.py          # second LLM call scoring output 1-10 against criteria
+    scorecard.py          # aggregator
+  traces/
+    .gitkeep              # trace files gitignored (large and may contain policy text)
+  run_evals.py            # CLI entry point
+```
+
+**Running evals:**
+
+```bash
+# Gap analysis — highest ROI, start here
+python -m evals.run_evals --task gap_analysis
+
+# Policy generation — requires reference policies in data/samples/
+python -m evals.run_evals --task policy_generation
+
+# With LLM judge scoring (needs EVAL_JUDGE_MODEL set)
+python -m evals.run_evals --task policy_generation --judge
+
+# Run all tasks
+python -m evals.run_evals --all
+
+# Print a summary report
+python -m evals.run_evals --task gap_analysis --report
+```
+
+**Eval case format** (`data/eval_datasets/gap_analysis/ga_001_ekyc_liveness_detection.json`):
+
+```json
+{
+  "id": "ga-001",
+  "task": "gap_analysis_coverage",
+  "input": {
+    "control_id": "QCB-EKYC-LIVENESS-01",
+    "control_statement": "The regulated entity must implement liveness detection...",
+    "policy_text_file": "data/samples/your_onboarding_policy.md"
+  },
+  "expected_output": {
+    "status": "Covered",
+    "status_alternatives": ["Partially Covered"],
+    "reason_contains": ["liveness", "eKYC"]
+  },
+  "metadata": { "annotated_by": "user", "regulation": "QCB eKYC Regulation" }
+}
+```
+
+Author these by going through each control in a regulation and annotating whether your reference policy covers it. Around 30–50 annotated cases gives a meaningful pass rate signal.
+
+**Scoring dimensions:**
+
+| Task | Scorer | What it measures |
+|------|--------|-----------------|
+| Gap analysis | `status_exact_match` | Exact match to expected Covered/Partially Covered/Missing |
+| Gap analysis | `reason_keywords_found` | Expected keywords appear in model's reason text |
+| Policy generation | `section_checker` | Required `## Section` headings are present |
+| Policy generation | `similarity_scorer` | difflib ratio vs. reference policy (threshold: 0.15) |
+| Policy generation | `llm_judge` | Score 1–10 against Qatar alignment, specificity, completeness, tone |
+
+**Trace files** are written to `evals/traces/` on every run. Each trace records the prompt version hash so you can correlate score changes to prompt edits.
+
 ## Important Product Notes
 
 - The app is currently local-first and file-backed for most workflows.
 - The LLM layer expects a locally reachable Ollama-compatible endpoint by default.
-- On macOS, the app now performs a startup Ollama health check and will try to auto-launch `Ollama.app` once if the local endpoint is unavailable.
+- On macOS, the app performs a startup Ollama health check and will try to auto-launch `Ollama.app` once if the local endpoint is unavailable.
 - The current search backend defaults to a safe keyword index, not semantic vector search.
-- Business profiles now store `applicable_regulations` and `recommended_regulations`, which feed the policy-generation and gap-analysis workflows.
+- Business profiles store `applicable_regulations` and `recommended_regulations`, which feed the policy-generation and gap-analysis workflows.
 - A curated regulation catalog is bundled in code so the app can recommend likely obligations and map them back to local control files when available.
 - OCR is not implemented yet. Scanned PDFs are not supported.
 - The database layer exists as a foundation, but the main user workflows are still mostly file-based today.
@@ -71,7 +245,7 @@ The current Streamlit app provides 9 tabs:
 
 ## Editable Control Taxonomy
 
-Control classification is now externalized into two files:
+Control classification is externalized into two files:
 
 - `configs/control_taxonomy.json`
   Holds the editable taxonomy for modality priority, topic keyword rules, and the allowed values and aliases for `category`, `control_type`, and `severity`.
@@ -99,11 +273,9 @@ save_classification_override(
 )
 ```
 
-This keeps the default taxonomy editable in config, while keeping statement-specific corrections in a separate runtime store.
-
 ## Profile-Linked Regulation Catalog
 
-The app now includes a curated regulation catalog in `domain/regulations/catalog.py`.
+The app includes a curated regulation catalog in `domain/regulations/catalog.py`.
 
 What it does:
 
@@ -119,22 +291,14 @@ Current bundled catalog entries include:
 - `Qatar Personal Data Privacy Law (Law No. 13 of 2016)`
 - `National Data Classification Policy v3.0`
 
-Saved profiles now persist both:
-
-- `applicable_regulations`
-- `recommended_regulations`
-
-Those fields are then reused by:
-
-- `Policy Generator`
-- `Gap Analysis`
-- `orchestrators/regulation_source_workflow.py`
+Saved profiles persist both `applicable_regulations` and `recommended_regulations`. Those fields are reused by Policy Generator, Gap Analysis, and `orchestrators/regulation_source_workflow.py`.
 
 ## Repository Structure
 
-High-level structure:
-
 ```text
+prompts/           LLM prompt templates (versioned Markdown)
+agents/            Declarative agent configs (JSON + loader)
+evals/             Evaluation framework
 app/
   pages/
   components/
@@ -147,10 +311,29 @@ services/
 tests/
 configs/
 data/
+  samples/         Reference policies (gitignored, user-supplied)
+  eval_datasets/   Annotated eval cases for gap analysis, policy gen, classification
+  regulations/
+    pdfs/          Raw regulation PDFs (gitignored)
+    processed/     Extracted JSONL (gitignored)
+  controls/
+  profiles/
+  blueprints/
+  artifacts/
+  gap_analysis/
+  generation_runs/
+  control_registry/
+  cache/
 ```
 
 Layer summary:
 
+- `prompts/`
+  Versioned Markdown prompt templates. Edit these to improve output quality without touching Python.
+- `agents/`
+  JSON configs documenting each agent's model, temperature, and prompt files.
+- `evals/`
+  Runners, scorecards, and CLI for measuring output quality against annotated ground truth.
 - `app/`
   Streamlit UI and page routing.
 - `orchestrators/`
@@ -215,56 +398,35 @@ Copy the example file and then edit it if needed:
 cp .env.example .env
 ```
 
-The repo now includes a real `.env.example` with sensible defaults for local development.
-
-Example:
+Key variables:
 
 ```env
+# Model selection
 DEFAULT_LLM_MODEL=qwen2.5:3b
 CONTROL_CLASSIFIER_MODEL=qwen2.5:3b
 GAP_ANALYSIS_MODEL=qwen2.5:3b
 POLICY_GENERATION_MODEL=qwen2.5:3b
 
+# For Qatar production: policy generation benefits significantly from >=14B models
+# POLICY_GENERATION_MODEL=qwen2.5:14b
+
+# LLM endpoint
 OLLAMA_URL=http://localhost:11434/api/chat
-
 LLM_TIMEOUT_SECONDS=600
-LLM_MAX_RETRIES=1
-LLM_RETRY_DELAY_SECONDS=1
 
+# Eval judge — set to a larger or different model than POLICY_GENERATION_MODEL
+# EVAL_JUDGE_MODEL=qwen2.5:14b
+
+# Search
 INDEX_BACKEND=keyword
 KEYWORD_INDEX_PATH=data/chroma_db/keyword_chunks.json
-
-# Optional DB override
-# DATABASE_URL=sqlite:///data/app.db
 ```
 
-What matters most:
-
-- `DEFAULT_LLM_MODEL`
-  Fallback model used when no workflow-specific model is set.
-- `CONTROL_CLASSIFIER_MODEL`
-  Used for control classification.
-- `GAP_ANALYSIS_MODEL`
-  Used for policy coverage analysis in the gap analyzer.
-- `POLICY_GENERATION_MODEL`
-  Used for policy drafting.
-- `OLLAMA_URL`
-  Default is `http://localhost:11434/api/chat`.
+**`EVAL_JUDGE_MODEL`** is used by `evals/scorecards/llm_judge.py`. Set it to a larger or different model than `POLICY_GENERATION_MODEL` so the judge gives an unbiased score. If unset, the LLM judge scorer is skipped during eval runs.
 
 ## 4. Start Ollama
 
 If you want the LLM-backed features to work, start Ollama and make sure your selected models are available.
-
-Current startup behavior:
-
-- when the app starts, it checks whether Ollama is reachable
-- on macOS with a local Ollama URL, it will try to launch `Ollama.app` automatically one time
-- if Ollama is still unavailable, the app shows a startup warning banner instead of only failing later inside generation
-- if Ollama is running but the configured model is missing, the app tells you which `ollama pull ...` command to run
-
-This means you may not always need to start Ollama manually first, but you still need the configured models to exist locally.
-
-Example:
 
 ```bash
 ollama serve
@@ -276,12 +438,17 @@ In another terminal:
 ollama pull qwen2.5:3b
 ```
 
-If you use different models, update `.env` accordingly.
-
-If the app is configured for a different model, pull that exact model instead. For example:
+For Qatar production, pull a larger model for policy generation:
 
 ```bash
-ollama pull qwen2.5:1.5b
+ollama pull qwen2.5:14b
+```
+
+Then update `.env`:
+
+```env
+POLICY_GENERATION_MODEL=qwen2.5:14b
+EVAL_JUDGE_MODEL=qwen2.5:14b
 ```
 
 ## 5. Run The App
@@ -314,19 +481,60 @@ If you are starting from scratch, the smoothest order is:
 1. Go to `Business Profile`
    Save the organization profile and confirm the applicable regulations suggested for that business.
 2. Go to `Regulation Upload`
-   Upload any text-based regulation PDFs that are not already represented in the local control library.
+   Upload any text-based regulation PDFs not already represented in the local control library.
 3. Go to `Controls`
    Extract controls from the newly uploaded regulations when needed.
-4. Go to `Policy Generator`
-   Select the profile, choose the applicable regulations or guidelines, and draft a policy from scratch.
-5. Go to `Policy Implementation`
+4. **Add a reference policy** (optional but recommended for Qatar output quality)
+   Save one of your existing, human-authored policies to `data/samples/your_policy.md`.
+5. Go to `Policy Generator`
+   Select the profile, choose the applicable regulations, select your reference policy as the style guide, and draft.
+6. Go to `Policy Implementation`
    Generate the supporting implementation plan, audit register, traceability matrix, and company control inventory.
-6. Go to `Gap Analysis`
+7. Go to `Gap Analysis`
    Compare an existing policy or current-state text against the profile-linked regulations and controls.
-7. Use `Index & Search` when you need clause lookup or requirement discovery from saved regulations.
-8. Use `Control Registry` and `Classification Admin` to maintain the shared control library and classification quality.
+8. **Run evals** (recommended before shipping)
+   ```bash
+   python -m evals.run_evals --task gap_analysis --report
+   ```
 
-If the needed regulations already have control files in `data/controls/`, you can often start at `Business Profile` and go straight to `Policy Generator` or `Gap Analysis`.
+## Adding Reference Policies (Style Grounding)
+
+To ground the LLM in Qatar-regulatory-quality writing:
+
+1. Copy an existing policy you've authored to `data/samples/`:
+   ```bash
+   cp /path/to/your/policy.md data/samples/onboarding_policy.md
+   ```
+2. In the Streamlit Policy Generator, select it from the "Reference Policy" dropdown.
+3. The first 1500 characters are injected into the generation prompt as a style example.
+
+These files are gitignored because they may contain confidential policy text. They stay on your machine only.
+
+## Running Evals
+
+After adding reference policies and authoring eval cases in `data/eval_datasets/`:
+
+```bash
+# Activate your venv
+source .venv/bin/activate
+export PYTHONPATH=$(pwd)
+
+# Gap analysis pass rate (highest ROI — start here)
+python -m evals.run_evals --task gap_analysis --report
+
+# Policy generation quality
+python -m evals.run_evals --task policy_generation --report
+
+# With LLM judge (requires EVAL_JUDGE_MODEL in .env)
+python -m evals.run_evals --task policy_generation --judge --report
+
+# All tasks
+python -m evals.run_evals --all --report
+```
+
+Target a gap analysis pass rate above 80% before shipping to clients.
+
+Trace files are written to `evals/traces/` on every run. Each trace records the prompt version hash (`sha256` of prompt content) so you can correlate score changes to specific prompt edits.
 
 ## Supported Input Files
 
@@ -346,18 +554,20 @@ Important caveats:
 - `.docx` support uses `python-docx`
 - `.xlsx` support uses `pandas` and `openpyxl`
 
-These ingestion dependencies are now included in `requirements.txt`, so setup is one-command for the currently supported file types.
-
 ## Current Storage Model
 
 The app creates and uses local folders under `data/`.
 
 Examples:
 
-- `data/processed/`
-  extracted page-level JSONL files
+- `data/samples/`
+  user-supplied reference policies (gitignored)
+- `data/eval_datasets/`
+  annotated eval cases for gap analysis, policy generation, and classification
+- `data/regulations/processed/`
+  extracted page-level JSONL files (gitignored)
 - `data/controls/`
-  extracted controls JSON and CSV, including catalog-linked control files used by profile-led workflows
+  extracted controls JSON and CSV, including catalog-linked control files
 - `data/profiles/`
   saved business profiles with applicable and recommended regulations
 - `data/blueprints/`
@@ -373,7 +583,7 @@ These folders are created automatically on startup by `app/ui.py`.
 
 ## Optional Database Initialization
 
-The project now includes a DB foundation with SQLAlchemy models under `models/` and setup helpers under `services/db/`.
+The project includes a DB foundation with SQLAlchemy models under `models/` and setup helpers under `services/db/`.
 
 This is optional for current usage.
 
@@ -384,11 +594,7 @@ source .venv/bin/activate
 python -c "from services.db.session import create_all_tables; create_all_tables()"
 ```
 
-By default this creates:
-
-```text
-data/app.db
-```
+By default this creates `data/app.db`.
 
 To use PostgreSQL later, set:
 
@@ -400,10 +606,7 @@ DATABASE_URL=postgresql+psycopg://user:password@localhost:5432/regulatory_ai
 
 The current index/search feature defaults to a safe keyword backend.
 
-That means:
-
 - the app will still let you build and query an index
-- the current behavior is more stable in local environments
 - semantic vector search is not the default runtime path right now
 
 This is intentional to avoid Python crashes caused by native ML/vector dependencies in some environments.
@@ -441,26 +644,15 @@ Check:
 - Ollama server status
 - firewall or localhost access issues
 
-If you are using the default local setup on macOS:
-
 ```bash
-open -a Ollama
 curl http://localhost:11434/api/tags
 ```
 
-If the health check works but generation still fails, the model in `.env` is likely missing locally.
-
 ### PDF upload says little or no text was extracted
 
-The PDF is probably scanned or image-based.
-
-Current limitation:
-
-- no OCR support yet
+The PDF is probably scanned or image-based. No OCR support yet.
 
 ### DOCX support fails
-
-Install:
 
 ```bash
 pip install python-docx
@@ -468,15 +660,11 @@ pip install python-docx
 
 ### XLSX support fails
 
-Install:
-
 ```bash
 pip install pandas openpyxl
 ```
 
 ### Streamlit port already in use
-
-Run on a different port:
 
 ```bash
 streamlit run app/ui.py --server.port 8502
@@ -484,16 +672,28 @@ streamlit run app/ui.py --server.port 8502
 
 ### I changed code and imports behave strangely
 
-Use:
-
 ```bash
 source .venv/bin/activate
 export PYTHONPATH=$(pwd)
 streamlit run app/ui.py
 ```
 
+### Eval runner says `No cases found`
+
+Check that `data/eval_datasets/<task>/` contains `.json` case files. See `data/eval_datasets/README.md` for the case format and authoring guidance.
+
+### LLM judge scorer is skipped
+
+Set `EVAL_JUDGE_MODEL` in `.env` to enable it:
+
+```env
+EVAL_JUDGE_MODEL=qwen2.5:14b
+```
+
 ## Developer Notes
 
+- `prompts/` is the first place to look when output quality is poor. Edit the `.md` files rather than the Python callers.
+- `evals/` is how you confirm that a prompt change actually improved things. Run before and after.
 - `core/` still contains compatibility modules during migration.
 - `orchestrators/` is the preferred place for multi-step workflows.
 - `domain/` is the preferred place for business rules.
@@ -510,7 +710,7 @@ cp .env.example .env
 ./run.sh
 ```
 
-Edit `.env` if you want different models or endpoints before the first real LLM-backed run.
+Edit `.env` to configure your models before the first LLM-backed run. For Qatar-quality output, use at least a 14B model for `POLICY_GENERATION_MODEL`.
 
 ## Current Limitations
 
@@ -518,6 +718,7 @@ Edit `.env` if you want different models or endpoints before the first real LLM-
 - DB-backed persistence is not the default flow yet
 - keyword search is the default search backend today
 - parts of the codebase still use compatibility modules under `core/`
+- eval cases in `data/eval_datasets/` must be authored manually; no auto-generation tooling yet
 
 ## Contributing
 
@@ -527,6 +728,7 @@ If you are extending the project:
 - put workflow sequencing in `orchestrators/`
 - put business rules in `domain/`
 - put transport, IO, and integration logic in `services/`
+- edit prompts in `prompts/` and run evals before merging prompt changes
 - avoid aggressive deletion of legacy modules until replacement paths are fully migrated
 
 ## Support
@@ -535,8 +737,9 @@ If someone new is onboarding to the project, the fastest path is:
 
 1. install dependencies
 2. configure `.env`
-3. start Ollama
-4. run Streamlit
-5. create a `Business Profile`, then use the profile-led `Policy Generator` / `Gap Analysis` flow or the advanced regulation-upload workspaces when you need new source documents
+3. start Ollama and pull your models
+4. (optional) add a reference policy to `data/samples/`
+5. run Streamlit
+6. create a `Business Profile`, then use the profile-led `Policy Generator` / `Gap Analysis` flow
 
 That should be enough for a new user to clone the repo, start the product locally, and use the main workflows without reading the code first.
