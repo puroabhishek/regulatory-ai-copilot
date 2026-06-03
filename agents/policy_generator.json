@@ -1,0 +1,15 @@
+{
+  "id": "policy_generator",
+  "description": "Drafts full regulatory policy markdown from a structured blueprint and optional reference policy",
+  "purpose": "policy_generation",
+  "env_model_key": "POLICY_GENERATION_MODEL",
+  "default_model": "qwen2.5:3b",
+  "temperature": 0.1,
+  "timeout_seconds": 600,
+  "max_retries": 1,
+  "system_prompt": "prompts/system/policy_drafter.md",
+  "task_prompt": "prompts/tasks/policy_generation.md",
+  "output_format": "markdown",
+  "few_shot_source": "data/samples/",
+  "notes": "For Qatar market: reference policies in data/samples/ must be QCB/QFCRA-aligned. Models ≥14B produce significantly better output for this task — strongly recommended for production. The reference policy excerpt (first 1500 chars) is injected as a style example."
+}

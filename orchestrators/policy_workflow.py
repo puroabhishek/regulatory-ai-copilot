@@ -34,7 +34,7 @@ from orchestrators.regulation_source_workflow import resolve_regulation_control_
 
 CONTROLS_DIR = Path("data/controls")
 PROFILES_DIR = Path("data/profiles")
-REFERENCES_DIR = Path("data/references")
+REFERENCES_DIR = Path("data/samples")
 BLUEPRINTS_DIR = Path("data/blueprints")
 ARTIFACTS_DIR = Path("data/artifacts")
 

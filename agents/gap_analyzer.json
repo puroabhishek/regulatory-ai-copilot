@@ -1,0 +1,19 @@
+{
+  "id": "gap_analyzer",
+  "description": "Assesses whether a policy document covers a specific regulatory control",
+  "purpose": "gap_analysis",
+  "env_model_key": "GAP_ANALYSIS_MODEL",
+  "default_model": "qwen2.5:3b",
+  "temperature": 0.1,
+  "timeout_seconds": 300,
+  "max_retries": 1,
+  "system_prompt": "prompts/system/compliance_reviewer.md",
+  "task_prompt": "prompts/tasks/gap_analysis_coverage.md",
+  "output_format": "json",
+  "output_schema": {
+    "status": "Covered | Partially Covered | Missing",
+    "reason": "string — cites the specific policy clause or notes its absence",
+    "remediation": "string — one to two actionable sentences"
+  },
+  "notes": "Strictness matters here — the model must not award 'Covered' unless the control is explicitly addressed. Run evals/run_evals.py --task gap_analysis to measure accuracy before deploying to a new model."
+}

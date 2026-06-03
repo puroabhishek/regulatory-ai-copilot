@@ -79,14 +79,14 @@ def list_blueprints(blueprint_dir: str = "data/blueprints") -> List[str]:
 
 def save_reference_policy(name: str, content: str) -> str:
     safe_name = name.strip().replace(" ", "_")
-    out_path = Path("data/references") / f"{safe_name}.md"
+    out_path = Path("data/samples") / f"{safe_name}.md"
     out_path.parent.mkdir(parents=True, exist_ok=True)
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(content)
     return str(out_path)
 
 
-def list_reference_policies(ref_dir: str = "data/references") -> List[str]:
+def list_reference_policies(ref_dir: str = "data/samples") -> List[str]:
     p = Path(ref_dir)
     if not p.exists():
         return []

@@ -1,0 +1,21 @@
+{
+  "id": "ga-003",
+  "task": "gap_analysis_coverage",
+  "description": "AML/CTF: PEP screening requirement vs Madad onboarding policy",
+  "input": {
+    "control_id": "AML-PEP-SCREEN-01",
+    "control_statement": "The regulated entity must screen all customers and beneficial owners against Politically Exposed Persons (PEP) lists prior to onboarding and on an ongoing basis. Enhanced Due Diligence (EDD) must be applied to all identified PEPs, including obtaining senior management approval before establishing or continuing the business relationship.",
+    "policy_text_file": "data/samples/Cust_Onboarding_Madad_policy.md"
+  },
+  "expected_output": {
+    "status": "Covered",
+    "status_alternatives": [],
+    "reason_contains": ["PEP", "Enhanced Due Diligence"]
+  },
+  "metadata": {
+    "annotated_by": "user",
+    "regulation": "QCB AML/CTF Guidelines",
+    "difficulty": "easy",
+    "notes": "Section 6 of the Madad policy is dedicated to PEP handling"
+  }
+}
