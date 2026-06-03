@@ -7,6 +7,7 @@ file I/O or UI rendering.
 
 from typing import Any, Dict, Optional
 
+from prompts.loader import render_prompt, system_prompt
 from services.llm.client import llm_json
 from schemas.common import ensure_schema
 from schemas.control import Control
@@ -40,40 +41,12 @@ def build_policy_coverage_prompt(control: Any, policy_text: str) -> str:
     control_id = safe_gap_text(control_model.control_id)
     trimmed_policy_text = safe_gap_text(policy_text)[:5000]
 
-    return f"""
-You are a compliance reviewer.
-
-Task:
-Compare the policy text against the control and decide whether the control is:
-- Covered
-- Partially Covered
-- Missing
-
-Return ONLY valid JSON in this exact format:
-{{
-  "status": "Covered | Partially Covered | Missing",
-  "reason": "short explanation",
-  "remediation": "specific suggested addition or fix"
-}}
-
-CONTROL ID:
-{control_id}
-
-CONTROL:
-{statement}
-
-POLICY TEXT:
-\"\"\"
-{trimmed_policy_text}
-\"\"\"
-
-Rules:
-1. Be strict and practical.
-2. "Covered" only if the policy clearly addresses the control.
-3. "Partially Covered" if the policy touches the topic but misses specificity.
-4. "Missing" if not addressed.
-5. Remediation must be concise and actionable.
-"""
+    return render_prompt(
+        "tasks.gap_analysis_coverage",
+        control_id=control_id,
+        control_statement=statement,
+        policy_text_excerpt=trimmed_policy_text,
+    )
 
 
 def validate_policy_coverage_output(output: Dict[str, Any]) -> PolicyCoverageAssessment:
@@ -109,6 +82,7 @@ def analyze_policy_coverage(
 
     output = llm_json(
         prompt=build_policy_coverage_prompt(control=control_model, policy_text=policy_text),
+        system=system_prompt("compliance_reviewer"),
         model=model,
         temperature=0.1,
         purpose="gap_analysis",

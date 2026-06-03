@@ -1,0 +1,21 @@
+{
+  "id": "control_classifier",
+  "description": "Classifies a regulatory control statement into category, type, severity, policy tags, and implementation hint",
+  "purpose": "control_classifier",
+  "env_model_key": "CONTROL_CLASSIFIER_MODEL",
+  "default_model": "qwen2.5:3b",
+  "temperature": 0.0,
+  "timeout_seconds": 120,
+  "max_retries": 1,
+  "system_prompt": "prompts/system/control_classifier.md",
+  "task_prompt": "prompts/tasks/control_classification.md",
+  "output_format": "json",
+  "output_schema": {
+    "category": "string — 2 to 4 words",
+    "control_type": "Governance | Technical | Operational | Legal",
+    "severity": "High | Medium | Low",
+    "policy_tags": ["string — policy document names this control belongs in"],
+    "implementation_hint": "string — one practical sentence"
+  },
+  "notes": "Temperature 0.0 for maximum consistency. Classification cache lives in data/cache/ — clear it when the taxonomy changes or the model is upgraded."
+}

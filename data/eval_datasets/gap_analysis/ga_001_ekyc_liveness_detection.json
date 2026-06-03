@@ -1,0 +1,21 @@
+{
+  "id": "ga-001",
+  "task": "gap_analysis_coverage",
+  "description": "QCB eKYC: liveness detection requirement vs Madad onboarding policy",
+  "input": {
+    "control_id": "QCB-EKYC-LIVENESS-01",
+    "control_statement": "The regulated entity must implement a liveness detection mechanism as part of the electronic Know Your Customer (eKYC) process to ensure the physical presence of the customer and prevent spoofing attacks using photographs, videos, or masks.",
+    "policy_text_file": "data/samples/Cust_Onboarding_Madad_policy.md"
+  },
+  "expected_output": {
+    "status": "Covered",
+    "status_alternatives": ["Partially Covered"],
+    "reason_contains": ["liveness", "eKYC"]
+  },
+  "metadata": {
+    "annotated_by": "user",
+    "regulation": "QCB eKYC Regulation 2023",
+    "difficulty": "medium",
+    "notes": "Section 2.5 and 2.6 of the Madad policy address eKYC security and IT infrastructure including liveness detection"
+  }
+}

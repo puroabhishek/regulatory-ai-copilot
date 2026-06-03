@@ -13,6 +13,7 @@ from configs.control_taxonomy import (
     delete_control_override as _delete_control_override,
     taxonomy_fingerprint,
 )
+from prompts.loader import render_prompt, system_prompt
 from services.llm.client import llm_json
 
 CACHE_PATH = Path("data/cache/control_classification_cache.json")
@@ -54,31 +55,13 @@ def build_classification_prompt(control_text: str, taxonomy: Dict[str, Any]) -> 
     if category_allow_custom:
         category_guidance += "- if no preferred category fits, use a short custom label\n"
 
-    return f"""
-You are classifying a regulatory control for a compliance product.
-
-Return ONLY valid JSON with these keys:
-{{
-  "category": "",
-  "control_type": "",
-  "severity": "",
-  "policy_tags": [],
-  "implementation_hint": ""
-}}
-
-Allowed values:
-- control_type: {control_type_allowed}
-- severity: {severity_allowed}
-
-Control:
-\"\"\"{control_text}\"\"\"
-
-Rules:
-- category should be concise
-{category_guidance}- do not invent values outside the allowed control_type or severity lists
-- policy_tags should be likely policy document names
-- implementation_hint should be practical and short
-"""
+    return render_prompt(
+        "tasks.control_classification",
+        control_text=control_text,
+        control_type_allowed=str(control_type_allowed),
+        severity_allowed=str(severity_allowed),
+        category_guidance=category_guidance.rstrip(),
+    )
 
 
 def classify_control(control_text: str, model: str = "qwen2.5:3b") -> Dict[str, Any]:
@@ -91,6 +74,7 @@ def classify_control(control_text: str, model: str = "qwen2.5:3b") -> Dict[str, 
 
     data = llm_json(
         build_classification_prompt(control_text, taxonomy),
+        system=system_prompt("control_classifier"),
         model=model,
         purpose="control_classifier",
     )

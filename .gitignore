@@ -19,15 +19,26 @@ venv/
 
 # Data folders that should stay local
 data/processed/
+data/regulations/processed/
+data/regulations/pdfs/
 data/chroma_db/
 data/cache/
 data/artifacts/
 data/generation_runs/
 data/control_registry/*
 !data/control_registry/.gitkeep
-data/references/
 
-# Keep folder structure if needed
+# Reference policies are confidential — do not commit
+data/samples/*.md
+data/samples/*.docx
+data/samples/*.pdf
+!data/samples/README.md
+
+# Eval traces can be large and contain sensitive policy text
+evals/traces/*
+!evals/traces/.gitkeep
+
+# Keep folder structure
 !data/.gitkeep
 
 # Logs

@@ -1,0 +1,21 @@
+{
+  "id": "ga-002",
+  "task": "gap_analysis_coverage",
+  "description": "QCB eKYC: record retention requirement vs Madad onboarding policy",
+  "input": {
+    "control_id": "QCB-EKYC-RECORDS-01",
+    "control_statement": "The regulated entity must retain all eKYC records, including customer identity documents, biometric data, liveness check results, and verification logs, for a minimum period of ten (10) years from the date of the last transaction or termination of the customer relationship.",
+    "policy_text_file": "data/samples/Cust_Onboarding_Madad_policy.md"
+  },
+  "expected_output": {
+    "status": "Covered",
+    "status_alternatives": ["Partially Covered"],
+    "reason_contains": ["record", "retention"]
+  },
+  "metadata": {
+    "annotated_by": "user",
+    "regulation": "QCB eKYC Regulation 2023",
+    "difficulty": "easy",
+    "notes": "Section 4 (Record Keeping) and Section 2.4 of the Madad policy address record retention"
+  }
+}

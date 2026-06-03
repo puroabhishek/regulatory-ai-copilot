@@ -69,15 +69,21 @@ class LLMClient:
         purpose: str = "default",
         timeout: Optional[float] = None,
         max_retries: Optional[int] = None,
+        system: Optional[str] = None,
     ) -> str:
         """Send a chat request and return the model's text content."""
         resolved_model = resolve_model(purpose=purpose, override=model)
         effective_timeout = timeout if timeout is not None else self.timeout_seconds
         attempts = 1 + (self.max_retries if max_retries is None else max(0, max_retries))
 
+        messages = []
+        if system:
+            messages.append({"role": "system", "content": system})
+        messages.append({"role": "user", "content": prompt})
+
         payload = {
             "model": resolved_model,
-            "messages": [{"role": "user", "content": prompt}],
+            "messages": messages,
             "options": {"temperature": temperature},
             "stream": False,
         }
@@ -147,6 +153,7 @@ def ollama_chat(
     purpose: str = "default",
     timeout: Optional[float] = None,
     max_retries: Optional[int] = None,
+    system: Optional[str] = None,
 ) -> str:
     """Compatibility helper that returns raw text from the configured LLM."""
     return _DEFAULT_CLIENT.generate(
@@ -156,6 +163,7 @@ def ollama_chat(
         purpose=purpose,
         timeout=timeout,
         max_retries=max_retries,
+        system=system,
     )
 
 
@@ -166,6 +174,7 @@ def llm_json(
     purpose: str = "default",
     timeout: Optional[float] = None,
     max_retries: Optional[int] = None,
+    system: Optional[str] = None,
 ) -> Dict[str, Any]:
     """Request a response and parse the returned content as structured JSON."""
     output = ollama_chat(
@@ -175,5 +184,6 @@ def llm_json(
         purpose=purpose,
         timeout=timeout,
         max_retries=max_retries,
+        system=system,
     )
     return parse_json_response(output)
