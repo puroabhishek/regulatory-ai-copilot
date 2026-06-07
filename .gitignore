@@ -44,3 +44,6 @@ evals/traces/*
 # Logs
 logs/
 *.log
+
+# Claude Code internal tooling
+.claude/

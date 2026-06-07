@@ -55,6 +55,7 @@ class User(UUIDPrimaryKeyMixin, TimestampMixin, Base):
 
     organization_id: Mapped[Optional[str]] = mapped_column(ForeignKey("organizations.id"), nullable=True, index=True)
     email: Mapped[Optional[str]] = mapped_column(String(255), nullable=True, unique=True)
+    phone: Mapped[Optional[str]] = mapped_column(String(30), nullable=True, unique=True)
     full_name: Mapped[Optional[str]] = mapped_column(String(255), nullable=True)
     role: Mapped[Optional[str]] = mapped_column(String(100), nullable=True)
     password_hash: Mapped[Optional[str]] = mapped_column(String(255), nullable=True)

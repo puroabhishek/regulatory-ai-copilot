@@ -53,6 +53,12 @@ def _import_models() -> None:
     import models.policy  # noqa: F401
     import models.readiness  # noqa: F401
     import models.task  # noqa: F401
+    import models.audit_log  # noqa: F401
+    import models.app_settings  # noqa: F401
+    import models.control_registry  # noqa: F401
+    import models.eval_store  # noqa: F401
+    import models.feedback  # noqa: F401
+    import models.policy_version  # noqa: F401
 
 
 def create_all_tables(engine: Engine | None = None) -> None:

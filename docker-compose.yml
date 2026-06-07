@@ -1,0 +1,56 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: regai
+      POSTGRES_PASSWORD: regai_dev
+      POSTGRES_DB: regulatory_ai
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@regai.local
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+    depends_on:
+      - postgres
+
+  app:
+    build: .
+    command: streamlit run app/ui.py --server.port 8501 --server.address 0.0.0.0
+    ports:
+      - "8501:8501"
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql+psycopg2://regai:regai_dev@postgres:5432/regulatory_ai
+      PYTHONPATH: /app
+    volumes:
+      - ./data:/app/data
+    depends_on:
+      - postgres
+
+  admin:
+    build: .
+    command: streamlit run app/admin.py --server.port 8502 --server.address 0.0.0.0
+    ports:
+      - "8502:8502"
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql+psycopg2://regai:regai_dev@postgres:5432/regulatory_ai
+      PYTHONPATH: /app
+    volumes:
+      - ./data:/app/data
+    depends_on:
+      - postgres
+
+volumes:
+  postgres_data:
