@@ -18,6 +18,7 @@ venv/
 .streamlit/
 
 # Data folders that should stay local
+data/*.db
 data/processed/
 data/regulations/processed/
 data/regulations/pdfs/
