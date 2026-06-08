@@ -204,19 +204,33 @@ def _handle_pdf_upload(uploaded_file, regulation_name, regulation_version, issui
 
 def _extract_pdf_controls_with_llm(text, regulation_name, regulation_version, issuing_body) -> None:
     try:
-        from services.llm.client import llm_json
+        from services.llm.client import ollama_chat
+        from services.llm.parser import safe_json_loads
 
         prompt = (
-            "Extract all regulatory controls from the following text as a JSON array. "
-            "Each element must have: clause_reference, control_statement, control_type, "
-            "severity (high/medium/low), category, implementation_hint. "
-            "Return only the JSON array, no extra text.\n\n"
-            f"TEXT:\n{text}"
+            "Extract all regulatory controls from the following regulation text.\n"
+            "Return a JSON object with a single key 'controls' containing an array of objects.\n"
+            "Each object must have these fields: clause_reference, control_statement, "
+            "control_type, severity (high/medium/low), category, implementation_hint.\n"
+            "Return ONLY valid JSON. No explanation, no markdown fences.\n\n"
+            f"TEXT:\n{text[:6000]}"
         )
         with st.spinner("Extracting controls with AI..."):
-            result = llm_json(prompt=prompt, purpose="default")
+            raw = ollama_chat(prompt=prompt, purpose="default")
 
-        controls = result if isinstance(result, list) else result.get("controls", [])
+        parsed = safe_json_loads(raw)
+        if isinstance(parsed, list):
+            controls = parsed
+        elif isinstance(parsed, dict):
+            # model may return {"controls": [...]} or {"items": [...]} etc.
+            for key in ("controls", "items", "data", "results"):
+                if isinstance(parsed.get(key), list):
+                    controls = parsed[key]
+                    break
+            else:
+                controls = list(parsed.values())[0] if parsed else []
+        else:
+            controls = []
         st.session_state["pdf_extracted_controls"] = controls
         st.success(f"Extracted {len(controls)} controls from PDF.")
     except Exception as exc:
